@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Witter Tech — Calm, personal tech help in Central Florida</title>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<meta name="description" content="Witter Tech — patient, honest help with computers, devices, networks and the everyday technology your home or small business depends on. Serving Kissimmee, Orlando, St. Cloud, Celebration & Davenport.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tomorrow:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Gruppo&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#0d1117;        /* navy / base */
+  --paper-2:#161b22;      /* card fill / alt section */
+  --card:#161b22;         /* component card fill */
+  --ink:#f0f6fc;          /* primary text (crisp off-white) */
+  --ink-2:#c2cbd6;        /* brighter slate for body text */
+  --muted:#8b949e;        /* secondary text */
+  --green:#74cc00;        /* brand lime green */
+  --green-deep:#62ad00;   /* hover */
+  --amber:#feac34;        /* brand orange (swoosh) */
+  --amber-deep:#f7951f;
+  --amber-soft:#3a2c14;
+  --line:#30363d;         /* subtle borders */
+  --line-soft:#22272e;
+  --maxw:1140px;
+  --r:2px; --r-lg:3px;
+}
+/* light sections: re-scope tokens so the same components read correctly on white,
+   with brand green/orange deepened just enough to stay legible */
+.light{
+  --paper:#ffffff; --paper-2:#f6f8fa; --card:#ffffff;
+  --ink:#14181f; --ink-2:#3a424d; --muted:#5b6470;
+  --line:#e4e7ec; --line-soft:#eef1f4;
+  --green:#4f8a00; --green-deep:#3f6e00; --amber:#cf7a14;
+  color:var(--ink);
+}
+.light h1,.light h2,.light h3{color:var(--ink)}
+.light .aud-card{box-shadow:0 18px 44px -26px rgba(20,24,31,.28)}
+.light .pitem:hover{background:linear-gradient(90deg,rgba(79,138,0,.08),transparent)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'IBM Plex Sans',system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,.serif{font-family:'Tomorrow',sans-serif;font-weight:400;line-height:1.08;letter-spacing:-.01em}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+.label{font-family:'Gruppo',sans-serif;font-size:.9rem;font-weight:400;letter-spacing:.24em;text-transform:uppercase;color:var(--amber)}
+.label.green{color:var(--green)}
+.muted{color:var(--muted)}
+
+/* soft buttons */
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:'IBM Plex Sans';font-weight:600;font-size:1rem;padding:.85rem 1.45rem;border-radius:2px;border:1px solid transparent;cursor:pointer;transition:.25s ease}
+.btn-solid{background:var(--green);color:#0d1117}
+.btn-solid:hover{background:var(--green-deep);transform:translateY(-1px)}
+.btn-outline{border-color:var(--line);color:var(--ink);background:transparent}
+.btn-outline:hover{border-color:var(--green);background:rgba(255,255,255,.05)}
+.link-quiet{color:var(--ink-2);font-weight:600;display:inline-flex;align-items:center;gap:.45rem;border-bottom:1px solid var(--line);padding-bottom:2px;transition:.2s}
+.link-quiet:hover{color:var(--green);border-color:var(--green)}
+.arrow{transition:.25s}
+.btn:hover .arrow,.link-quiet:hover .arrow{transform:translateX(3px)}
+
+/* header */
+header{position:sticky;top:0;z-index:60;background:rgba(13,17,23,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line-soft)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:78px;gap:20px}
+.logo{height:50px;width:auto}
+.nav-mid{display:flex;gap:30px;align-items:center}
+.nav-mid a{font-size:.96rem;font-weight:500;color:var(--ink-2);transition:.2s}
+.nav-mid a:hover{color:var(--ink)}
+.nav-right{display:flex;align-items:center;gap:18px}
+.nav-phone{font-weight:600;font-size:.95rem;color:var(--ink);display:flex;align-items:center;gap:.4rem}
+.nav-phone svg{color:var(--green)}
+.burger{display:none;background:none;border:0;color:var(--ink);cursor:pointer}
+
+/* hero */
+.hero{padding:64px 0 30px}
+.hero-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:64px;align-items:center}
+.hero .tag{display:inline-flex;align-items:center;gap:.5rem;color:var(--ink-2);font-size:.86rem;font-weight:500;margin-bottom:26px}
+.hero .tag .dot{width:7px;height:7px;border-radius:50%;background:var(--green);display:inline-block}
+.hero h1{font-size:clamp(2.6rem,5.6vw,4.3rem);font-weight:400;letter-spacing:-.022em}
+.hero h1 em{font-style:italic;color:var(--amber)}
+.hero .sub{font-size:1.2rem;color:var(--ink-2);margin:26px 0 0;max-width:40ch}
+.hero-cta{display:flex;align-items:center;gap:22px;margin-top:34px;flex-wrap:wrap}
+.hero-photo{position:relative}
+.hero-photo .frame{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 60px -34px rgba(0,0,0,.7)}
+.hero-photo img{width:100%;height:560px;object-fit:cover}
+.hero-note{position:absolute;left:-22px;bottom:34px;background:var(--card);border:1px solid var(--line-soft);border-radius:3px;padding:16px 20px;max-width:230px;box-shadow:0 18px 40px -22px rgba(35,32,26,.4)}
+.hero-note .serif{font-size:1.02rem;font-style:italic;color:var(--ink)}
+.hero-note small{color:var(--muted);font-size:.8rem}
+
+/* reassurance statement */
+.statement{padding:84px 0}
+.statement p{font-family:'Tomorrow',sans-serif;font-weight:300;font-size:clamp(1.6rem,3.3vw,2.5rem);line-height:1.32;max-width:20ch;letter-spacing:-.01em}
+.statement p span{color:var(--muted)}
+.statement .row{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.statement .aside{padding-top:8px}
+.statement .aside p{font-family:'IBM Plex Sans';font-weight:400;font-size:1.08rem;line-height:1.7;color:var(--ink-2);max-width:46ch}
+
+/* common problems */
+.problems{background:#ffffff;padding:88px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.sec-head{max-width:34ch;margin-bottom:46px}
+.sec-head h2{font-size:clamp(1.9rem,3.6vw,2.7rem);margin:14px 0 0;font-weight:400}
+.plist{border-top:1px solid var(--line)}
+.pitem{display:flex;align-items:baseline;gap:24px;padding:22px 4px;border-bottom:1px solid var(--line);transition:.25s}
+.pitem:hover{padding-left:16px;background:linear-gradient(90deg,rgba(79,122,57,.05),transparent)}
+.pitem .q{font-family:'Tomorrow',sans-serif;font-size:clamp(1.2rem,2vw,1.5rem);font-weight:400;color:var(--ink);flex:1}
+.pitem .n{font-size:.8rem;color:var(--amber);font-weight:600;min-width:34px}
+.pitem .tag{font-size:.8rem;color:var(--muted);font-weight:500;white-space:nowrap}
+.plist-foot{margin-top:26px;color:var(--ink-2);font-size:1.05rem}
+.plist-foot a{color:var(--green);border-bottom:1px solid var(--green)}
+
+/* how it works */
+.how{padding:92px 0}
+.how-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.steps{margin-top:30px}
+.step{display:flex;gap:22px;padding:26px 0;border-top:1px solid var(--line)}
+.step:last-child{border-bottom:1px solid var(--line)}
+.step .si{font-family:'Gruppo',sans-serif;font-size:1.9rem;color:var(--amber);min-width:40px}
+.step h3{font-size:1.3rem;font-weight:500;margin-bottom:4px}
+.step p{color:var(--ink-2)}
+.how-photo{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);box-shadow:0 26px 56px -34px rgba(0,0,0,.7)}
+.how-photo img{width:100%;height:600px;object-fit:cover}
+
+/* audiences */
+.aud{padding:92px 0;background:#ffffff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.aud-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.aud-card{background:var(--card);border:1px solid var(--line-soft);border-radius:var(--r-lg);overflow:hidden}
+.aud-card .ph{height:230px;overflow:hidden}
+.aud-card .ph img{width:100%;height:100%;object-fit:cover}
+.aud-card .body{padding:32px}
+.aud-card h3{font-size:1.7rem;font-weight:400;margin:8px 0 12px}
+.aud-card p{color:var(--ink-2);margin-bottom:18px}
+.aud-card ul{list-style:none;display:grid;gap:10px;margin-bottom:24px}
+.aud-card li{display:flex;gap:.6rem;align-items:flex-start;color:var(--ink-2);font-size:.98rem}
+.aud-card li svg{color:var(--green);flex:none;margin-top:5px}
+
+/* about / real person */
+.about{background:var(--card);color:var(--ink-2);padding:96px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center}
+.about .label{color:var(--amber)}
+.about h2{font-size:clamp(1.9rem,3.6vw,2.7rem);font-weight:400;color:var(--ink);margin:16px 0 22px}
+.about p{color:var(--muted);font-size:1.08rem;margin-bottom:16px;max-width:52ch}
+.about .creds{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.about .creds span{font-size:.82rem;font-weight:500;color:var(--ink-2);border:1px solid var(--line);border-radius:2px;padding:.4rem .9rem}
+.about-photo{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line)}
+.about-photo img{width:100%;height:520px;object-fit:cover;filter:saturate(.96)}
+.about-sign{font-family:'Tomorrow',sans-serif;font-style:italic;font-size:1.3rem;color:var(--ink);margin-top:28px}
+.about-sign small{display:block;font-family:'IBM Plex Sans';font-style:normal;font-size:.85rem;color:var(--muted);margin-top:4px}
+
+/* faq */
+.faq{padding:92px 0;background:#ffffff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start}
+.faq-item{border-top:1px solid var(--line);padding:6px 0}
+.faq-item:last-child{border-bottom:1px solid var(--line)}
+.faq-q{width:100%;text-align:left;background:none;border:0;cursor:pointer;padding:22px 0;display:flex;justify-content:space-between;align-items:center;gap:20px;font-family:'Tomorrow',sans-serif;font-size:1.22rem;font-weight:400;color:var(--ink)}
+.faq-q .ic{width:24px;height:24px;flex:none;position:relative;transition:.3s}
+.faq-q .ic::before,.faq-q .ic::after{content:"";position:absolute;background:var(--amber);transition:.3s}
+.faq-q .ic::before{top:11px;left:2px;width:20px;height:2px}
+.faq-q .ic::after{left:11px;top:2px;width:2px;height:20px}
+.faq-item.open .ic::after{transform:rotate(90deg);opacity:0}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq-a p{padding:0 0 24px;color:var(--ink-2);max-width:60ch}
+
+/* contact */
+.contact{background:var(--paper-2);padding:92px 0;border-top:1px solid var(--line-soft)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.contact h2{font-size:clamp(2rem,3.8vw,2.9rem);font-weight:400;margin:14px 0 16px}
+.contact .lede{color:var(--ink-2);font-size:1.12rem;max-width:42ch;margin-bottom:32px}
+.cinfo{display:grid;gap:18px}
+.cinfo .row{display:flex;gap:16px;align-items:flex-start}
+.cinfo .ic{width:44px;height:44px;border-radius:2px;background:var(--paper);border:1px solid var(--line);display:grid;place-items:center;color:var(--green);flex:none}
+.cinfo b{font-weight:600;display:block;font-size:.97rem}
+.cinfo a{color:var(--ink);font-weight:600}
+.cinfo span{color:var(--muted);font-size:.92rem}
+.pay{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
+.pay span{font-size:.76rem;font-weight:600;background:var(--paper);border:1px solid var(--line);padding:.25rem .6rem;border-radius:2px;color:var(--ink-2)}
+.form{background:var(--card);border:1px solid var(--line-soft);border-radius:var(--r-lg);padding:34px}
+.form h3{font-family:'Tomorrow',sans-serif;font-weight:400;font-size:1.5rem;margin-bottom:4px}
+.form .sm{color:var(--muted);font-size:.92rem;margin-bottom:22px}
+.field{margin-bottom:16px}
+.field label{display:block;font-size:.82rem;font-weight:600;color:var(--ink-2);margin-bottom:6px}
+.field input,.field select,.field textarea{width:100%;padding:.82rem 1rem;border:1px solid var(--line);border-radius:2px;font:inherit;background:var(--paper);color:var(--ink);transition:.2s}
+.field input::placeholder,.field textarea::placeholder{color:var(--muted)}
+.field select{color:var(--ink)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--green);background:var(--paper);box-shadow:0 0 0 4px rgba(116,204,0,.18)}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+
+/* footer */
+footer{background:var(--paper);padding:64px 0 34px;border-top:1px solid var(--line-soft)}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;padding-bottom:38px;border-bottom:1px solid var(--line-soft)}
+.foot-logo{height:60px;margin-bottom:16px}
+.foot-grid p{color:var(--ink-2);max-width:32ch;font-size:.96rem}
+footer h4{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;font-weight:600}
+footer ul{list-style:none;display:grid;gap:9px}
+footer ul a,footer ul li{color:var(--ink-2);font-size:.95rem}
+footer ul a:hover{color:var(--green)}
+.foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding-top:22px;font-size:.86rem;color:var(--muted)}
+.foot-bottom a{color:var(--green);font-weight:600}
+
+/* mobile bar */
+.mbar{display:none;position:fixed;left:14px;right:14px;bottom:14px;z-index:80;background:var(--card);border:1px solid var(--line);border-radius:3px;padding:10px;gap:8px;box-shadow:0 16px 40px -16px rgba(0,0,0,.7)}
+.mbar a{flex:1;justify-content:center;display:flex;align-items:center;gap:.5rem;padding:.8rem;border-radius:2px;font-weight:600;font-size:.95rem}
+.mbar .msg{background:var(--green);color:#0d1117}
+.mbar .call{color:var(--ink);border:1px solid var(--line)}
+
+.reveal{opacity:0;transform:translateY(20px);transition:.8s cubic-bezier(.16,.84,.44,1)}
+.reveal.in{opacity:1;transform:none}
+
+@media(max-width:920px){
+  .hero-grid,.statement .row,.how-grid,.aud-grid,.about-grid,.faq-grid,.contact-grid{grid-template-columns:1fr;gap:40px}
+  .hero-photo{order:-1;max-width:520px}
+  .hero-photo img{height:420px}
+  .how-photo{order:-1}.how-photo img{height:380px}
+  .about-photo img{height:380px}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:30px}
+}
+@media(max-width:600px){
+  .nav-mid,.nav-phone{display:none}
+  .nav-right .btn{display:none}
+  .burger{display:block}
+  .frow{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  body{padding-bottom:80px}
+  .mbar{display:flex}
+  .pitem .tag{display:none}
+  section,.hero{padding-left:0;padding-right:0}
+  .statement,.problems,.how,.aud,.about,.faq,.contact{padding-top:60px;padding-bottom:60px}
+}
+
+/* Tomorrow header weights */
+h1,h2,h3{font-weight:600!important;letter-spacing:-.012em}
+.hero h1{letter-spacing:-.022em}
+.statement p{font-weight:400!important;letter-spacing:-.006em}
+.pitem .q,.faq-q{font-family:'Tomorrow',sans-serif;font-weight:500;letter-spacing:-.01em}
+.about-sign{font-style:normal}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="wrap nav">
+    <a href="#top"><img src="assets/logo.png" alt="Witter Tech" class="logo"></a>
+    <nav class="nav-mid">
+      <a href="#problems">Common problems</a>
+      <a href="#how">How help works</a>
+      <a href="#about">About</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-right">
+      <a href="tel:14076248459" class="nav-phone">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        407-624-8459
+      </a>
+      <a href="#contact" class="btn btn-solid">Get help</a>
+    </div>
+    <button class="burger" aria-label="Menu"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="tag"><span class="dot"></span>Witter Tech · Central Florida · since 2019</span>
+      <h1>Technology help that feels clear, calm, and <em>personal</em>.</h1>
+      <p class="sub">Computer and device problems have a way of interrupting your whole day. I'll help you get back to normal — and explain what's going on, in plain language, along the way.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-solid">Tell us what's going on <svg class="arrow" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="tel:14076248459" class="link-quiet">Or call &amp; text Joe</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <div class="frame"><img src="assets/hero.jpg" alt="Careful, hands-on device repair"></div>
+      <div class="hero-note">
+        <div class="serif">You work with me directly — start to finish.</div>
+        <small>Joe Witter, owner</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATEMENT -->
+<section class="statement">
+  <div class="wrap row">
+    <p class="reveal">When something stops working, you don't need jargon or a sales pitch. <span>You need someone who'll listen, find out what's actually wrong, and tell you honestly what it takes to fix it.</span></p>
+    <div class="aside reveal">
+      <p>That's the whole idea behind Witter Tech. After more than thirteen years working in IT — most of them leading support for businesses that can't afford downtime — I started doing this for the families and small businesses around me. Same care, none of the runaround.</p>
+    </div>
+  </div>
+</section>
+
+<!-- COMMON PROBLEMS -->
+<section class="problems light" id="problems">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="label">In plain language</span>
+      <h2>Things people usually reach out about.</h2>
+    </div>
+    <div class="plist">
+      <div class="pitem reveal"><span class="n">01</span><span class="q">"It turns on, but nothing really happens."</span><span class="tag">Computers &amp; laptops</span></div>
+      <div class="pitem reveal"><span class="n">02</span><span class="q">"The Wi-Fi drops in half the house."</span><span class="tag">Networks &amp; Wi-Fi</span></div>
+      <div class="pitem reveal"><span class="n">03</span><span class="q">"Everything's gotten slow and I don't know why."</span><span class="tag">Tune-ups &amp; cleanup</span></div>
+      <div class="pitem reveal"><span class="n">04</span><span class="q">"I cracked the screen — or spilled something on it."</span><span class="tag">Repairs</span></div>
+      <div class="pitem reveal"><span class="n">05</span><span class="q">"I really need my photos and files back."</span><span class="tag">Data recovery</span></div>
+      <div class="pitem reveal"><span class="n">06</span><span class="q">"We're setting up cameras, a doorbell, or a new TV."</span><span class="tag">Smart home</span></div>
+      <div class="pitem reveal"><span class="n">07</span><span class="q">"Our office network just needs to work — reliably."</span><span class="tag">Small business IT</span></div>
+    </div>
+    <p class="plist-foot reveal">If yours isn't on the list, that's completely fine. <a href="#contact">Just describe it in your own words</a> and we'll take it from there.</p>
+  </div>
+</section>
+
+<!-- HOW HELP WORKS -->
+<section class="how" id="how">
+  <div class="wrap how-grid">
+    <div class="reveal">
+      <span class="label green">How help works</span>
+      <h2 style="font-size:clamp(1.9rem,3.6vw,2.7rem);font-weight:400;margin-top:14px">Three calm steps — no surprises.</h2>
+      <div class="steps">
+        <div class="step"><span class="si">01</span><div><h3>You tell me what's going on</h3><p>Send a quick message or give me a call. Describe it however makes sense to you — no tech vocabulary required.</p></div></div>
+        <div class="step"><span class="si">02</span><div><h3>I take a look</h3><p>On-site, remotely, or you drop it by. You get a clear picture of the problem and an honest price before anything moves forward.</p></div></div>
+        <div class="step"><span class="si">03</span><div><h3>We get you back to normal</h3><p>I fix it properly, and I make sure you understand what happened — so you're not left guessing. Same-day when the schedule allows.</p></div></div>
+      </div>
+    </div>
+    <div class="how-photo reveal"><img src="assets/hands.jpg" alt="Working on a computer"></div>
+  </div>
+</section>
+
+<!-- AUDIENCES -->
+<section class="aud light">
+  <div class="wrap">
+    <div class="aud-grid">
+      <div class="aud-card reveal">
+        <div class="ph"><img src="assets/living.jpg" alt="Home technology setup"></div>
+        <div class="body">
+          <span class="label green">For your home</span>
+          <h3>The everyday tech a household runs on</h3>
+          <p>Patient, unhurried help — and I'll never make you feel behind for asking.</p>
+          <ul>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Computer &amp; laptop repair, tune-ups, and cleanups</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Wi-Fi that reaches the whole house</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>TVs, doorbells, cameras &amp; smart devices, set up right</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Recovering the photos and files that matter</li>
+          </ul>
+          <a href="#contact" class="link-quiet">Ask about home help <svg class="arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+      <div class="aud-card reveal">
+        <div class="ph"><img src="assets/network.jpg" alt="Small business network"></div>
+        <div class="body">
+          <span class="label">For your business</span>
+          <h3>Quiet, dependable IT behind the scenes</h3>
+          <p>The kind of support that lets your team stop thinking about technology.</p>
+          <ul>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Networks &amp; Wi-Fi built to stay up</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Microsoft 365 &amp; everyday account help</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Security, backups &amp; compliance, made understandable</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>Ongoing support, so there's always someone to call</li>
+          </ul>
+          <a href="#contact" class="link-quiet">Talk through business IT <svg class="arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div class="about-photo reveal"><img src="assets/bench.jpg" alt="Joe's workbench"></div>
+    <div class="reveal">
+      <span class="label">A little about who you'll be talking to</span>
+      <h2>Hi, I'm Joe — and Witter Tech is just me, doing this the way I'd want it done for my own family.</h2>
+      <p>Technology has been my thing for over thirteen years. By day I've managed IT for organizations where reliability and security really matter; on the side, since 2019, I've been helping the families and small businesses around Central Florida with the same level of care.</p>
+      <p>What that means for you: clear communication, fair pricing, and the job done right the first time. No ticket queues, no being talked down to — just a real person who's genuinely good at this and happy to explain it.</p>
+      <div class="creds">
+        <span>13+ years in IT</span>
+        <span>CompTIA A+ &amp; Network+</span>
+        <span>Microsoft MCSE / MCSA</span>
+        <span>Family-owned</span>
+      </div>
+      <div class="about-sign">Joe Witter<small>Owner, Witter Tech</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq light" id="faq">
+  <div class="wrap faq-grid">
+    <div class="reveal">
+      <span class="label green">Questions, answered plainly</span>
+      <h2 style="font-size:clamp(1.9rem,3.6vw,2.6rem);font-weight:400;margin-top:14px">The things people<br>usually wonder.</h2>
+      <p class="muted" style="margin-top:16px">Still unsure about something? Ask me directly — I'd rather you understand than guess.</p>
+    </div>
+    <div class="reveal">
+      <div class="faq-item"><button class="faq-q">Do you come to me, or do I bring it to you?<span class="ic"></span></button><div class="faq-a"><p>Whatever's easiest for you. I work on-site at homes and businesses across Central Florida, I can often help remotely, or you're welcome to drop a device off. We'll figure out the simplest option when you reach out.</p></div></div>
+      <div class="faq-item"><button class="faq-q">Will my files and photos be safe?<span class="ic"></span></button><div class="faq-a"><p>In most repairs your data stays exactly where it is. If there's ever a chance something could be lost, I'll tell you before I start — so you can decide what you're comfortable with. Nothing happens behind your back.</p></div></div>
+      <div class="faq-item"><button class="faq-q">How much is this going to cost?<span class="ic"></span></button><div class="faq-a"><p>You'll get an honest price up front, before any work begins. I'd rather lose a job than surprise someone with a bill. If something turns out to be simpler than expected, that's reflected in what you pay.</p></div></div>
+      <div class="faq-item"><button class="faq-q">How quickly can you help?<span class="ic"></span></button><div class="faq-a"><p>Often the same day, depending on the schedule and the part needed. When you reach out, I'll give you a realistic window rather than an empty promise.</p></div></div>
+      <div class="faq-item"><button class="faq-q">Which areas do you cover?<span class="ic"></span></button><div class="faq-a"><p>Kissimmee, Orlando, St. Cloud, Celebration, Davenport and the surrounding Central Florida communities. Not sure if you're in range? Just ask.</p></div></div>
+      <div class="faq-item"><button class="faq-q">What if it can't be fixed?<span class="ic"></span></button><div class="faq-a"><p>Then I'll tell you straight, and help you figure out the most sensible next step — whether that's a replacement, recovering what's on it, or simply a better option. You won't pay for work that didn't help.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div class="reveal">
+      <span class="label">Start a quick message</span>
+      <h2>Tell us what's going on.</h2>
+      <p class="lede">A sentence or two is plenty to start. I'll read it, ask anything I need to, and let you know the next step — usually the same day.</p>
+      <div class="cinfo">
+        <div class="row"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div><b>Prefer to talk?</b><a href="tel:14076248459">407-624-8459</a><span> · call or text, Mon–Fri 8am–7pm</span></div></div>
+        <div class="row"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 5L2 7"/></svg></div><div><b>Email</b><a href="mailto:joe@wittertech.com">joe@wittertech.com</a></div></div>
+        <div class="row"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><div><b>Hours</b><span>Mon–Fri 8am–7pm · weekends by appointment</span><div class="pay"><span>Cash</span><span>Zelle</span><span>Cash App</span><span>Check</span></div></div></div>
+      </div>
+    </div>
+    <div class="form reveal">
+      <h3>A quick note to Joe</h3>
+      <p class="sm">No pressure, no obligation — just the start of a conversation.</p>
+      <div class="frow"><div class="field"><label>Your name</label><input type="text" placeholder="First name is fine"></div><div class="field"><label>Phone</label><input type="tel" placeholder="Best number to reach you"></div></div>
+      <div class="field"><label>Email</label><input type="email" placeholder="you@email.com"></div>
+      <div class="field"><label>What's this about?</label><select><option>Pick whatever's closest…</option><option>A computer or laptop</option><option>Wi-Fi or networking</option><option>It's running slow</option><option>A cracked screen or spill</option><option>Recovering files or photos</option><option>Cameras, doorbell or smart home</option><option>Business / office IT</option><option>Honestly not sure yet</option></select></div>
+      <div class="field"><label>Tell me what's going on</label><textarea rows="3" placeholder="In your own words — whatever comes to mind."></textarea></div>
+      <button class="btn btn-solid" style="width:100%;justify-content:center">Send it over <svg class="arrow" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <img src="assets/logo.png" alt="Witter Tech" class="foot-logo">
+        <p>Calm, honest, personal technology help for Central Florida homes and small businesses. Run by Joe Witter, since 2019.</p>
+      </div>
+      <div><h4>Help with</h4><ul><li><a href="#problems">Computers &amp; laptops</a></li><li><a href="#problems">Wi-Fi &amp; networks</a></li><li><a href="#problems">Smart home</a></li><li><a href="#problems">Data recovery</a></li><li><a href="#problems">Business IT</a></li></ul></div>
+      <div><h4>Around here</h4><ul><li>Kissimmee</li><li>Orlando</li><li>St. Cloud</li><li>Celebration</li><li>Davenport</li></ul></div>
+      <div><h4>Reach Joe</h4><ul><li><a href="tel:14076248459">407-624-8459</a></li><li><a href="mailto:joe@wittertech.com">joe@wittertech.com</a></li><li>Mon–Fri · 8am–7pm</li><li><a href="#">Facebook</a> · <a href="#">Instagram</a></li></ul></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Witter Tech · a DBA of Witt-Tech Solutions LLC</span>
+      <span>Website by <a href="https://roemdigital.com">ROEM Digital</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- MOBILE BAR -->
+<div class="mbar">
+  <a href="#contact" class="msg">Tell us what's going on</a>
+  <a href="tel:14076248459" class="call"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call</a>
+</div>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+document.querySelectorAll('.faq-item').forEach(it=>{
+  const q=it.querySelector('.faq-q'),a=it.querySelector('.faq-a');
+  q.addEventListener('click',()=>{
+    const open=it.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(o=>{o.classList.remove('open');o.querySelector('.faq-a').style.maxHeight=null});
+    if(!open){it.classList.add('open');a.style.maxHeight=a.scrollHeight+'px'}
+  });
+});
+</script>
+</body>
+</html>
