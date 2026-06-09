@@ -27,7 +27,7 @@ export default function Home() {
           <div className="hero-photo" id="heroPhoto">
             <div className="frame"><img src="/assets/hero-tech.jpg" alt="Careful, hands-on device repair" /></div>
             <div className="intro-card">
-              <img src="/assets/joe.jpg" alt="Joe Witter" />
+              <img src="/assets/joe-polo.jpg" alt="Joe Witter" />
               <p><span className="dotline">●</span> Honest, careful work — and you&apos;ll always understand what I&apos;m doing and why.</p>
             </div>
           </div>
