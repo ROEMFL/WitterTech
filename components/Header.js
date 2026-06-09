@@ -38,7 +38,7 @@ export default function Header() {
           <Link href="/" className="brand">
             Witter Tech<span className="dot">.</span>
           </Link>
-          <nav className="nav-mid">
+          <nav className="nav-mid" role="navigation" aria-label="Main navigation">
             {NAV.map(l => (
               <Link key={l.href} href={l.href} className={pathname.startsWith(l.href) ? 'active' : ''}>
                 {l.label}
@@ -51,14 +51,14 @@ export default function Header() {
               407-624-8459
             </a>
             <Link href="/contact" className="header-pill">Get help</Link>
-            <button className="menu-btn" onClick={() => setMenuOpen(true)} aria-label="Open menu">
+            <button className="menu-btn" onClick={() => setMenuOpen(true)} aria-label="Open menu" aria-expanded={menuOpen} aria-controls="mobile-menu">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
             </button>
           </div>
         </div>
       </header>
 
-      <div className={`m-overlay${menuOpen ? ' open' : ''}`}>
+      <div id="mobile-menu" className={`m-overlay${menuOpen ? ' open' : ''}`} aria-hidden={!menuOpen} role="navigation" aria-label="Mobile navigation">
         <button className="m-close" onClick={() => setMenuOpen(false)} aria-label="Close menu">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
         </button>

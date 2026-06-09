@@ -22,7 +22,7 @@ export default function About() {
       <section className="about-page">
         <div className="wrap about-page-grid">
           <div className="about-photo" id="aboutPhoto">
-            <img src="/assets/joe-hero.jpg" alt="Joe Witter, owner of Witter Tech" />
+            <img src="/assets/joe-hero.jpg" alt="Joe Witter, owner of Witter Tech" loading="lazy" />
           </div>
           <div>
             <span className="eyebrow green reveal">My story</span>
@@ -86,7 +86,7 @@ export default function About() {
 
           {/* Experience highlights */}
           <div style={{marginTop:'80px',padding:'48px',background:'var(--white)',borderRadius:'var(--r)',border:'1px solid var(--line)'}}>
-            <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'48px'}}>
+            <div className="exp-grid">
               <div className="reveal">
                 <h3 style={{fontSize:'1.3rem',marginBottom:'16px'}}>Experience &amp; Specialties</h3>
                 <p style={{color:'var(--ink-2)',marginBottom:'16px',lineHeight:'1.7'}}>I bring more than 13 years of Information Technology experience, including leadership, infrastructure management, cybersecurity, cloud services, networking, and end-user support.</p>

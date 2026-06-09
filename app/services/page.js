@@ -19,12 +19,12 @@ export default function Services() {
       </div>
 
       {/* HOME TECH SUPPORT */}
-      <section className="svc-section" id="home-tech" style={{background:'var(--white)',padding:'100px 0'}}>
+      <section className="svc-section" id="home-tech">
         <div className="wrap svc-grid">
           <div>
             <span className="eyebrow green reveal">Home Tech Support</span>
             <h2 className="anim-words">We Make Tech Easy for Your Home &amp; Family.</h2>
-            <p className="lede reveal" style={{color:'var(--ink-2)'}}>Fast, friendly, and reliable tech support for your home — same-day appointments available whenever scheduling permits.</p>
+            <p className="lede reveal">Fast, friendly, and reliable tech support for your home — same-day appointments available whenever scheduling permits.</p>
             <ul className="svc-list reveal">
               <li><div><strong>PC &amp; Laptop Repair</strong><span>Speed up slow computers, fix crashes, hardware issues, screen damage, and spills. Windows and Mac.</span></div></li>
               <li><div><strong>Virus Removal &amp; System Cleanup</strong><span>Remove threats, malware, and junk — then lock things down so it doesn&apos;t happen again.</span></div></li>
@@ -38,30 +38,30 @@ export default function Services() {
             </div>
           </div>
           <div className="svc-photo reveal">
-            <img src="/assets/hero-tech.jpg" alt="Home tech support" />
+            <img src="/assets/hero-tech.jpg" alt="Home tech support" loading="lazy" />
           </div>
         </div>
       </section>
 
       {/* SMALL BUSINESS IT */}
-      <section className="svc-section" id="business-it" style={{background:'var(--dark)',color:'#fff',padding:'100px 0'}}>
+      <section className="svc-section dark" id="business-it">
         <div className="wrap svc-grid">
           <div className="svc-photo reveal">
-            <img src="/assets/network2.jpg" alt="Small business IT support" />
+            <img src="/assets/network2.jpg" alt="Small business IT support" loading="lazy" />
           </div>
           <div>
             <span className="eyebrow on-dark reveal">Small Business IT</span>
-            <h2 className="anim-words" style={{color:'#fff'}}>IT Support That Lets You Focus on Your Business.</h2>
-            <p className="lede reveal" style={{color:'var(--muted-d)'}}>Local, reliable, and responsive — affordable monthly plans for Kissimmee, Orlando, and surrounding areas.</p>
-            <ul className="svc-list reveal" style={{'--dot-color':'var(--green)'}}>
-              <li><div><strong style={{color:'#fff'}}>Microsoft 365 Administration</strong><span style={{color:'var(--muted-d)'}}>Email setup, user management, Teams, SharePoint, and ongoing 365 support for your team.</span></div></li>
-              <li><div><strong style={{color:'#fff'}}>Network &amp; Wi-Fi Reliability</strong><span style={{color:'var(--muted-d)'}}>Wired and wireless networks built to stay up. Office infrastructure that doesn&apos;t interrupt your day.</span></div></li>
-              <li><div><strong style={{color:'#fff'}}>Cybersecurity &amp; Data Protection</strong><span style={{color:'var(--muted-d)'}}>Security assessments, antivirus, endpoint protection, backup strategies, and compliance basics.</span></div></li>
-              <li><div><strong style={{color:'#fff'}}>Commercial PC Maintenance</strong><span style={{color:'var(--muted-d)'}}>Keep every workstation running smoothly. Hardware diagnostics, updates, and proactive maintenance.</span></div></li>
-              <li><div><strong style={{color:'#fff'}}>Office Equipment Support</strong><span style={{color:'var(--muted-d)'}}>Printers, peripherals, and office tech — configured and troubleshot so your team stays productive.</span></div></li>
-              <li><div><strong style={{color:'#fff'}}>Monthly IT Support Plans</strong><span style={{color:'var(--muted-d)'}}>Ongoing coverage with priority response. One local contact for everything tech-related in your business.</span></div></li>
+            <h2 className="anim-words">IT Support That Lets You Focus on Your Business.</h2>
+            <p className="lede reveal">Local, reliable, and responsive — affordable monthly plans for Kissimmee, Orlando, and surrounding areas.</p>
+            <ul className="svc-list reveal">
+              <li><div><strong>Microsoft 365 Administration</strong><span>Email setup, user management, Teams, SharePoint, and ongoing 365 support for your team.</span></div></li>
+              <li><div><strong>Network &amp; Wi-Fi Reliability</strong><span>Wired and wireless networks built to stay up. Office infrastructure that doesn&apos;t interrupt your day.</span></div></li>
+              <li><div><strong>Cybersecurity &amp; Data Protection</strong><span>Security assessments, antivirus, endpoint protection, backup strategies, and compliance basics.</span></div></li>
+              <li><div><strong>Commercial PC Maintenance</strong><span>Keep every workstation running smoothly. Hardware diagnostics, updates, and proactive maintenance.</span></div></li>
+              <li><div><strong>Office Equipment Support</strong><span>Printers, peripherals, and office tech — configured and troubleshot so your team stays productive.</span></div></li>
+              <li><div><strong>Monthly IT Support Plans</strong><span>Ongoing coverage with priority response. One local contact for everything tech-related in your business.</span></div></li>
             </ul>
-            <div className="price-note" style={{marginTop:'28px',borderColor:'var(--line-d)',color:'var(--muted-d)'}}>
+            <div className="price-note" style={{marginTop:'28px'}}>
               Monthly plans available · Contact for custom quote based on your business size
             </div>
             <div style={{marginTop:'24px'}}>
@@ -72,12 +72,12 @@ export default function Services() {
       </section>
 
       {/* PC REPAIR & CUSTOM BUILDS */}
-      <section className="svc-section" id="pc-repair" style={{background:'var(--paper)',padding:'100px 0'}}>
+      <section className="svc-section paper" id="pc-repair">
         <div className="wrap svc-grid">
           <div>
             <span className="eyebrow reveal">PC Repair &amp; Custom Builds</span>
             <h2 className="anim-words">Is your computer slow, overheating, or not turning on? Don&apos;t replace it — fix it.</h2>
-            <p className="lede reveal" style={{color:'var(--ink-2)'}}>Honest recommendations, no upselling. Fast turnaround. Affordable pricing. Local and reliable.</p>
+            <p className="lede reveal">Honest recommendations, no upselling. Fast turnaround. Affordable pricing. Local and reliable.</p>
             <ul className="svc-list reveal">
               <li><div><strong>Full PC Diagnostics</strong><span>A thorough check-up to identify exactly what&apos;s wrong before any repair work begins.</span></div></li>
               <li><div><strong>Hardware Repair &amp; Replacement</strong><span>Motherboards, power supplies, cooling systems, screens — repaired or replaced with quality parts.</span></div></li>
@@ -94,21 +94,21 @@ export default function Services() {
             </div>
           </div>
           <div className="svc-photo reveal">
-            <img src="/assets/bench.jpg" alt="PC repair and custom builds" />
+            <img src="/assets/bench.jpg" alt="PC repair and custom builds" loading="lazy" />
           </div>
         </div>
       </section>
 
       {/* SECURITY CAMERAS */}
-      <section className="svc-section" id="security" style={{background:'var(--white)',padding:'100px 0'}}>
+      <section className="svc-section" id="security">
         <div className="wrap svc-grid">
           <div className="svc-photo reveal">
-            <img src="/assets/hands.jpg" alt="Security camera and smart device installation" />
+            <img src="/assets/hands.jpg" alt="Security camera and smart device installation" loading="lazy" />
           </div>
           <div>
             <span className="eyebrow green reveal">Security &amp; Smart Home</span>
             <h2 className="anim-words">Cameras, smart devices &amp; home security — set up right.</h2>
-            <p className="lede reveal" style={{color:'var(--ink-2)'}}>From doorbell cameras to full security systems — installed cleanly and working together before I leave.</p>
+            <p className="lede reveal">From doorbell cameras to full security systems — installed cleanly and working together before I leave.</p>
             <ul className="svc-list reveal">
               <li><div><strong>Security Camera Installation</strong><span>Indoor and outdoor cameras, wired or wireless, positioned for maximum coverage of your property.</span></div></li>
               <li><div><strong>Video Doorbell Setup</strong><span>Ring, Nest, Eufy, Arlo — configured, connected to your phone, and working reliably.</span></div></li>
@@ -124,15 +124,15 @@ export default function Services() {
       </section>
 
       {/* TRUST BAR */}
-      <section style={{background:'var(--dark)',padding:'80px 0',textAlign:'center'}}>
+      <section className="trust-bar">
         <div className="wrap">
-          <p className="reveal" style={{color:'var(--muted-d)',fontFamily:"'Fragment Mono',monospace",fontSize:'.9rem',marginBottom:'36px'}}>Trusted by families and businesses across Central Florida since 2019</p>
-          <div style={{display:'flex',gap:'32px',justifyContent:'center',flexWrap:'wrap'}}>
+          <p className="reveal">Trusted by families and businesses across Central Florida since 2019</p>
+          <div className="trust-chips reveal">
             {['Local & family-owned','No hidden fees','Same-day available','Honest recommendations','13+ years experience','CompTIA A+ certified'].map(t => (
-              <span key={t} style={{color:'var(--muted-d)',fontFamily:"'Fragment Mono',monospace",fontSize:'.8rem',border:'1px solid var(--line-d)',borderRadius:'999px',padding:'.4rem .9rem'}}>{t}</span>
+              <span key={t} className="trust-chip">{t}</span>
             ))}
           </div>
-          <div style={{marginTop:'48px'}} className="reveal">
+          <div className="reveal">
             <Link href="/contact" className="btn-pill accent">Tell us what&apos;s going on →</Link>
           </div>
         </div>

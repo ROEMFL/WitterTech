@@ -77,6 +77,8 @@ header{position:fixed;top:0;left:0;right:0;z-index:80;transition:.3s}
 .nav-mid{display:flex;gap:32px}
 .nav-mid a{font-size:.97rem;color:var(--ink-2);font-weight:500;transition:.2s}
 .nav-mid a:hover,.nav-mid a.active{color:var(--ink)}
+.nav-mid a.active{position:relative}
+.nav-mid a.active::after{content:"";position:absolute;bottom:-4px;left:0;right:0;height:2px;background:var(--accent);border-radius:2px}
 .nav-right{display:flex;align-items:center;gap:16px}
 .nav-phone{font-weight:600;font-size:.96rem;display:flex;align-items:center;gap:.45rem;white-space:nowrap}
 .nav-phone svg{color:var(--accent)}
@@ -95,7 +97,7 @@ header{position:fixed;top:0;left:0;right:0;z-index:80;transition:.3s}
 /* PAGE HERO (inner pages) */
 .page-hero{background:var(--dark);color:#fff;padding:160px 0 100px;position:relative;overflow:hidden;text-align:center}
 .page-hero .ghost{font-size:20vw;bottom:0}
-.page-hero .inner{position:relative;z-index:2;max-width:780px;margin:0 auto}
+.page-hero .inner{position:relative;z-index:2;max-width:780px;margin:0 auto;padding:0 24px}
 .page-hero h1{font-size:clamp(2.6rem,5vw,4.2rem);font-weight:600;color:#fff;margin:18px 0 20px}
 .page-hero .sub{font-size:1.18rem;color:var(--muted-d);max-width:52ch;margin:0 auto}
 
@@ -108,7 +110,7 @@ header{position:fixed;top:0;left:0;right:0;z-index:80;transition:.3s}
 .hero .sub{font-size:1.18rem;color:var(--ink-2);max-width:42ch;margin:28px 0 0}
 .hero-cta{margin-top:38px;display:flex;align-items:center;gap:24px;flex-wrap:wrap}
 .hero-photo{position:relative}
-.hero-photo .frame{border-radius:var(--r);overflow:hidden;background:var(--paper-soft);aspect-ratio:4/4.5;box-shadow:0 40px 80px -40px rgba(0,0,0,.45)}
+.hero-photo .frame{position:relative;border-radius:var(--r);overflow:hidden;background:var(--paper-soft);aspect-ratio:4/4.5;box-shadow:0 40px 80px -40px rgba(0,0,0,.45)}
 .hero-photo .frame img{width:100%;height:100%;object-fit:cover;transform:scale(1.12);transition:transform 1.4s cubic-bezier(.16,.84,.44,1)}
 .hero-photo.in .frame img{transform:scale(1)}
 .intro-card{position:absolute;left:-26px;bottom:30px;max-width:320px;background:var(--white);border-radius:var(--r-sm);padding:14px;display:flex;gap:13px;align-items:center;box-shadow:0 26px 50px -28px rgba(0,0,0,.45);opacity:0;transform:translateY(40px) scale(.85);transition:.7s cubic-bezier(.16,.84,.44,1) .5s}
@@ -260,14 +262,15 @@ header{position:fixed;top:0;left:0;right:0;z-index:80;transition:.3s}
 .form-success p{color:var(--muted)}
 
 /* SERVICES PAGE */
-.svc-section{padding:100px 0;border-bottom:1px solid var(--line)}
+.svc-section{padding:100px 0;border-bottom:1px solid var(--line);background:var(--white)}
 .svc-section:last-of-type{border-bottom:0}
-.svc-section.dark{background:var(--dark);color:#fff}
+.svc-section.paper{background:var(--paper)}
+.svc-section.dark{background:var(--dark);color:#fff;border-bottom-color:var(--line-d)}
 .svc-section.dark p{color:var(--muted-d)}
 .svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
 .svc-grid.flip{direction:rtl}
 .svc-grid.flip>*{direction:ltr}
-.svc-photo{border-radius:var(--r);overflow:hidden;aspect-ratio:5/4}
+.svc-photo{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:5/4}
 .svc-photo img{width:100%;height:100%;object-fit:cover}
 .svc-section h2{font-size:clamp(1.9rem,3.4vw,2.8rem);font-weight:600;margin:16px 0 18px}
 .svc-section .lede{font-size:1.1rem;margin-bottom:28px}
@@ -282,7 +285,7 @@ header{position:fixed;top:0;left:0;right:0;z-index:80;transition:.3s}
 /* ABOUT PAGE */
 .about-page{background:var(--white);padding:100px 0}
 .about-page-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center}
-.about-photo{border-radius:var(--r);overflow:hidden;aspect-ratio:4/4.5;box-shadow:0 40px 80px -44px rgba(0,0,0,.4)}
+.about-photo{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:4/4.5;box-shadow:0 40px 80px -44px rgba(0,0,0,.4)}
 .about-photo img{width:100%;height:100%;object-fit:cover;object-position:center top}
 .about-page h2{font-size:clamp(1.9rem,3.4vw,2.8rem);font-weight:600;margin:16px 0 22px}
 .about-page p{color:var(--ink-2);font-size:1.08rem;margin-bottom:16px;max-width:54ch;line-height:1.7}
@@ -361,4 +364,28 @@ footer ul a:hover{color:var(--accent)}
   section,.hero,.about,.services,.benefits,.owner,.problems,.reviews,.faq,.ctaband,.contact,.about-page,.cert-section,.hours-section{padding-top:88px;padding-bottom:88px}
   .hero{padding-top:118px}
   .page-hero{padding:130px 0 80px}
+  .exp-grid{grid-template-columns:1fr}
 }
+
+/* SKIP LINK */
+.skip-link{position:absolute;top:-100%;left:0;z-index:200;background:var(--accent);color:#fff;font-weight:600;padding:.9rem 1.6rem;border-radius:0 0 var(--r-sm) 0;transition:.2s;white-space:nowrap}
+.skip-link:focus{top:0}
+
+/* FOCUS VISIBLE — keyboard navigation ring */
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+
+/* SCROLL OFFSET — accounts for fixed header */
+[id]{scroll-margin-top:96px}
+
+/* DARK SECTION — svc-list text (removes need for inline color overrides) */
+.svc-section.dark .svc-list li strong{color:#fff}
+.svc-section.dark .svc-list li span{color:var(--muted-d)}
+
+/* TRUST BAR (services page) */
+.trust-bar{background:var(--dark);padding:80px 0;text-align:center}
+.trust-bar p{color:var(--muted-d);font-family:'Fragment Mono',monospace;font-size:.9rem;margin-bottom:36px;position:relative;z-index:2}
+.trust-chips{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:48px;position:relative;z-index:2}
+.trust-chip{color:var(--muted-d);font-family:'Fragment Mono',monospace;font-size:.8rem;border:1px solid var(--line-d);border-radius:999px;padding:.4rem .9rem}
+
+/* EXPERIENCE GRID (about page) */
+.exp-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}

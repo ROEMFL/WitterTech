@@ -4,6 +4,7 @@ import Footer from '@/components/Footer'
 import AnimationInit from '@/components/AnimationInit'
 
 export const metadata = {
+  metadataBase: new URL('https://wittertech.com'),
   title: {
     template: '%s | Witter Tech',
     default: 'Witter Tech — Calm, Personal Tech Help in Central Florida',
@@ -11,6 +12,57 @@ export const metadata = {
   description:
     'Computer repair, Wi-Fi, smart home, and IT support for homes and small businesses in Kissimmee, Orlando, St. Cloud, Celebration, and Davenport. Honest pricing, same-day service available.',
   keywords: 'computer repair Kissimmee, IT support Orlando, PC repair Central Florida, WiFi setup, smart home, virus removal',
+  openGraph: {
+    title: 'Witter Tech — Calm, Personal Tech Help in Central Florida',
+    description:
+      'Computer repair, Wi-Fi, smart home, and IT support for homes and small businesses across Central Florida. Honest pricing, same-day service available.',
+    url: 'https://wittertech.com',
+    siteName: 'Witter Tech',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Witter Tech — Calm, Personal Tech Help in Central Florida',
+    description:
+      'Computer repair, Wi-Fi, smart home, and IT support for homes and small businesses across Central Florida.',
+  },
+}
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Witter Tech',
+  alternateName: 'Witt-Tech Solutions LLC',
+  description:
+    'Computer repair, Wi-Fi setup, smart home installation, and IT support for homes and small businesses in Kissimmee, Orlando, St. Cloud, Celebration, and Davenport.',
+  url: 'https://wittertech.com',
+  telephone: '+1-407-624-8459',
+  email: 'joe@wittertech.com',
+  priceRange: '$$',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Kissimmee',
+    addressRegion: 'FL',
+    addressCountry: 'US',
+  },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '08:00',
+      closes: '19:00',
+    },
+  ],
+  areaServed: [
+    { '@type': 'City', name: 'Kissimmee' },
+    { '@type': 'City', name: 'Orlando' },
+    { '@type': 'City', name: 'St. Cloud' },
+    { '@type': 'City', name: 'Celebration' },
+    { '@type': 'City', name: 'Davenport' },
+  ],
+  founder: { '@type': 'Person', name: 'Joe Witter' },
+  foundingDate: '2019',
 }
 
 export default function RootLayout({ children }) {
@@ -24,10 +76,15 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fragment+Mono:ital@0;1&display=swap"
           rel="stylesheet"
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </head>
       <body>
+        <a href="#main-content" className="skip-link">Skip to content</a>
         <Header />
-        <main>{children}</main>
+        <main id="main-content">{children}</main>
         <Footer />
         <AnimationInit />
         {/* Mobile sticky bar */}

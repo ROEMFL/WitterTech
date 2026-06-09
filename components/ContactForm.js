@@ -35,16 +35,16 @@ export default function ContactForm() {
       <div className="frow">
         <div className="field">
           <label htmlFor="c-name">Your name</label>
-          <input id="c-name" name="name" type="text" placeholder="First name is fine" value={form.name} onChange={update} required />
+          <input id="c-name" name="name" type="text" placeholder="First name is fine" value={form.name} onChange={update} required autoComplete="name" />
         </div>
         <div className="field">
           <label htmlFor="c-phone">Phone</label>
-          <input id="c-phone" name="phone" type="tel" placeholder="Best number to reach you" value={form.phone} onChange={update} />
+          <input id="c-phone" name="phone" type="tel" placeholder="Best number to reach you" value={form.phone} onChange={update} autoComplete="tel" />
         </div>
       </div>
       <div className="field">
         <label htmlFor="c-email">Email</label>
-        <input id="c-email" name="email" type="email" placeholder="you@email.com" value={form.email} onChange={update} />
+        <input id="c-email" name="email" type="email" placeholder="you@email.com" value={form.email} onChange={update} autoComplete="email" />
       </div>
       <div className="field">
         <label htmlFor="c-topic">What&apos;s this about?</label>

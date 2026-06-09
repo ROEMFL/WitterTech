@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata = {
   title: 'Witter Tech — Calm, Personal Tech Help in Central Florida',
@@ -25,9 +26,11 @@ export default function Home() {
             </div>
           </div>
           <div className="hero-photo" id="heroPhoto">
-            <div className="frame"><img src="/assets/hero-tech.jpg" alt="Careful, hands-on device repair" /></div>
+            <div className="frame">
+              <Image src="/assets/hero-tech.jpg" alt="Careful, hands-on device repair" fill style={{objectFit:'cover'}} priority sizes="(max-width:980px) 100vw, 50vw" />
+            </div>
             <div className="intro-card">
-              <img src="/assets/joe-polo.jpg" alt="Joe Witter" />
+              <Image src="/assets/joe-polo.jpg" alt="Joe Witter" width={60} height={60} />
               <p><span className="dotline">●</span> Honest, careful work — and you&apos;ll always understand what I&apos;m doing and why.</p>
             </div>
           </div>
@@ -105,7 +108,7 @@ export default function Home() {
             <div className="bcard"><div><h3>Same-day, often</h3><p>When the schedule and parts allow — and a realistic window when they don&apos;t.</p></div><div className="big">⚡</div></div>
             <div className="bcard feature">
               <div className="txt"><h3>Quiet, dependable IT</h3><p>Networks and support built to stay up — so your team can stop thinking about technology.</p></div>
-              <img src="/assets/network2.jpg" alt="Networking work" />
+              <img src="/assets/network2.jpg" alt="Networking work" loading="lazy" />
             </div>
             <div className="bcard"><div><h3>Honest on cost</h3><p>An up-front price before any work begins. I&apos;d rather lose a job than surprise you with a bill.</p></div><div className="big" style={{fontSize:'1.5rem',color:'var(--green-deep)'}}>No surprises</div></div>
             <div className="bcard"><div><h3>Plain language</h3><p>You&apos;ll understand what happened and why — never made to feel behind for asking.</p></div><div className="big">💬</div></div>
@@ -117,7 +120,7 @@ export default function Home() {
       <section className="owner">
         <div className="wrap owner-grid">
           <div className="owner-photo" id="ownerPhoto">
-            <img src="/assets/joe-hero.jpg" alt="Joe Witter, owner of Witter Tech" />
+            <img src="/assets/joe-hero.jpg" alt="Joe Witter, owner of Witter Tech" loading="lazy" />
           </div>
           <div>
             <span className="eyebrow green reveal">Meet Joe</span>
@@ -144,12 +147,12 @@ export default function Home() {
             <h2 className="anim-words">Things people usually reach out about.</h2>
           </div>
           <div className="pgrid">
-            <div className="pcard reveal"><div className="ph"><img src="/assets/hero.jpg" alt="Laptop repair" /></div><div className="pb"><div className="pq">&ldquo;It turns on, but nothing really happens.&rdquo;</div><span className="pcat">Laptops</span></div></div>
-            <div className="pcard reveal"><div className="ph"><img src="/assets/network.jpg" alt="Networking" /></div><div className="pb"><div className="pq">&ldquo;The Wi-Fi drops in half the house.&rdquo;</div><span className="pcat">Networks</span></div></div>
-            <div className="pcard reveal"><div className="ph"><img src="/assets/hands.jpg" alt="Computer tune-up" /></div><div className="pb"><div className="pq">&ldquo;Everything&apos;s gotten slow and I don&apos;t know why.&rdquo;</div><span className="pcat">Tune-ups</span></div></div>
-            <div className="pcard reveal"><div className="ph"><img src="/assets/bench.jpg" alt="Data recovery" /></div><div className="pb"><div className="pq">&ldquo;I really need my photos and files back.&rdquo;</div><span className="pcat">Recovery</span></div></div>
-            <div className="pcard reveal"><div className="ph"><img src="/assets/living.jpg" alt="Smart home" /></div><div className="pb"><div className="pq">&ldquo;We&apos;re setting up cameras, a doorbell, or a new TV.&rdquo;</div><span className="pcat">Smart home</span></div></div>
-            <div className="pcard reveal"><div className="ph"><img src="/assets/network2.jpg" alt="Business IT" /></div><div className="pb"><div className="pq">&ldquo;Our office network just needs to work — reliably.&rdquo;</div><span className="pcat">Business IT</span></div></div>
+            <div className="pcard reveal"><div className="ph"><img src="/assets/hero.jpg" alt="Laptop repair" loading="lazy" /></div><div className="pb"><div className="pq">&ldquo;It turns on, but nothing really happens.&rdquo;</div><span className="pcat">Laptops</span></div></div>
+            <div className="pcard reveal"><div className="ph"><img src="/assets/network.jpg" alt="Networking" loading="lazy" /></div><div className="pb"><div className="pq">&ldquo;The Wi-Fi drops in half the house.&rdquo;</div><span className="pcat">Networks</span></div></div>
+            <div className="pcard reveal"><div className="ph"><img src="/assets/hands.jpg" alt="Computer tune-up" loading="lazy" /></div><div className="pb"><div className="pq">&ldquo;Everything&apos;s gotten slow and I don&apos;t know why.&rdquo;</div><span className="pcat">Tune-ups</span></div></div>
+            <div className="pcard reveal"><div className="ph"><img src="/assets/bench.jpg" alt="Data recovery" loading="lazy" /></div><div className="pb"><div className="pq">&ldquo;I really need my photos and files back.&rdquo;</div><span className="pcat">Recovery</span></div></div>
+            <div className="pcard reveal"><div className="ph"><img src="/assets/living.jpg" alt="Smart home" loading="lazy" /></div><div className="pb"><div className="pq">&ldquo;We&apos;re setting up cameras, a doorbell, or a new TV.&rdquo;</div><span className="pcat">Smart home</span></div></div>
+            <div className="pcard reveal"><div className="ph"><img src="/assets/network2.jpg" alt="Business IT" loading="lazy" /></div><div className="pb"><div className="pq">&ldquo;Our office network just needs to work — reliably.&rdquo;</div><span className="pcat">Business IT</span></div></div>
           </div>
           <p className="pfoot reveal">If yours isn&apos;t on the list, that&apos;s fine. <Link href="/contact">Just describe it in your own words.</Link></p>
         </div>
@@ -165,7 +168,7 @@ export default function Home() {
             <p className="reveal">Real help, explained plainly — here&apos;s how that feels.</p>
           </div>
           <div className="rcard reveal">
-            <img src="/assets/living.jpg" alt="Happy customer at home" />
+            <img src="/assets/living.jpg" alt="Happy customer at home" loading="lazy" />
             <div className="rb">
               <div className="stars">★★★★★</div>
               <blockquote>&ldquo;He fixed in an afternoon what two other places couldn&apos;t — and actually explained what went wrong.&rdquo;</blockquote>

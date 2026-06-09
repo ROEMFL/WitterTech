@@ -104,16 +104,20 @@ export default function AnimationInit() {
       const btn = item.querySelector('.faq-q')
       const ans = item.querySelector('.faq-a')
       if (!btn || !ans) return
+      btn.setAttribute('aria-expanded', 'false')
       btn.onclick = () => {
         const isOpen = item.classList.contains('open')
         document.querySelectorAll('.faq-item.open').forEach(i => {
           i.classList.remove('open')
           const a = i.querySelector('.faq-a')
+          const b = i.querySelector('.faq-q')
           if (a) a.style.maxHeight = '0'
+          if (b) b.setAttribute('aria-expanded', 'false')
         })
         if (!isOpen) {
           item.classList.add('open')
           ans.style.maxHeight = ans.scrollHeight + 'px'
+          btn.setAttribute('aria-expanded', 'true')
         }
       }
     })
