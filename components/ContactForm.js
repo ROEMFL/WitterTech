@@ -30,8 +30,8 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h3>A quick note to Joe</h3>
-      <p className="sm">No pressure, no obligation — just the start of a conversation.</p>
+      <h3>Describe what&apos;s going on</h3>
+      <p className="sm">Joe reads every message. No obligation — just a fast, honest response.</p>
       <div className="frow">
         <div className="field">
           <label htmlFor="c-name">Your name</label>

@@ -14,8 +14,8 @@ export default function Contact() {
         <div className="ghost on-dark" style={{fontSize:'14vw',bottom:'-1vw'}}>Contact</div>
         <div className="inner">
           <span className="eyebrow on-dark reveal">Get in touch</span>
-          <h1 className="anim-words">Tell us what&apos;s going on — we&apos;ll take it from there.</h1>
-          <p className="sub reveal">A sentence or two is plenty to start. Joe will read it, ask anything he needs to, and let you know the next step — usually the same day.</p>
+          <h1 className="anim-words">Reach out — Joe reads every message and responds the same day.</h1>
+          <p className="sub reveal">A sentence or two is all you need. Joe responds personally, asks any follow-up questions, and gives you a straight answer — no scripts, no runaround.</p>
         </div>
       </div>
 
@@ -43,8 +43,8 @@ export default function Contact() {
         <div className="wrap contact-grid">
           <div>
             <span className="eyebrow reveal">Contact info</span>
-            <h2 className="anim-words">Real person. Real answers. Fast.</h2>
-            <p className="lede reveal">No call centers, no ticket queues. You&apos;re talking directly to Joe — the person who&apos;ll actually do the work.</p>
+            <h2 className="anim-words">You&apos;re talking to Joe — every time.</h2>
+            <p className="lede reveal">No call centers, no ticket queues. The person who picks up the phone is the person who shows up and does the work.</p>
 
             <div className="cinfo reveal">
               <div className="row">

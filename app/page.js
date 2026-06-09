@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 export const metadata = {
-  title: 'Witter Tech — Calm, Personal Tech Help in Central Florida',
+  title: 'Witter Tech — Reliable Tech Repair & IT Support in Central Florida',
 }
 
 export default function Home() {
@@ -10,19 +10,19 @@ export default function Home() {
     <>
       {/* HERO */}
       <section className="hero">
-        <div className="ghost" data-parallax="0.18">Calm.</div>
+        <div className="ghost" data-parallax="0.18">Fix it.</div>
         <div className="wrap hero-grid">
           <div>
-            <h1 className="anim-words">Technology help that feels clear, calm, and <em>personal.</em></h1>
-            <p className="sub reveal">Computer and device problems have a way of interrupting your whole day. I&apos;ll get you back to normal — and explain what&apos;s going on, in plain language, along the way.</p>
+            <h1 className="anim-words">Reliable tech repair and IT support — done right, priced <em>fairly.</em></h1>
+            <p className="sub reveal">When your computer stops working or your Wi-Fi gives out, it throws off your whole day. I diagnose the problem, give you a price before anything starts, and fix it right — then walk you through exactly what happened, in plain English.</p>
             <div className="hero-cta reveal">
               <div className="cta">
-                <Link href="/contact" className="btn-pill accent">Tell us what&apos;s going on</Link>
-                <Link href="/contact" className="btn-circle" aria-label="Get help">
+                <Link href="/contact" className="btn-pill accent">Get a free estimate</Link>
+                <Link href="/contact" className="btn-circle" aria-label="Get a free estimate">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
                 </Link>
               </div>
-              <a href="tel:14076248459" className="link-quiet">Or call &amp; text Joe</a>
+              <a href="tel:14076248459" className="link-quiet">Or call &amp; text Joe directly</a>
             </div>
           </div>
           <div className="hero-photo" id="heroPhoto">
@@ -31,7 +31,7 @@ export default function Home() {
             </div>
             <div className="intro-card">
               <Image src="/assets/joe-polo.jpg" alt="Joe Witter" width={60} height={60} />
-              <p><span className="dotline">●</span> Honest, careful work — and you&apos;ll always understand what I&apos;m doing and why.</p>
+              <p><span className="dotline">●</span> Price quoted before anything starts — no surprises, no exceptions.</p>
             </div>
           </div>
         </div>
@@ -56,7 +56,7 @@ export default function Home() {
           <div>
             <span className="eyebrow green reveal">About</span>
             <p className="statement anim-words" style={{marginTop:'18px'}}>
-              From a slow laptop to a whole-office network — I figure out what&apos;s actually wrong and fix it properly. <span>No jargon, no sales pitch, no being talked down to.</span>
+              From a frozen laptop to a full office network — I find what&apos;s actually wrong and fix it right, the first time. <span>Straight answers, fair pricing, always.</span>
             </p>
             <div className="counters reveal">
               <div className="counter"><div className="num"><span data-val="13">0</span><span className="plus">+</span></div><p>Years in IT — enterprise-grade care for neighbors</p></div>
@@ -74,7 +74,7 @@ export default function Home() {
           <div className="head">
             <div>
               <span className="eyebrow on-dark reveal">Services</span>
-              <h2 className="anim-words" style={{marginTop:'14px'}}>Everything your tech needs — handled by one person who explains it.</h2>
+              <h2 className="anim-words" style={{marginTop:'14px'}}>Everything your tech needs — one certified technician, no outsourcing, no runaround.</h2>
             </div>
             <Link href="/services" className="btn-pill reveal" style={{alignSelf:'center'}}>See all services →</Link>
           </div>
@@ -94,10 +94,10 @@ export default function Home() {
         <div className="wrap benefits-grid">
           <div>
             <span className="eyebrow green reveal">Benefits</span>
-            <h2 className="anim-words">Why people work with Joe.</h2>
-            <p className="reveal" style={{color:'var(--muted)',maxWidth:'38ch',marginBottom:'30px'}}>Enterprise-grade skill, neighbor-level care. Here&apos;s what that actually means for you.</p>
+            <h2 className="anim-words">What you actually get when you call.</h2>
+            <p className="reveal" style={{color:'var(--muted)',maxWidth:'38ch',marginBottom:'30px'}}>13 years of enterprise IT experience — brought to your home or office at a fair price.</p>
             <div className="cta reveal">
-              <Link href="/contact" className="btn-pill dark">Tell us what&apos;s going on</Link>
+              <Link href="/contact" className="btn-pill dark">Book a same-day visit</Link>
               <Link href="/contact" className="btn-circle" aria-label="Get help">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
               </Link>
@@ -125,8 +125,8 @@ export default function Home() {
           <div>
             <span className="eyebrow green reveal">Meet Joe</span>
             <h2 className="anim-words">Hi, I&apos;m Joe — and Witter Tech is just me, doing this the way I&apos;d want it done for my own family.</h2>
-            <p className="reveal">Technology has been my thing for over thirteen years. By day I&apos;ve managed IT for organizations where reliability and security really matter; since 2019 I&apos;ve been helping the families and small businesses around Central Florida with the same level of care.</p>
-            <p className="reveal">What that means for you: clear communication, fair pricing, and the job done right the first time. No ticket queues, no being talked down to — just a real person who&apos;s genuinely good at this and happy to explain it.</p>
+            <p className="reveal">I&apos;ve been in IT for over 13 years — managing infrastructure and security for organizations where uptime really matters. Since 2019, I&apos;ve brought that same level of care to the families and small businesses of Central Florida.</p>
+            <p className="reveal">What that means for you: straight answers, fair pricing, and the job done right the first time. No ticket queues, no being talked down to — just a real person who&apos;s genuinely good at this and happy to explain it.</p>
             <div className="creds reveal">
               <span>13+ years in IT</span><span>CompTIA A+ &amp; Network+</span><span>Microsoft MCSE / MCSA</span><span>Family-owned</span>
             </div>
@@ -143,8 +143,8 @@ export default function Home() {
         <div className="ghost" data-parallax="0.1">Problems</div>
         <div className="wrap">
           <div className="head">
-            <span className="eyebrow reveal" style={{justifyContent:'center'}}>In plain language</span>
-            <h2 className="anim-words">Things people usually reach out about.</h2>
+            <span className="eyebrow reveal" style={{justifyContent:'center'}}>Sound familiar?</span>
+            <h2 className="anim-words">Calls I get every week.</h2>
           </div>
           <div className="pgrid">
             <div className="pcard reveal"><div className="ph"><img src="/assets/hero.jpg" alt="Laptop repair" loading="lazy" /></div><div className="pb"><div className="pq">&ldquo;It turns on, but nothing really happens.&rdquo;</div><span className="pcat">Laptops</span></div></div>
@@ -203,10 +203,10 @@ export default function Home() {
       <section className="ctaband">
         <div className="ghost on-dark" data-parallax="0.14">Let&apos;s fix it.</div>
         <div className="wrap">
-          <span className="eyebrow on-dark reveal" style={{justifyContent:'center'}}>Ready when you are</span>
-          <h2 className="anim-words">Tell me what&apos;s going on — I&apos;ll take it from there.</h2>
+          <span className="eyebrow on-dark reveal" style={{justifyContent:'center'}}>One call or text is all it takes</span>
+          <h2 className="anim-words">Describe the problem — I&apos;ll handle everything else.</h2>
           <div className="cta reveal">
-            <Link href="/contact" className="btn-pill accent">Tell us what&apos;s going on</Link>
+            <Link href="/contact" className="btn-pill accent">Send Joe a message</Link>
             <a href="tel:14076248459" className="btn-circle" aria-label="Call Joe">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
             </a>

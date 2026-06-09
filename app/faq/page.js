@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export const metadata = {
   title: 'FAQ',
-  description: 'Common questions about Witter Tech services, pricing, scheduling, and how Joe works. Honest answers to help you decide if we&apos;re the right fit.',
+  description: 'Common questions about Witter Tech services, pricing, scheduling, and how Joe works. Straight answers — no scripts, no hedging.',
 }
 
 const FAQS = [
@@ -104,8 +104,8 @@ export default function FAQ() {
         <div className="ghost on-dark" style={{fontSize:'14vw',bottom:'-1vw'}}>FAQ</div>
         <div className="inner">
           <span className="eyebrow on-dark reveal">Questions</span>
-          <h1 className="anim-words">Answered plainly. No jargon.</h1>
-          <p className="sub reveal">Still unsure about something? Ask me directly — I&apos;d rather you understand than guess.</p>
+          <h1 className="anim-words">Straight answers to the questions I get most.</h1>
+          <p className="sub reveal">Still unsure? Ask Joe directly — he&apos;d rather answer a question than have you guess.</p>
         </div>
       </div>
 

@@ -26,10 +26,10 @@ export default function About() {
           </div>
           <div>
             <span className="eyebrow green reveal">My story</span>
-            <h2 className="anim-words">Built on a passion for making technology work for people — not the other way around.</h2>
-            <p className="reveal">I started Witt-Tech Solutions because I&apos;ve always enjoyed helping people solve technology problems and making technology easier to understand. Technology has been a passion of mine for more than 13 years, both professionally and personally. What I enjoy most is helping families and small businesses get reliable, affordable IT support without the frustration that often comes with technical issues.</p>
-            <p className="reveal">Witter Tech is family-inspired. I wanted to build something of my own that reflects my values of honesty, reliability, and treating customers the way I would want my own family treated. Clear communication, fair pricing, and doing the job right the first time — that&apos;s what you can count on from me.</p>
-            <p className="reveal">Witt-Tech Solutions was founded in 2019 as a way to provide trusted technology support to local families and small businesses throughout Central Florida. While continuing my career in Information Technology leadership, I launched Witter Tech to offer personalized service and practical technology solutions.</p>
+            <h2 className="anim-words">13 years in IT. One business built on the values I&apos;d want as a customer.</h2>
+            <p className="reveal">I&apos;ve been in IT for over 13 years — and what I enjoy most has never changed: helping people solve technology problems and making it less frustrating. What I enjoy most is helping families and small businesses get reliable, affordable IT support without the runaround that usually comes with it.</p>
+            <p className="reveal">Witter Tech is family-inspired. I built this on the values I&apos;d want if the situation were reversed — honesty, reliability, and treating customers the way I&apos;d want my own family treated. Straight answers, fair pricing, and the job done right the first time. That&apos;s what you can count on from me.</p>
+            <p className="reveal">While continuing my career in IT leadership — managing infrastructure, security, and networks for organizations where downtime isn&apos;t an option — I launched Witter Tech in 2019 to bring that same level of care to local homes and small businesses. You get enterprise-grade experience without the enterprise-sized bill.</p>
             <div className="creds reveal" style={{marginTop:'28px'}}>
               <span>13+ years in IT</span>
               <span>CompTIA A+ &amp; Network+</span>
@@ -88,10 +88,10 @@ export default function About() {
           <div style={{marginTop:'80px',padding:'48px',background:'var(--white)',borderRadius:'var(--r)',border:'1px solid var(--line)'}}>
             <div className="exp-grid">
               <div className="reveal">
-                <h3 style={{fontSize:'1.3rem',marginBottom:'16px'}}>Experience &amp; Specialties</h3>
-                <p style={{color:'var(--ink-2)',marginBottom:'16px',lineHeight:'1.7'}}>I bring more than 13 years of Information Technology experience, including leadership, infrastructure management, cybersecurity, cloud services, networking, and end-user support.</p>
+                <h3 style={{fontSize:'1.3rem',marginBottom:'16px'}}>What I work on</h3>
+                <p style={{color:'var(--ink-2)',marginBottom:'16px',lineHeight:'1.7'}}>13+ years across IT leadership, infrastructure, cybersecurity, networking, and hands-on repair. Here&apos;s where most of that time goes for Witter Tech clients:</p>
                 <ul style={{listStyle:'none',display:'grid',gap:'10px'}}>
-                  {['Computer repair & troubleshooting','Microsoft 365 administration','Cybersecurity & data protection','Network design & support','Smart home technology','Small business IT services'].map(s => (
+                  {['Computer repair & troubleshooting','Microsoft 365 setup & administration','Cybersecurity & data protection','Network design & support','Smart home installation & setup','Small business IT services & monthly plans'].map(s => (
                     <li key={s} style={{display:'flex',gap:'10px',alignItems:'center',fontSize:'.96rem',color:'var(--ink-2)'}}>
                       <span style={{width:'7px',height:'7px',borderRadius:'50%',background:'var(--green)',flex:'none',display:'block'}}></span>
                       {s}
@@ -100,9 +100,9 @@ export default function About() {
                 </ul>
               </div>
               <div className="reveal">
-                <h3 style={{fontSize:'1.3rem',marginBottom:'16px'}}>Accomplishments</h3>
-                <p style={{color:'var(--ink-2)',lineHeight:'1.7'}}>Over the course of my career, I have supported thousands of users and managed technology environments that require high levels of uptime and security. I have helped customers recover from malware infections, hardware failures, network outages, and performance issues while minimizing downtime.</p>
-                <p style={{color:'var(--muted)',marginTop:'16px',fontFamily:"'Fragment Mono',monospace",fontSize:'.84rem'}}>Customers often compliment my responsiveness, professionalism, and ability to explain technical concepts in a way that is easy to understand.</p>
+                <h3 style={{fontSize:'1.3rem',marginBottom:'16px'}}>Track record</h3>
+                <p style={{color:'var(--ink-2)',lineHeight:'1.7'}}>I&apos;ve helped thousands of customers recover from malware infections, hardware failures, network outages, and slow machines — while keeping downtime to a minimum. Every job gets the same attention, whether it&apos;s a single laptop or a full office network.</p>
+                <p style={{color:'var(--muted)',marginTop:'16px',fontFamily:"'Fragment Mono',monospace",fontSize:'.84rem'}}>The most common thing people say: &ldquo;You actually explained it so I understood what happened.&rdquo;</p>
               </div>
             </div>
           </div>
