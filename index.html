@@ -24,6 +24,9 @@
   --accent-2:#ff6a1a;
   --accent-deep:#c85e0c;/* accent text on light */
   --accent-hover:#ff8c2e;
+  --green:#74cc00;      /* Witter brand green */
+  --green-deep:#4f8a00; /* green text on light */
+  --green-hover:#68b800;
   --line:#d9dbdd;
   --line-d:#222831;
   --maxw:1320px;
@@ -41,6 +44,9 @@ h1,h2,h3,h4{font-weight:600;letter-spacing:-.045em;line-height:1.05}
 .eyebrow{font-family:'Fragment Mono',monospace;font-size:.9rem;letter-spacing:.02em;color:var(--accent-deep);display:inline-flex;align-items:center;gap:.6rem;text-transform:uppercase}
 .eyebrow::before{content:"";width:11px;height:11px;border-radius:50%;background:var(--accent);flex:none;box-shadow:0 0 0 4px rgba(251,122,30,.18)}
 .eyebrow.on-dark{color:var(--accent)}
+.eyebrow.green{color:var(--green-deep)}
+.eyebrow.green::before{background:var(--green);box-shadow:0 0 0 4px rgba(116,204,0,.18)}
+.eyebrow.green.on-dark{color:var(--green)}
 .mono{font-family:'Fragment Mono',monospace}
 
 /* buttons */
@@ -70,7 +76,7 @@ h1,h2,h3,h4{font-weight:600;letter-spacing:-.045em;line-height:1.05}
 .marquee-track{display:flex;gap:48px;width:max-content;animation:scrollx 28s linear infinite}
 .marquee:hover .marquee-track{animation-play-state:paused}
 .marquee-track span{font-family:'Fragment Mono',monospace;font-size:1rem;color:var(--ink-2);display:inline-flex;align-items:center;gap:48px;white-space:nowrap}
-.marquee-track span::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.marquee-track span::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--green)}
 @keyframes scrollx{to{transform:translateX(-50%)}}
 
 /* HEADER */
@@ -125,6 +131,7 @@ header{position:fixed;top:0;left:0;right:0;z-index:80;transition:.3s}
 .counters{display:flex;gap:56px;flex-wrap:wrap;margin-top:56px;padding-top:46px;border-top:1px solid var(--line)}
 .counter .num{font-size:clamp(2.8rem,5vw,4.2rem);font-weight:600;letter-spacing:-.04em;line-height:1;color:var(--ink)}
 .counter .num .plus{color:var(--accent)}
+.counter:nth-child(2) .num{color:var(--green-deep)}
 .counter p{color:var(--muted);margin-top:8px;max-width:22ch}
 
 /* SERVICES */
@@ -148,7 +155,7 @@ header{position:fixed;top:0;left:0;right:0;z-index:80;transition:.3s}
 .benefits h2{font-size:clamp(2rem,3.8vw,3.1rem);font-weight:600;margin:22px 0 28px;max-width:14ch}
 .bento{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .bcard{background:var(--white);border-radius:var(--r);padding:30px;min-height:200px;display:flex;flex-direction:column;justify-content:space-between;transition:.35s;border:1px solid transparent}
-.bcard:hover{transform:translateY(-5px);box-shadow:0 30px 56px -30px rgba(0,0,0,.32);border-color:rgba(251,122,30,.4)}
+.bcard:hover{transform:translateY(-5px);box-shadow:0 30px 56px -30px rgba(0,0,0,.32);border-color:rgba(116,204,0,.5)}
 .bcard .big{font-size:2.7rem;font-weight:600;letter-spacing:-.04em}
 .bcard .big .plus{color:var(--accent)}
 .bcard h3{font-size:1.22rem;font-weight:600;margin-bottom:6px}
@@ -172,7 +179,7 @@ header{position:fixed;top:0;left:0;right:0;z-index:80;transition:.3s}
 
 /* PROBLEMS / CARDS */
 .problems{background:var(--paper);padding:140px 0;position:relative;overflow:hidden}
-.problems .ghost{font-size:17vw;top:90px}
+.problems .ghost{font-size:16vw;top:auto;bottom:24px}
 .problems .head{position:relative;z-index:2;text-align:center;margin-bottom:50px}
 .problems h2{font-size:clamp(2rem,3.8vw,3.1rem);font-weight:600;margin-top:14px}
 .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;position:relative;z-index:2}
@@ -183,13 +190,13 @@ header{position:fixed;top:0;left:0;right:0;z-index:80;transition:.3s}
 .pcard:hover .ph img{transform:scale(1.07)}
 .pcard .pb{padding:22px 22px 26px;display:flex;justify-content:space-between;align-items:flex-start;gap:14px}
 .pcard .pq{font-size:1.08rem;font-weight:600;letter-spacing:-.02em;line-height:1.3}
-.pcat{font-family:'Fragment Mono',monospace;font-size:.72rem;background:rgba(251,122,30,.12);color:var(--accent-deep);border-radius:var(--pill);padding:.4rem .8rem;white-space:nowrap}
+.pcat{font-family:'Fragment Mono',monospace;font-size:.72rem;background:rgba(116,204,0,.15);color:var(--green-deep);border-radius:var(--pill);padding:.4rem .8rem;white-space:nowrap}
 .pfoot{text-align:center;margin-top:42px;color:var(--ink-2);font-size:1.05rem;position:relative;z-index:2}
 .pfoot a{color:var(--accent-deep);font-weight:600;border-bottom:1px solid var(--accent)}
 
 /* REVIEWS */
 .reviews{background:var(--white);padding:140px 0;position:relative;overflow:hidden;text-align:center}
-.reviews .ghost{font-size:17vw;top:110px}
+.reviews .ghost{font-size:16vw;top:auto;bottom:24px}
 .reviews .head{position:relative;z-index:2}
 .reviews h2{font-size:clamp(2rem,4vw,3.4rem);font-weight:600;margin:16px 0 8px}
 .reviews .head p{color:var(--muted)}
@@ -212,7 +219,7 @@ header{position:fixed;top:0;left:0;right:0;z-index:80;transition:.3s}
 .faq-item:last-child{border-bottom:1px solid var(--line)}
 .faq-q{width:100%;text-align:left;background:none;border:0;cursor:pointer;padding:26px 0;display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:1.22rem;font-weight:600;letter-spacing:-.02em;color:var(--ink)}
 .faq-q .ic{width:24px;height:24px;flex:none;position:relative;transition:.3s}
-.faq-q .ic::before,.faq-q .ic::after{content:"";position:absolute;background:var(--accent);transition:.3s}
+.faq-q .ic::before,.faq-q .ic::after{content:"";position:absolute;background:var(--green);transition:.3s}
 .faq-q .ic::before{top:11px;left:2px;width:20px;height:2px}
 .faq-q .ic::after{left:11px;top:2px;width:2px;height:20px}
 .faq-item.open .ic::after{transform:rotate(90deg);opacity:0}
@@ -220,8 +227,8 @@ header{position:fixed;top:0;left:0;right:0;z-index:80;transition:.3s}
 .faq-a p{padding:0 0 26px;color:var(--ink-2);max-width:62ch}
 
 /* CTA band */
-.ctaband{background:var(--dark);color:#fff;padding:130px 0;text-align:center;position:relative;overflow:hidden}
-.ctaband .ghost{font-size:13vw;bottom:7%}
+.ctaband{background:var(--dark);color:#fff;padding:130px 0 200px;text-align:center;position:relative;overflow:hidden}
+.ctaband .ghost{font-size:11vw;bottom:22px}
 .ctaband h2{font-size:clamp(2.2rem,4.5vw,3.6rem);font-weight:600;max-width:18ch;margin:18px auto 30px;color:#fff;position:relative;z-index:2}
 .ctaband .cta{justify-content:center;position:relative;z-index:2}
 .ctaband .eyebrow{position:relative;z-index:2}
@@ -379,7 +386,7 @@ footer ul a:hover{color:var(--accent)}
       <div><h4>How</h4><p>On-site · Remote · Drop-off — whatever's easiest for you</p></div>
     </div>
     <div>
-      <span class="eyebrow reveal">About</span>
+      <span class="eyebrow green reveal">About</span>
       <p class="statement anim-words" style="margin-top:18px">From a slow laptop to a whole-office network — I figure out what's actually wrong and fix it properly. <span>No jargon, no sales pitch, no being talked down to.</span></p>
       <div class="counters reveal">
         <div class="counter"><div class="num"><span data-val="13">0</span><span class="plus">+</span></div><p>Years in IT — enterprise-grade care for neighbors</p></div>
@@ -412,7 +419,7 @@ footer ul a:hover{color:var(--accent)}
 <section class="benefits">
   <div class="wrap benefits-grid">
     <div>
-      <span class="eyebrow reveal">Benefits</span>
+      <span class="eyebrow green reveal">Benefits</span>
       <h2 class="anim-words">Why people work with Joe.</h2>
       <p class="reveal" style="color:var(--muted);max-width:38ch;margin-bottom:30px">Enterprise-grade skill, neighbor-level care. Here's what that actually means for you.</p>
       <div class="cta reveal">
@@ -427,7 +434,7 @@ footer ul a:hover{color:var(--accent)}
         <div class="txt"><h3>Quiet, dependable IT</h3><p>Networks and support built to stay up — so your team can stop thinking about technology.</p></div>
         <img src="assets/network2.jpg" alt="Networking work">
       </div>
-      <div class="bcard"><div><h3>Honest on cost</h3><p>An up-front price before any work begins. I'd rather lose a job than surprise you with a bill.</p></div><div class="big" style="font-size:1.5rem;color:var(--accent-deep)">No surprises</div></div>
+      <div class="bcard"><div><h3>Honest on cost</h3><p>An up-front price before any work begins. I'd rather lose a job than surprise you with a bill.</p></div><div class="big" style="font-size:1.5rem;color:var(--green-deep)">No surprises</div></div>
       <div class="bcard"><div><h3>Plain language</h3><p>You'll understand what happened and why — never made to feel behind for asking.</p></div><div class="big">💬</div></div>
     </div>
   </div>
@@ -438,7 +445,7 @@ footer ul a:hover{color:var(--accent)}
   <div class="wrap owner-grid">
     <div class="owner-photo" id="ownerPhoto"><img src="assets/joe-hero.jpg" alt="Joe Witter, owner of Witter Tech"></div>
     <div>
-      <span class="eyebrow reveal">Meet Joe</span>
+      <span class="eyebrow green reveal">Meet Joe</span>
       <h2 class="anim-words">Hi, I'm Joe — and Witter Tech is just me, doing this the way I'd want it done for my own family.</h2>
       <p class="reveal">Technology has been my thing for over thirteen years. By day I've managed IT for organizations where reliability and security really matter; since 2019 I've been helping the families and small businesses around Central Florida with the same level of care.</p>
       <p class="reveal">What that means for you: clear communication, fair pricing, and the job done right the first time. No ticket queues, no being talked down to — just a real person who's genuinely good at this and happy to explain it.</p>
@@ -497,7 +504,7 @@ footer ul a:hover{color:var(--accent)}
 <section class="faq" id="faq">
   <div class="wrap faq-grid">
     <div>
-      <span class="eyebrow reveal">FAQ</span>
+      <span class="eyebrow green reveal">FAQ</span>
       <h2 class="anim-words">Questions, answered plainly.</h2>
       <p class="lede reveal">Still unsure about something? Ask me directly — I'd rather you understand than guess.</p>
     </div>
