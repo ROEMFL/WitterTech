@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
@@ -14,6 +14,7 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const pathname = usePathname()
+  const closeBtnRef = useRef(null)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -23,6 +24,16 @@ export default function Header() {
   }, [])
 
   useEffect(() => { setMenuOpen(false) }, [pathname])
+
+  // Escape closes the mobile menu; focus moves to the close button on open
+  useEffect(() => {
+    if (!menuOpen) return
+    // small delay — the overlay is visibility:hidden until its transition starts
+    const t = setTimeout(() => closeBtnRef.current?.focus(), 120)
+    const onKey = e => { if (e.key === 'Escape') setMenuOpen(false) }
+    window.addEventListener('keydown', onKey)
+    return () => { clearTimeout(t); window.removeEventListener('keydown', onKey) }
+  }, [menuOpen])
 
   const headerStyle = {
     background: scrolled ? 'rgba(233,234,234,.94)' : 'transparent',
@@ -63,7 +74,7 @@ export default function Header() {
       </header>
 
       <div id="mobile-menu" className={`m-overlay${menuOpen ? ' open' : ''}`} aria-hidden={!menuOpen} role="navigation" aria-label="Mobile navigation">
-        <button className="m-close" onClick={() => setMenuOpen(false)} aria-label="Close menu">
+        <button className="m-close" ref={closeBtnRef} onClick={() => setMenuOpen(false)} aria-label="Close menu">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
         </button>
         {NAV.map(l => (

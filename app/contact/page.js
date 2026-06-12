@@ -19,25 +19,6 @@ export default function Contact() {
         </div>
       </div>
 
-      {/* HOW IT WORKS */}
-      <section style={{background:'var(--white)',padding:'80px 0',borderBottom:'1px solid var(--line)'}}>
-        <div className="wrap">
-          <div className="steps-grid">
-            {[
-              { step:'01', title:'Reach out', desc:"Call, text, email, or fill out the form below. Describe the issue in your own words — no tech jargon needed." },
-              { step:'02', title:'Get a clear answer', desc:"Joe reads your message and responds with a straightforward plan and honest price — usually the same day." },
-              { step:'03', title:'Problem solved', desc:"On-site, remote, or drop-off — whichever works best for you. Explained throughout, start to finish." },
-            ].map(s => (
-              <div key={s.step} className="step-card reveal">
-                <div className="step-num">{s.step}</div>
-                <h3>{s.title}</h3>
-                <p>{s.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* CONTACT CONTENT */}
       <section className="contact">
         <div className="wrap contact-grid">
@@ -100,12 +81,12 @@ export default function Contact() {
 
             <div style={{marginTop:'36px',padding:'24px',background:'rgba(116,204,0,.07)',borderRadius:'var(--r-sm)',border:'1px solid rgba(116,204,0,.2)'}}>
               <p style={{fontFamily:'var(--font-mono),monospace',fontSize:'.82rem',color:'var(--green-deep)',marginBottom:'10px'}}>Quick links</p>
-              <div style={{display:'flex',gap:'10px',flexWrap:'wrap'}}>
-                <Link href="/services" style={{color:'var(--ink)',fontSize:'.95rem',fontWeight:'500',textDecoration:'underline',textUnderlineOffset:'3px'}}>View all services</Link>
+              <div style={{display:'flex',gap:'10px',flexWrap:'wrap',alignItems:'center'}}>
+                <Link href="/services" style={{color:'var(--ink)',fontSize:'.95rem',fontWeight:'500',textDecoration:'underline',textUnderlineOffset:'3px',display:'inline-block',padding:'8px 0'}}>View all services</Link>
                 <span style={{color:'var(--muted)'}}>·</span>
-                <Link href="/faq" style={{color:'var(--ink)',fontSize:'.95rem',fontWeight:'500',textDecoration:'underline',textUnderlineOffset:'3px'}}>Read FAQ</Link>
+                <Link href="/faq" style={{color:'var(--ink)',fontSize:'.95rem',fontWeight:'500',textDecoration:'underline',textUnderlineOffset:'3px',display:'inline-block',padding:'8px 0'}}>Read FAQ</Link>
                 <span style={{color:'var(--muted)'}}>·</span>
-                <Link href="/about" style={{color:'var(--ink)',fontSize:'.95rem',fontWeight:'500',textDecoration:'underline',textUnderlineOffset:'3px'}}>About Joe</Link>
+                <Link href="/about" style={{color:'var(--ink)',fontSize:'.95rem',fontWeight:'500',textDecoration:'underline',textUnderlineOffset:'3px',display:'inline-block',padding:'8px 0'}}>About Joe</Link>
               </div>
             </div>
           </div>
@@ -113,6 +94,25 @@ export default function Contact() {
           {/* CLIENT FORM COMPONENT */}
           <div className="form reveal">
             <ContactForm />
+          </div>
+        </div>
+      </section>
+
+      {/* HOW IT WORKS */}
+      <section style={{background:'var(--white)',padding:'80px 0',borderTop:'1px solid var(--line)'}}>
+        <div className="wrap">
+          <div className="steps-grid">
+            {[
+              { step:'01', title:'Reach out', desc:"Call, text, email, or fill out the form above. Describe the issue in your own words — no tech jargon needed." },
+              { step:'02', title:'Get a clear answer', desc:"Joe reads your message and responds with a straightforward plan and honest price — usually the same day." },
+              { step:'03', title:'Problem solved', desc:"On-site, remote, or drop-off — whichever works best for you. Explained throughout, start to finish." },
+            ].map(s => (
+              <div key={s.step} className="step-card reveal">
+                <div className="step-num">{s.step}</div>
+                <h3>{s.title}</h3>
+                <p>{s.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

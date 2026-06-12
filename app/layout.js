@@ -19,6 +19,13 @@ const fragmentMono = Fragment_Mono({
   display: 'swap',
 })
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
+  themeColor: '#e9eaea',
+}
+
 export const metadata = {
   metadataBase: new URL('https://wittertech.com'),
   title: {

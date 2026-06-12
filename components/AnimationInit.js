@@ -6,6 +6,8 @@ export default function AnimationInit() {
   const pathname = usePathname()
 
   useEffect(() => {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
     // Word-splitting for blur-in heading animations
     document.querySelectorAll('.anim-words').forEach(el => {
       if (el.dataset.split) return
@@ -33,7 +35,7 @@ export default function AnimationInit() {
         const t = e.target
         if (t.classList.contains('anim-words')) {
           t.querySelectorAll('.word').forEach((w, i) =>
-            setTimeout(() => w.classList.add('in'), i * 55)
+            setTimeout(() => w.classList.add('in'), reducedMotion ? 0 : i * 55)
           )
         } else {
           t.classList.add('in')
@@ -60,6 +62,7 @@ export default function AnimationInit() {
         if (!e.isIntersecting) return
         e.target.querySelectorAll('[data-val]').forEach(el => {
           const target = +el.dataset.val
+          if (reducedMotion) { el.textContent = target; return }
           const isYear = target > 1900
           const dur = 1300
           const t0 = performance.now()
@@ -77,8 +80,8 @@ export default function AnimationInit() {
     }, { threshold: 0.4 })
     document.querySelectorAll('.counters,.bento').forEach(el => cio.observe(el))
 
-    // Ghost word parallax — rAF throttled
-    const ghosts = [...document.querySelectorAll('[data-parallax]')].map(el => ({
+    // Ghost word parallax — rAF throttled (skipped under reduced motion)
+    const ghosts = reducedMotion ? [] : [...document.querySelectorAll('[data-parallax]')].map(el => ({
       el, f: +el.dataset.parallax, base: 0,
     }))
     const measureG = () => ghosts.forEach(o => {
