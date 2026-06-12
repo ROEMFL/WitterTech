@@ -1,8 +1,12 @@
 import { TIPS } from '@/lib/tips'
 import { LOCATIONS } from '@/lib/locations'
+import { COMING_SOON } from '@/lib/config'
 
 export default function sitemap() {
   const base = 'https://wittertech.com'
+  if (COMING_SOON) {
+    return [{ url: base, lastModified: new Date(), changeFrequency: 'daily', priority: 1.0 }]
+  }
   return [
     { url: base,                      lastModified: new Date(), changeFrequency: 'monthly', priority: 1.0 },
     { url: `${base}/services`,        lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },

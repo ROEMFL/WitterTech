@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { COMING_SOON } from '@/lib/config'
+import ComingSoon from '@/components/ComingSoon'
 
 export const metadata = {
   title: 'Witter Tech: Reliable Tech Repair & IT Support in Central Florida',
@@ -7,6 +9,7 @@ export const metadata = {
 }
 
 export default function Home() {
+  if (COMING_SOON) return <ComingSoon />
   return (
     <>
       {/* HERO */}
