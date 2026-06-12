@@ -346,7 +346,7 @@ footer ul a:hover{color:var(--accent)}
 }
 @media(max-width:980px){
   .hero-grid,.about-grid,.benefits-grid,.owner-grid,.faq-grid,.contact-grid,.rcard,.svc-grid,.about-page-grid{grid-template-columns:1fr;gap:40px}
-  .hero-photo{max-width:480px;margin:0 auto}
+  .hero-photo{max-width:480px;margin:0 auto;width:100%}
   .owner-photo,.about-photo{max-width:440px}
   .pgrid{grid-template-columns:1fr 1fr}
   .srow{grid-template-columns:1fr;gap:12px}
