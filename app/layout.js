@@ -30,24 +30,24 @@ export const metadata = {
   metadataBase: new URL('https://wittertech.com'),
   title: {
     template: '%s | Witter Tech',
-    default: 'Witter Tech — Reliable Tech Repair & IT Support in Central Florida',
+    default: 'Witter Tech: Reliable Tech Repair & IT Support in Central Florida',
   },
   description:
     'Computer repair, Wi-Fi setup, smart home installation, and IT support for homes and small businesses in Kissimmee, Orlando, St. Cloud, Celebration, and Davenport. Honest upfront pricing, same-day service available.',
   keywords: 'computer repair Kissimmee, IT support Orlando, PC repair Central Florida, WiFi setup, smart home, virus removal, data recovery',
   openGraph: {
-    title: 'Witter Tech — Reliable Tech Repair & IT Support in Central Florida',
+    title: 'Witter Tech: Reliable Tech Repair & IT Support in Central Florida',
     description:
       'Computer repair, Wi-Fi setup, smart home, and IT support for homes and small businesses in Central Florida. Honest upfront pricing, same-day service available.',
     url: 'https://wittertech.com',
     siteName: 'Witter Tech',
     locale: 'en_US',
     type: 'website',
-    images: [{ url: '/assets/og.png', width: 1200, height: 630, alt: 'Witter Tech — Reliable Tech Repair & IT Support in Central Florida' }],
+    images: [{ url: '/assets/og.png', width: 1200, height: 630, alt: 'Witter Tech: Reliable Tech Repair & IT Support in Central Florida' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Witter Tech — Reliable Tech Repair & IT Support in Central Florida',
+    title: 'Witter Tech: Reliable Tech Repair & IT Support in Central Florida',
     description:
       'Computer repair, Wi-Fi setup, smart home, and IT support for homes and small businesses in Central Florida. Honest pricing, same-day service.',
     images: ['/assets/og.png'],
@@ -104,7 +104,7 @@ const jsonLd = {
       reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
       author: { '@type': 'Person', name: 'Mark Bynes' },
       reviewBody:
-        "I'm truly impressed. When I called Joseph to fix my PC I assumed it would take days and most of my bank account, but he met me, took my computer to his lab, and within only a couple hours it was fixed and for way less money than I expected. I'm currently writing this review from that computer — his 5-star status is well deserved.",
+        "I'm truly impressed. When I called Joseph to fix my PC I assumed it would take days and most of my bank account, but he met me, took my computer to his lab, and within only a couple hours it was fixed and for way less money than I expected. I'm currently writing this review from that computer, his 5-star status is well deserved.",
     },
     {
       '@type': 'Review',

@@ -5,7 +5,7 @@ export default function Footer() {
     <footer>
       <div className="wrap">
         <div className="foot-top">
-          <div className="foot-lead reveal">Reliable tech help for homes &amp; businesses — right here in Central Florida.</div>
+          <div className="foot-lead reveal">Reliable tech help for homes &amp; businesses, right here in Central Florida.</div>
           <div>
             <h4>Help with</h4>
             <ul>
@@ -31,7 +31,7 @@ export default function Footer() {
             <ul>
               <li><a href="tel:14076248459">407-624-8459</a></li>
               <li><a href="mailto:joe@wittertech.com">joe@wittertech.com</a></li>
-              <li>Mon–Fri · 8am–7pm</li>
+              <li>Mon-Fri · 8am-7pm</li>
               <li>Weekends by appt.</li>
               <li><a href="https://www.facebook.com/WittTechSol/" target="_blank" rel="noopener noreferrer">Facebook</a> &middot; <a href="https://www.instagram.com/witt.tech.solutions/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
             </ul>

@@ -16,7 +16,7 @@ export default function Services() {
         <div className="inner">
           <span className="eyebrow on-dark reveal">What I do</span>
           <h1 className="anim-words">One technician. Honest pricing. Every job done right.</h1>
-          <p className="sub reveal">No ticket queues, no outsourcing. Whether it&apos;s your home laptop or your entire office network — I&apos;ll handle it.</p>
+          <p className="sub reveal">No ticket queues, no outsourcing. Whether it&apos;s your home laptop or your entire office network. I&apos;ll handle it.</p>
         </div>
       </div>
 
@@ -26,14 +26,14 @@ export default function Services() {
           <div>
             <span className="eyebrow green reveal">Home Tech Support</span>
             <h2 className="anim-words">Making tech simple for your home &amp; family.</h2>
-            <p className="lede reveal">Fast, reliable tech help for your home — same-day appointments available whenever scheduling permits.</p>
+            <p className="lede reveal">Fast, reliable tech help for your home, same-day appointments available whenever scheduling permits.</p>
             <ul className="svc-list reveal">
               <li><div><strong>PC &amp; Laptop Repair</strong><span>Speed up slow computers, fix crashes, hardware issues, screen damage, and spills. Windows and Mac.</span></div></li>
-              <li><div><strong>Virus Removal &amp; System Cleanup</strong><span>Remove threats, malware, and junk — then lock things down so it doesn&apos;t happen again.</span></div></li>
+              <li><div><strong>Virus Removal &amp; System Cleanup</strong><span>Remove threats, malware, and junk, then lock things down so it doesn&apos;t happen again.</span></div></li>
               <li><div><strong>Home Wi-Fi Setup &amp; Optimization</strong><span>Stronger signal, better coverage, no more dead zones. Whole-home mesh networks and router setup.</span></div></li>
-              <li><div><strong>Smart Home &amp; Device Setup</strong><span>Cameras, doorbells, smart TVs, streaming devices — installed cleanly and working together.</span></div></li>
+              <li><div><strong>Smart Home &amp; Device Setup</strong><span>Cameras, doorbells, smart TVs, streaming devices, installed cleanly and working together.</span></div></li>
               <li><div><strong>Printer &amp; Device Support</strong><span>Printers, tablets, and peripherals that just work. I fix the frustrating stuff so you don&apos;t have to.</span></div></li>
-              <li><div><strong>Data Recovery</strong><span>Lost photos, deleted files, failed drives — if there&apos;s a way to get it back, I&apos;ll find it.</span></div></li>
+              <li><div><strong>Data Recovery</strong><span>Lost photos, deleted files, failed drives, if there&apos;s a way to get it back, I&apos;ll find it.</span></div></li>
             </ul>
             <div style={{marginTop:'32px'}}>
               <Link href="/contact" className="btn-pill accent">Schedule home service</Link>
@@ -54,13 +54,13 @@ export default function Services() {
           <div>
             <span className="eyebrow on-dark reveal">Small Business IT</span>
             <h2 className="anim-words">IT support that lets you focus on your business.</h2>
-            <p className="lede reveal">Local, reliable, and responsive — affordable monthly plans for Kissimmee, Orlando, and surrounding areas.</p>
+            <p className="lede reveal">Local, reliable, and responsive, affordable monthly plans for Kissimmee, Orlando, and surrounding areas.</p>
             <ul className="svc-list reveal">
               <li><div><strong>Microsoft 365 Administration</strong><span>Email setup, user management, Teams, SharePoint, and ongoing 365 support for your team.</span></div></li>
               <li><div><strong>Network &amp; Wi-Fi Reliability</strong><span>Wired and wireless networks built to stay up. Office infrastructure that doesn&apos;t interrupt your day.</span></div></li>
               <li><div><strong>Cybersecurity &amp; Data Protection</strong><span>Security assessments, antivirus, endpoint protection, backup strategies, and compliance basics.</span></div></li>
               <li><div><strong>Commercial PC Maintenance</strong><span>Keep every workstation running smoothly. Hardware diagnostics, updates, and proactive maintenance.</span></div></li>
-              <li><div><strong>Office Equipment Support</strong><span>Printers, peripherals, and office tech — configured and troubleshot so your team stays productive.</span></div></li>
+              <li><div><strong>Office Equipment Support</strong><span>Printers, peripherals, and office tech, configured and troubleshot so your team stays productive.</span></div></li>
               <li><div><strong>Monthly IT Support Plans</strong><span>Ongoing coverage with priority response. One local contact for everything tech-related in your business.</span></div></li>
             </ul>
             <div className="price-note" style={{marginTop:'28px'}}>
@@ -78,15 +78,15 @@ export default function Services() {
         <div className="wrap svc-grid">
           <div>
             <span className="eyebrow reveal">PC Repair &amp; Custom Builds</span>
-            <h2 className="anim-words">Is your computer slow, overheating, or not turning on? Don&apos;t replace it — fix it.</h2>
+            <h2 className="anim-words">Is your computer slow, overheating, or not turning on? Don&apos;t replace it, fix it.</h2>
             <p className="lede reveal">Honest recommendations, no upselling. Fast turnaround. Affordable pricing. Local and reliable.</p>
             <ul className="svc-list reveal">
               <li><div><strong>Full PC Diagnostics</strong><span>A thorough check-up to identify exactly what&apos;s wrong before any repair work begins.</span></div></li>
-              <li><div><strong>Hardware Repair &amp; Replacement</strong><span>Motherboards, power supplies, cooling systems, screens — repaired or replaced with quality parts.</span></div></li>
-              <li><div><strong>SSD Upgrades</strong><span>A major speed boost — most computers feel brand new after swapping a hard drive for an SSD. <Link href="/tech-tips/ssd-upgrade-signs" className="svc-tip-link">Is an SSD right for your machine?</Link></span></div></li>
-              <li><div><strong>RAM &amp; Performance Upgrades</strong><span>More memory, better thermal paste, hardware tuning — faster without buying a whole new machine.</span></div></li>
+              <li><div><strong>Hardware Repair &amp; Replacement</strong><span>Motherboards, power supplies, cooling systems, screens, repaired or replaced with quality parts.</span></div></li>
+              <li><div><strong>SSD Upgrades</strong><span>A major speed boost, most computers feel brand new after swapping a hard drive for an SSD. <Link href="/tech-tips/ssd-upgrade-signs" className="svc-tip-link">Is an SSD right for your machine?</Link></span></div></li>
+              <li><div><strong>RAM &amp; Performance Upgrades</strong><span>More memory, better thermal paste, hardware tuning, faster without buying a whole new machine.</span></div></li>
               <li><div><strong>Virus Removal &amp; System Cleanup</strong><span>Deep clean, malware removal, bloatware uninstall, and a fresh system tune-up.</span></div></li>
-              <li><div><strong>Custom PC Builds</strong><span>Spec&apos;d for your exact use case — gaming, creative work, home office, or business. Starting at $350 + parts.</span></div></li>
+              <li><div><strong>Custom PC Builds</strong><span>Spec&apos;d for your exact use case: gaming, creative work, home office, or business. Starting at $350 + parts.</span></div></li>
             </ul>
             <div className="price-note" style={{marginTop:'28px'}}>
               Custom PC builds starting at $350 + parts · Diagnostics quoted before work begins
@@ -109,17 +109,64 @@ export default function Services() {
           </div>
           <div>
             <span className="eyebrow green reveal">Security &amp; Smart Home</span>
-            <h2 className="anim-words">Cameras, smart devices &amp; home security — set up right.</h2>
-            <p className="lede reveal">From doorbell cameras to full security systems — installed cleanly and working together before I leave.</p>
+            <h2 className="anim-words">Cameras, smart devices &amp; home security, set up right.</h2>
+            <p className="lede reveal">From doorbell cameras to full security systems, installed cleanly and working together before I leave.</p>
             <ul className="svc-list reveal">
               <li><div><strong>Security Camera Installation</strong><span>Indoor and outdoor cameras, wired or wireless, positioned for maximum coverage of your property.</span></div></li>
-              <li><div><strong>Video Doorbell Setup</strong><span>Ring, Nest, Eufy, Arlo — configured, connected to your phone, and working reliably.</span></div></li>
-              <li><div><strong>Smart Home Automation</strong><span>Smart lights, locks, thermostats, and hubs — set up so they actually work together the way they should.</span></div></li>
-              <li><div><strong>Streaming &amp; Entertainment</strong><span>Smart TVs, Roku, Fire Stick, Apple TV, and surround sound — connected and configured simply.</span></div></li>
+              <li><div><strong>Video Doorbell Setup</strong><span>Ring, Nest, Eufy, Arlo, configured, connected to your phone, and working reliably.</span></div></li>
+              <li><div><strong>Smart Home Automation</strong><span>Smart lights, locks, thermostats, and hubs, set up so they actually work together the way they should.</span></div></li>
+              <li><div><strong>Streaming &amp; Entertainment</strong><span>Smart TVs, Roku, Fire Stick, Apple TV, and surround sound, connected and configured simply.</span></div></li>
               <li><div><strong>Security Compliance</strong><span>Basic security assessments for homes and small businesses to help protect your data and devices.</span></div></li>
             </ul>
             <div style={{marginTop:'32px'}}>
               <Link href="/contact" className="btn-pill accent">Book smart home setup</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* COMMON REPAIRS */}
+      <section className="svc-section dark" id="common-repairs">
+        <div className="wrap">
+          <div style={{textAlign:'center',maxWidth:'660px',margin:'0 auto 52px'}}>
+            <span className="eyebrow on-dark reveal">Common repairs</span>
+            <h2 className="anim-words" style={{marginTop:'16px'}}>Whatever&apos;s gone wrong, odds are I&apos;ve fixed it before.</h2>
+            <p className="lede reveal" style={{margin:'14px auto 0'}}>A few of the issues people bring me most. Don&apos;t see yours? Just ask. If it&apos;s tech, I can almost certainly help.</p>
+          </div>
+          <div className="repairs-grid">
+            <div className="repairs-col reveal">
+              <h3>Laptops</h3>
+              <ul>
+                <li>Cracked or broken screens (LCD)</li>
+                <li>Keyboard replacement</li>
+                <li>Charging port &amp; power jack repair</li>
+                <li>Battery replacement</li>
+                <li>Broken hinges &amp; casing</li>
+                <li>Liquid spill cleanup</li>
+              </ul>
+            </div>
+            <div className="repairs-col reveal">
+              <h3>Desktops &amp; performance</h3>
+              <ul>
+                <li>Slow computer tune-ups</li>
+                <li>Blue screen (BSOD) errors</li>
+                <li>Won&apos;t power on or boot</li>
+                <li>Overheating &amp; loud fans</li>
+                <li>Hard drive &amp; SSD upgrades</li>
+                <li>Memory (RAM) upgrades</li>
+                <li>CMOS battery replacement</li>
+              </ul>
+            </div>
+            <div className="repairs-col reveal">
+              <h3>Software &amp; setup</h3>
+              <ul>
+                <li>Virus, spyware &amp; malware removal</li>
+                <li>Windows reinstall &amp; OS refresh</li>
+                <li>New PC setup &amp; data transfer</li>
+                <li>Email &amp; internet not working</li>
+                <li>Printer &amp; device setup</li>
+                <li>Firewall &amp; security setup</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -136,17 +183,17 @@ export default function Services() {
             <div className="step-card reveal">
               <div className="step-num">01</div>
               <h3>Diagnose &amp; quote</h3>
-              <p>I look at the problem first, then give you an honest price for the fix — in writing if you want it.</p>
+              <p>I look at the problem first, then give you an honest price for the fix, in writing if you want it.</p>
             </div>
             <div className="step-card reveal">
               <div className="step-num">02</div>
               <h3>You approve</h3>
-              <p>No work starts until you say go. If you&apos;d rather not proceed, that&apos;s completely fine — no pressure, ever.</p>
+              <p>No work starts until you say go. If you&apos;d rather not proceed, that&apos;s completely fine, no pressure, ever.</p>
             </div>
             <div className="step-card reveal">
               <div className="step-num">03</div>
               <h3>The price holds</h3>
-              <p>What I quote is what you pay. If anything changes mid-job, I tell you before proceeding — never after.</p>
+              <p>What I quote is what you pay. If anything changes mid-job, I tell you before proceeding, never after.</p>
             </div>
           </div>
         </div>

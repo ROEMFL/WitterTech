@@ -18,7 +18,7 @@ export function generateMetadata({ params }) {
       description: tip.description,
       type: 'article',
       siteName: 'Witter Tech',
-      images: [{ url: '/assets/og.png', width: 1200, height: 630, alt: 'Witter Tech — Reliable Tech Repair & IT Support in Central Florida' }],
+      images: [{ url: '/assets/og.png', width: 1200, height: 630, alt: 'Witter Tech: Reliable Tech Repair & IT Support in Central Florida' }],
     },
   }
 }

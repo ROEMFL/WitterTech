@@ -80,7 +80,7 @@ export default function AnimationInit() {
     }, { threshold: 0.4 })
     document.querySelectorAll('.counters,.bento').forEach(el => cio.observe(el))
 
-    // Ghost word parallax — rAF throttled (skipped under reduced motion)
+    // Ghost word parallax, rAF throttled (skipped under reduced motion)
     const ghosts = reducedMotion ? [] : [...document.querySelectorAll('[data-parallax]')].map(el => ({
       el, f: +el.dataset.parallax, base: 0,
     }))
@@ -110,7 +110,7 @@ export default function AnimationInit() {
       btn.setAttribute('aria-expanded', 'false')
       btn.onclick = () => {
         const isOpen = item.classList.contains('open')
-        // Only close siblings in the same group — on the FAQ page each
+        // Only close siblings in the same group, on the FAQ page each
         // category accordions independently
         item.parentElement.querySelectorAll('.faq-item.open').forEach(i => {
           i.classList.remove('open')

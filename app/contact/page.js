@@ -3,7 +3,7 @@ import ContactForm from '@/components/ContactForm'
 
 export const metadata = {
   title: 'Contact',
-  description: 'Reach Joe Witter directly — call, text, or email for computer repair, IT support, Wi-Fi setup, or any tech help in Kissimmee, Orlando, and Central Florida.',
+  description: 'Reach Joe Witter directly, call, text, or email for computer repair, IT support, Wi-Fi setup, or any tech help in Kissimmee, Orlando, and Central Florida.',
   alternates: { canonical: '/contact' },
 }
 
@@ -15,8 +15,8 @@ export default function Contact() {
         <div className="ghost on-dark" style={{fontSize:'14vw',bottom:'-1vw'}}>Contact</div>
         <div className="inner">
           <span className="eyebrow on-dark reveal">Get in touch</span>
-          <h1 className="anim-words">Reach out — Joe reads every message and responds the same day.</h1>
-          <p className="sub reveal">A sentence or two is all you need. Joe responds personally, asks any follow-up questions, and gives you a straight answer — no scripts, no runaround.</p>
+          <h1 className="anim-words">Reach out. Joe reads every message and responds the same day.</h1>
+          <p className="sub reveal">A sentence or two is all you need. Joe responds personally, asks any follow-up questions, and gives you a straight answer, no scripts, no runaround.</p>
         </div>
       </div>
 
@@ -25,7 +25,7 @@ export default function Contact() {
         <div className="wrap contact-grid">
           <div>
             <span className="eyebrow reveal">Contact info</span>
-            <h2 className="anim-words">You&apos;re talking to Joe — every time.</h2>
+            <h2 className="anim-words">You&apos;re talking to Joe, every time.</h2>
             <p className="lede reveal">No call centers, no ticket queues. The person who picks up the phone is the person who shows up and does the work.</p>
 
             <div className="cinfo reveal">
@@ -36,7 +36,7 @@ export default function Contact() {
                 <div>
                   <b>Call or text</b>
                   <a href="tel:14076248459">407-624-8459</a>
-                  <span> &middot; Mon–Fri 8am–7pm</span>
+                  <span> &middot; Mon-Fri 8am-7pm</span>
                 </div>
               </div>
               <div className="row">
@@ -54,7 +54,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <b>Hours</b>
-                  <span>Mon–Fri 8am–7pm &middot; weekends by appointment</span>
+                  <span>Mon-Fri 8am-7pm &middot; weekends by appointment</span>
                   <span style={{display:'block',marginTop:'4px'}}>Same-day service available when scheduling permits</span>
                 </div>
               </div>
@@ -104,9 +104,9 @@ export default function Contact() {
         <div className="wrap">
           <div className="steps-grid">
             {[
-              { step:'01', title:'Reach out', desc:"Call, text, email, or fill out the form above. Describe the issue in your own words — no tech jargon needed." },
-              { step:'02', title:'Get a clear answer', desc:"Joe reads your message and responds with a straightforward plan and honest price — usually the same day." },
-              { step:'03', title:'Problem solved', desc:"On-site, remote, or drop-off — whichever works best for you. Explained throughout, start to finish." },
+              { step:'01', title:'Reach out', desc:"Call, text, email, or fill out the form above. Describe the issue in your own words, no tech jargon needed." },
+              { step:'02', title:'Get a clear answer', desc:"Joe reads your message and responds with a straightforward plan and honest price, usually the same day." },
+              { step:'03', title:'Problem solved', desc:"On-site, remote, or drop-off, whichever works best for you. Explained throughout, start to finish." },
             ].map(s => (
               <div key={s.step} className="step-card reveal">
                 <div className="step-num">{s.step}</div>

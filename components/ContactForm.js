@@ -3,7 +3,7 @@ import { useState } from 'react'
 
 // Formspree endpoint, e.g. 'https://formspree.io/f/abcdwxyz' (free tier: formspree.io).
 // While empty, the form falls back to opening the visitor's email app via mailto.
-const FORM_ENDPOINT = ''
+const FORM_ENDPOINT = 'https://formspree.io/f/mjgdaeja'
 
 export default function ContactForm() {
   const [form, setForm] = useState({ name: '', phone: '', email: '', topic: '', message: '' })
@@ -64,7 +64,7 @@ export default function ContactForm() {
   return (
     <form onSubmit={handleSubmit}>
       <h3>Describe what&apos;s going on</h3>
-      <p className="sm">Joe reads every message. No obligation — just a fast, honest response.</p>
+      <p className="sm">Joe reads every message. No obligation, just a fast, honest response.</p>
       <div className="frow">
         <div className="field">
           <label htmlFor="c-name">Your name</label>
@@ -97,7 +97,7 @@ export default function ContactForm() {
       </div>
       <div className="field">
         <label htmlFor="c-msg">Tell me what&apos;s going on</label>
-        <textarea id="c-msg" name="message" rows="4" placeholder="In your own words — whatever comes to mind." value={form.message} onChange={update}></textarea>
+        <textarea id="c-msg" name="message" rows="4" placeholder="In your own words, whatever comes to mind." value={form.message} onChange={update}></textarea>
       </div>
       {status === 'error' && (
         <p style={{ color: 'var(--accent-deep)', fontSize: '.92rem', marginBottom: '14px' }}>

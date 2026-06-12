@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 const NAV = [
+  { href: '/', label: 'Home' },
   { href: '/services', label: 'Services' },
   { href: '/about', label: 'About' },
   { href: '/faq', label: 'FAQ' },
@@ -28,7 +29,7 @@ export default function Header() {
   // Escape closes the mobile menu; focus moves to the close button on open
   useEffect(() => {
     if (!menuOpen) return
-    // small delay — the overlay is visibility:hidden until its transition starts
+    // small delay, the overlay is visibility:hidden until its transition starts
     const t = setTimeout(() => closeBtnRef.current?.focus(), 120)
     const onKey = e => { if (e.key === 'Escape') setMenuOpen(false) }
     window.addEventListener('keydown', onKey)
@@ -42,7 +43,7 @@ export default function Header() {
     WebkitBackdropFilter: scrolled ? 'blur(12px)' : 'none',
   }
 
-  // Inner pages open on a dark hero — the header needs light text until it
+  // Inner pages open on a dark hero, the header needs light text until it
   // gains its frosted background on scroll
   const onDarkHero = pathname !== '/' && !scrolled
 
@@ -54,11 +55,14 @@ export default function Header() {
             Witter Tech<span className="dot">.</span>
           </Link>
           <nav className="nav-mid" role="navigation" aria-label="Main navigation">
-            {NAV.map(l => (
-              <Link key={l.href} href={l.href} className={pathname.startsWith(l.href) ? 'active' : ''}>
-                {l.label}
-              </Link>
-            ))}
+            {NAV.map(l => {
+              const active = l.href === '/' ? pathname === '/' : pathname.startsWith(l.href)
+              return (
+                <Link key={l.href} href={l.href} className={active ? 'active' : ''}>
+                  {l.label}
+                </Link>
+              )
+            })}
           </nav>
           <div className="nav-right">
             <a href="tel:14076248459" className="nav-phone">

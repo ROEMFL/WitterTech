@@ -3,7 +3,7 @@ import { TIPS } from '@/lib/tips'
 
 export const metadata = {
   title: 'Tech Tips',
-  description: 'Practical tech advice from Joe Witter — plain-language guides on PC health, Wi-Fi, cybersecurity, smart home setup, and knowing when to repair vs. replace.',
+  description: 'Practical tech advice from Joe Witter, plain-language guides on PC health, Wi-Fi, cybersecurity, smart home setup, and knowing when to repair vs. replace.',
   alternates: { canonical: '/tech-tips' },
 }
 
@@ -39,8 +39,8 @@ export default function TechTips() {
           {/* BOTTOM CTA */}
           <div className="cta-box reveal" style={{marginTop:'80px'}}>
             <span className="eyebrow on-dark" style={{justifyContent:'center',display:'inline-flex',marginBottom:'20px'}}>Still not sure?</span>
-            <h2>Ask Joe — he&apos;ll give you a straight answer.</h2>
-            <p>Every situation is different. Describe yours in plain language and get a real recommendation — not a generic one.</p>
+            <h2>Ask Joe, he&apos;ll give you a straight answer.</h2>
+            <p>Every situation is different. Describe yours in plain language and get a real recommendation, not a generic one.</p>
             <div className="cta-box-row">
               <Link href="/contact" className="btn-pill accent">Send Joe a message</Link>
               <a href="tel:14076248459" className="btn-pill ghost-pill">Call 407-624-8459</a>

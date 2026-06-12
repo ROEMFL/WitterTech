@@ -14,7 +14,7 @@ const svg = `<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http:/
 
   <!-- tagline -->
   <text x="80" y="290" font-family="Helvetica, Arial, sans-serif" font-size="40" fill="#9aa3ad">Reliable tech repair &amp; IT support,</text>
-  <text x="80" y="344" font-family="Helvetica, Arial, sans-serif" font-size="40" fill="#9aa3ad">done right &#8212; priced fairly.</text>
+  <text x="80" y="344" font-family="Helvetica, Arial, sans-serif" font-size="40" fill="#9aa3ad">done right, priced fairly.</text>
 
   <!-- rating chip -->
   <rect x="80" y="404" width="330" height="64" rx="32" fill="rgba(251,122,30,0.14)" stroke="#fb7a1e" stroke-width="2"/>

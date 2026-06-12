@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 export const metadata = {
-  title: 'Witter Tech — Reliable Tech Repair & IT Support in Central Florida',
+  title: 'Witter Tech: Reliable Tech Repair & IT Support in Central Florida',
   alternates: { canonical: '/' },
 }
 
@@ -14,8 +14,8 @@ export default function Home() {
         <div className="ghost" data-parallax="0.18">Fix it.</div>
         <div className="wrap hero-grid">
           <div>
-            <h1 className="anim-words">Reliable tech repair and IT support — done right, priced <em>fairly.</em></h1>
-            <p className="sub reveal">When your computer stops working or your Wi-Fi gives out, it throws off your whole day. I diagnose the problem, give you a price before anything starts, and fix it right — then walk you through exactly what happened, in plain English.</p>
+            <h1 className="anim-words">Reliable tech repair and IT support: done right, priced <em>fairly.</em></h1>
+            <p className="sub reveal">When your computer stops working or your Wi-Fi gives out, it throws off your whole day. I diagnose the problem, give you a price before anything starts, and fix it right, then walk you through exactly what happened, in plain English.</p>
             <div className="hero-cta reveal">
               <div className="cta">
                 <Link href="/contact" className="btn-pill accent">Get a free estimate</Link>
@@ -32,7 +32,7 @@ export default function Home() {
             </div>
             <div className="intro-card">
               <Image src="/assets/joe-polo.jpg" alt="Joe Witter" width={60} height={60} />
-              <p><span className="dotline">●</span> Price quoted before anything starts — no surprises, no exceptions.</p>
+              <p><span className="dotline">●</span> Price quoted before anything starts. No surprises!</p>
             </div>
           </div>
         </div>
@@ -52,17 +52,17 @@ export default function Home() {
           <div className="labels reveal">
             <div><h4>Who I help</h4><p>Homes &middot; Families &middot; Small businesses &amp; offices</p></div>
             <div><h4>Service area</h4><p>Kissimmee &middot; Orlando &middot; St. Cloud &middot; Celebration &middot; Davenport</p></div>
-            <div><h4>How</h4><p>On-site &middot; Remote &middot; Drop-off — whatever&apos;s easiest for you</p></div>
+            <div><h4>How</h4><p>On-site &middot; Remote &middot; Drop-off, whatever&apos;s easiest for you</p></div>
           </div>
           <div>
             <span className="eyebrow green reveal">About</span>
             <p className="statement anim-words" style={{marginTop:'18px'}}>
-              From a frozen laptop to a full office network — I find what&apos;s actually wrong and fix it right, the first time. <span>Straight answers, fair pricing, always.</span>
+              From a frozen laptop to a full office network, I find what&apos;s actually wrong and fix it right, the first time. <span>Straight answers, fair pricing, always.</span>
             </p>
             <div className="counters reveal">
-              <div className="counter"><div className="num"><span data-val="13">0</span><span className="plus">+</span></div><p>Years in IT — enterprise-grade care for neighbors</p></div>
+              <div className="counter"><div className="num"><span data-val="13">0</span><span className="plus">+</span></div><p>Years in IT, enterprise-grade care for neighbors</p></div>
               <div className="counter"><div className="num"><span data-val="2019">2019</span></div><p>Serving Central Florida homes &amp; businesses since</p></div>
-              <div className="counter"><div className="num"><span data-val="100">0</span><span className="plus">%</span></div><p>Honest, up-front pricing — every single time</p></div>
+              <div className="counter"><div className="num"><span data-val="100">0</span><span className="plus">%</span></div><p>Honest, up-front pricing, every single time</p></div>
             </div>
           </div>
         </div>
@@ -75,17 +75,17 @@ export default function Home() {
           <div className="head">
             <div>
               <span className="eyebrow on-dark reveal">Services</span>
-              <h2 className="anim-words" style={{marginTop:'14px'}}>Everything your tech needs — one certified technician, no outsourcing, no runaround.</h2>
+              <h2 className="anim-words" style={{marginTop:'14px'}}>Everything your tech needs, one certified technician, no outsourcing, no runaround.</h2>
             </div>
             <Link href="/services" className="btn-pill reveal" style={{alignSelf:'center'}}>See all services →</Link>
           </div>
           <div className="slist">
-            <div className="srow reveal"><div><div className="num">01</div><div className="st">Computers &amp; laptops <span className="em">— repairs, tune-ups &amp; cleanups</span></div></div><div className="sd">Slow, frozen, won&apos;t boot, cracked or spilled-on — I diagnose it honestly and fix it right, Windows or Mac.</div></div>
-            <div className="srow reveal"><div><div className="num">02</div><div className="st">Wi-Fi &amp; networks <span className="em">— coverage that reaches everywhere</span></div></div><div className="sd">No more dead zones or drop-outs. Networks built to stay up, for the whole house or the whole office.</div></div>
-            <div className="srow reveal"><div><div className="num">03</div><div className="st">Smart home <span className="em">— cameras, doorbells &amp; devices, set up right</span></div></div><div className="sd">New devices working together the way they should — installed cleanly and explained simply.</div></div>
-            <div className="srow reveal"><div><div className="num">04</div><div className="st">Data recovery <span className="em">— getting your photos &amp; files back</span></div></div><div className="sd">The photos and files that matter most. If there&apos;s a way to recover them, I&apos;ll find it.</div></div>
-            <div className="srow reveal"><div><div className="num">05</div><div className="st">Business IT <span className="em">— quiet, dependable support</span></div></div><div className="sd">Microsoft 365, security, backups and the kind of support that lets your team stop thinking about tech.</div></div>
-            <div className="srow reveal"><div><div className="num">06</div><div className="st">Custom PC builds <span className="em">— starting at $350 + parts</span></div></div><div className="sd">New build or a performance upgrade — I spec, source, and assemble it right the first time.</div></div>
+            <div className="srow reveal"><div><div className="num">01</div><div className="st">Computers &amp; laptops: <span className="em">repairs, tune-ups &amp; cleanups</span></div></div><div className="sd">Slow, frozen, won&apos;t boot, cracked or spilled-on, I diagnose it honestly and fix it right, Windows or Mac.</div></div>
+            <div className="srow reveal"><div><div className="num">02</div><div className="st">Wi-Fi &amp; networks: <span className="em">coverage that reaches everywhere</span></div></div><div className="sd">No more dead zones or drop-outs. Networks built to stay up, for the whole house or the whole office.</div></div>
+            <div className="srow reveal"><div><div className="num">03</div><div className="st">Smart home: <span className="em">cameras, doorbells &amp; devices, set up right</span></div></div><div className="sd">New devices working together the way they should, installed cleanly and explained simply.</div></div>
+            <div className="srow reveal"><div><div className="num">04</div><div className="st">Data recovery: <span className="em">getting your photos &amp; files back</span></div></div><div className="sd">The photos and files that matter most. If there&apos;s a way to recover them, I&apos;ll find it.</div></div>
+            <div className="srow reveal"><div><div className="num">05</div><div className="st">Business IT: <span className="em">quiet, dependable support</span></div></div><div className="sd">Microsoft 365, security, backups and the kind of support that lets your team stop thinking about tech.</div></div>
+            <div className="srow reveal"><div><div className="num">06</div><div className="st">Custom PC builds: <span className="em">starting at $350 + parts</span></div></div><div className="sd">New build or a performance upgrade, I spec, source, and assemble it right the first time.</div></div>
           </div>
         </div>
       </section>
@@ -96,7 +96,7 @@ export default function Home() {
           <div>
             <span className="eyebrow green reveal">Benefits</span>
             <h2 className="anim-words">What you actually get when you call.</h2>
-            <p className="reveal" style={{color:'var(--muted)',maxWidth:'38ch',marginBottom:'30px'}}>13 years of enterprise IT experience — brought to your home or office at a fair price.</p>
+            <p className="reveal" style={{color:'var(--muted)',maxWidth:'38ch',marginBottom:'30px'}}>13 years of enterprise IT experience, brought to your home or office at a fair price.</p>
             <div className="cta reveal">
               <Link href="/contact" className="btn-pill dark">Book a same-day visit</Link>
               <Link href="/contact" className="btn-circle" aria-label="Get help">
@@ -106,13 +106,13 @@ export default function Home() {
           </div>
           <div className="bento reveal">
             <div className="bcard"><div className="big"><span data-val="13">0</span><span className="plus">+</span></div><div><h3>Years of experience</h3><p>CompTIA A+ &amp; Network+, Microsoft MCSE/MCSA.</p></div></div>
-            <div className="bcard"><div><h3>Same-day, often</h3><p>When the schedule and parts allow — and a realistic window when they don&apos;t.</p></div><div className="big">⚡</div></div>
+            <div className="bcard"><div><h3>Same-day, often</h3><p>When the schedule and parts allow, and a realistic window when they don&apos;t.</p></div><div className="big">⚡</div></div>
             <div className="bcard feature">
-              <div className="txt"><h3>Quiet, dependable IT</h3><p>Networks and support built to stay up — so your team can stop thinking about technology.</p></div>
+              <div className="txt"><h3>Quiet, dependable IT</h3><p>Networks and support built to stay up, so your team can stop thinking about technology.</p></div>
               <div className="bimg"><Image src="/assets/network2.jpg" alt="Business network installation" fill style={{objectFit:'cover'}} sizes="(max-width:680px) 100vw, 25vw" /></div>
             </div>
             <div className="bcard"><div><h3>Honest on cost</h3><p>An up-front price before any work begins. I&apos;d rather lose a job than surprise you with a bill.</p></div><div className="big" style={{fontSize:'1.5rem',color:'var(--green-deep)'}}>No surprises</div></div>
-            <div className="bcard"><div><h3>Plain language</h3><p>You&apos;ll understand what happened and why — never made to feel behind for asking.</p></div><div className="big">💬</div></div>
+            <div className="bcard"><div><h3>Plain language</h3><p>You&apos;ll understand what happened and why, never made to feel behind for asking.</p></div><div className="big">💬</div></div>
           </div>
         </div>
       </section>
@@ -125,9 +125,9 @@ export default function Home() {
           </div>
           <div>
             <span className="eyebrow green reveal">Meet Joe</span>
-            <h2 className="anim-words">Hi, I&apos;m Joe — and Witter Tech is just me, doing this the way I&apos;d want it done for my own family.</h2>
-            <p className="reveal">I&apos;ve been in IT for over 13 years — managing infrastructure and security for organizations where uptime really matters. Since 2019, I&apos;ve brought that same level of care to the families and small businesses of Central Florida.</p>
-            <p className="reveal">What that means for you: straight answers, fair pricing, and the job done right the first time. No ticket queues, no being talked down to — just a real person who&apos;s genuinely good at this and happy to explain it.</p>
+            <h2 className="anim-words">Hi, I&apos;m Joe, and Witter Tech is just me, doing this the way I&apos;d want it done for my own family.</h2>
+            <p className="reveal">I&apos;ve been in IT for over 13 years, managing infrastructure and security for organizations where uptime really matters. Since 2019, I&apos;ve brought that same level of care to the families and small businesses of Central Florida.</p>
+            <p className="reveal">What that means for you: straight answers, fair pricing, and the job done right the first time. No ticket queues, no being talked down to, just a real person who&apos;s genuinely good at this and happy to explain it.</p>
             <div className="creds reveal">
               <span>13+ years in IT</span><span>CompTIA A+ &amp; Network+</span><span>Microsoft MCSE / MCSA</span><span>Family-owned</span>
             </div>
@@ -153,7 +153,7 @@ export default function Home() {
             <div className="pcard reveal"><div className="ph"><Image src="/assets/hands.jpg" alt="Computer tune-up and cleanup" fill style={{objectFit:'cover'}} sizes="(max-width:680px) 100vw, 33vw" /></div><div className="pb"><div className="pq">&ldquo;Everything&apos;s gotten slow and I don&apos;t know why.&rdquo;</div><span className="pcat">Tune-ups</span></div></div>
             <div className="pcard reveal"><div className="ph"><Image src="/assets/bench.jpg" alt="Data recovery from failed drives" fill style={{objectFit:'cover'}} sizes="(max-width:680px) 100vw, 33vw" /></div><div className="pb"><div className="pq">&ldquo;I really need my photos and files back.&rdquo;</div><span className="pcat">Recovery</span></div></div>
             <div className="pcard reveal"><div className="ph"><Image src="/assets/living.jpg" alt="Smart home and camera installation" fill style={{objectFit:'cover'}} sizes="(max-width:680px) 100vw, 33vw" /></div><div className="pb"><div className="pq">&ldquo;We&apos;re setting up cameras, a doorbell, or a new TV.&rdquo;</div><span className="pcat">Smart home</span></div></div>
-            <div className="pcard reveal"><div className="ph"><Image src="/assets/network2.jpg" alt="Small business office network support" fill style={{objectFit:'cover'}} sizes="(max-width:680px) 100vw, 33vw" /></div><div className="pb"><div className="pq">&ldquo;Our office network just needs to work — reliably.&rdquo;</div><span className="pcat">Business IT</span></div></div>
+            <div className="pcard reveal"><div className="ph"><Image src="/assets/network2.jpg" alt="Small business office network support" fill style={{objectFit:'cover'}} sizes="(max-width:680px) 100vw, 33vw" /></div><div className="pb"><div className="pq">&ldquo;Our office network just needs to work, reliably.&rdquo;</div><span className="pcat">Business IT</span></div></div>
           </div>
           <p className="pfoot reveal">If yours isn&apos;t on the list, that&apos;s fine. <Link href="/contact">Just describe it in your own words.</Link></p>
         </div>
@@ -165,15 +165,15 @@ export default function Home() {
         <div className="wrap">
           <div className="head">
             <span className="eyebrow reveal" style={{justifyContent:'center'}}>Reviews</span>
-            <h2 className="anim-words">Rated 5.0 on Google — 36 reviews, all five stars.</h2>
-            <p className="reveal">Real reviews from real neighbors, posted to Google under Witt-Tech Solutions — Witter Tech&apos;s legal name. Same Joe.</p>
+            <h2 className="anim-words">Rated 5.0 on Google: 36 reviews, all five stars.</h2>
+            <p className="reveal">Real reviews from real neighbors, posted to Google under Witt-Tech Solutions, Witter Tech&apos;s legal name. Same Joe.</p>
           </div>
           <div className="rcard reveal">
             <div className="rph"><Image src="/assets/living.jpg" alt="Happy customer at home" fill style={{objectFit:'cover'}} sizes="(max-width:980px) 100vw, 40vw" /></div>
             <div className="rb">
               <div className="stars">★★★★★</div>
               <blockquote>&ldquo;I assumed it would take days and most of my bank account&hellip; within only a couple hours it was fixed.&rdquo;</blockquote>
-              <p className="body">&ldquo;He met me, took my computer to his lab, and within only a couple hours it was fixed — and for way less money than I expected. I&apos;m currently writing this review from that computer. His 5-star status is well deserved.&rdquo;</p>
+              <p className="body">&ldquo;He met me, took my computer to his lab, and within only a couple hours it was fixed, and for way less money than I expected. I&apos;m currently writing this review from that computer. His 5-star status is well deserved.&rdquo;</p>
               <div className="who">Mark Bynes<span>Google review</span></div>
             </div>
           </div>
@@ -200,7 +200,7 @@ export default function Home() {
             </div>
             <div className="rev-card reveal">
               <div className="stars">★★★★★</div>
-              <p>&ldquo;He takes the time to explain and search for solutions — super trustful and efficient, highly recommended!&rdquo;</p>
+              <p>&ldquo;He takes the time to explain and search for solutions, super trustful and efficient, highly recommended!&rdquo;</p>
               <div className="who">Jose M<span>Google review</span></div>
             </div>
             <div className="rev-card reveal">
@@ -221,14 +221,14 @@ export default function Home() {
           <div>
             <span className="eyebrow green reveal">FAQ</span>
             <h2 className="anim-words">Questions, answered plainly.</h2>
-            <p className="lede reveal">Still unsure about something? Ask me directly — I&apos;d rather you understand than guess.</p>
+            <p className="lede reveal">Still unsure about something? Ask me directly, I&apos;d rather you understand than guess.</p>
             <div className="cta reveal" style={{marginTop:'28px'}}>
               <Link href="/faq" className="btn-pill">See all questions →</Link>
             </div>
           </div>
           <div className="reveal">
             <div className="faq-item"><button className="faq-q">Do you come to me, or do I bring it to you?<span className="ic"></span></button><div className="faq-a"><p>Whatever&apos;s easiest for you. I work on-site at homes and businesses across Central Florida, I can often help remotely, or you&apos;re welcome to drop a device off. We&apos;ll figure out the simplest option when you reach out.</p></div></div>
-            <div className="faq-item"><button className="faq-q">Will my files and photos be safe?<span className="ic"></span></button><div className="faq-a"><p>In most repairs your data stays exactly where it is. If there&apos;s ever a chance something could be lost, I&apos;ll tell you before I start — so you can decide what you&apos;re comfortable with. Nothing happens behind your back.</p></div></div>
+            <div className="faq-item"><button className="faq-q">Will my files and photos be safe?<span className="ic"></span></button><div className="faq-a"><p>In most repairs your data stays exactly where it is. If there&apos;s ever a chance something could be lost, I&apos;ll tell you before I start, so you can decide what you&apos;re comfortable with. Nothing happens behind your back.</p></div></div>
             <div className="faq-item"><button className="faq-q">How much is this going to cost?<span className="ic"></span></button><div className="faq-a"><p>You&apos;ll get an honest price up front, before any work begins. If something turns out simpler than expected, that&apos;s reflected in what you pay.</p></div></div>
             <div className="faq-item"><button className="faq-q">How quickly can you help?<span className="ic"></span></button><div className="faq-a"><p>Often the same day, depending on the schedule and the part needed. When you reach out, I&apos;ll give you a realistic window rather than an empty promise.</p></div></div>
           </div>
@@ -240,7 +240,7 @@ export default function Home() {
         <div className="ghost on-dark" data-parallax="0.14">Let&apos;s fix it.</div>
         <div className="wrap">
           <span className="eyebrow on-dark reveal" style={{justifyContent:'center'}}>One call or text is all it takes</span>
-          <h2 className="anim-words">Describe the problem — I&apos;ll handle everything else.</h2>
+          <h2 className="anim-words">Describe the problem, I&apos;ll handle everything else.</h2>
           <div className="cta reveal">
             <Link href="/contact" className="btn-pill accent">Send Joe a message</Link>
             <a href="tel:14076248459" className="btn-circle" aria-label="Call Joe">

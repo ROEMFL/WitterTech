@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export const metadata = {
   title: 'About Joe Witter',
-  description: 'Meet Joe Witter — 13+ years of IT experience, Microsoft MCSE/MCSA and CompTIA certified, serving Central Florida families and small businesses since 2019.',
+  description: 'Meet Joe Witter, 13+ years of IT experience, Microsoft MCSE/MCSA and CompTIA certified, serving Central Florida families and small businesses since 2019.',
   alternates: { canonical: '/about' },
 }
 
@@ -15,7 +15,7 @@ export default function About() {
         <div className="ghost on-dark" style={{fontSize:'16vw',bottom:'-1vw'}}>About Joe</div>
         <div className="inner">
           <span className="eyebrow on-dark reveal">Meet Joe</span>
-          <h1 className="anim-words">Hi, I&apos;m Joe. Witter Tech is just me — doing this the way I&apos;d want it done for my own family.</h1>
+          <h1 className="anim-words">Hi, I&apos;m Joe. Witter Tech is just me, doing this the way I&apos;d want it done for my own family.</h1>
           <p className="sub reveal">13+ years in IT. Family-owned. Honest pricing. Real explanations. Serving Central Florida since 2019.</p>
         </div>
       </div>
@@ -29,9 +29,9 @@ export default function About() {
           <div>
             <span className="eyebrow green reveal">My story</span>
             <h2 className="anim-words">13 years in IT. One business built on the values I&apos;d want as a customer.</h2>
-            <p className="reveal">I&apos;ve been in IT for over 13 years — and what I enjoy most has never changed: helping people solve technology problems and making the whole thing less frustrating. These days, that means giving families and small businesses reliable, affordable IT support without the runaround that usually comes with it.</p>
-            <p className="reveal">Witter Tech is family-inspired. I built this on the values I&apos;d want if the situation were reversed — honesty, reliability, and treating customers the way I&apos;d want my own family treated. Straight answers, fair pricing, and the job done right the first time. That&apos;s what you can count on from me.</p>
-            <p className="reveal">While continuing my career in IT leadership — managing infrastructure, security, and networks for organizations where downtime isn&apos;t an option — I launched Witter Tech in 2019 to bring that same level of care to local homes and small businesses. You get enterprise-grade experience without the enterprise-sized bill.</p>
+            <p className="reveal">I&apos;ve been in IT for over 13 years, and what I enjoy most has never changed: helping people solve technology problems and making the whole thing less frustrating. These days, that means giving families and small businesses reliable, affordable IT support without the runaround that usually comes with it.</p>
+            <p className="reveal">Witter Tech is family-inspired. I built this on the values I&apos;d want if the situation were reversed, honesty, reliability, and treating customers the way I&apos;d want my own family treated. Straight answers, fair pricing, and the job done right the first time. That&apos;s what you can count on from me.</p>
+            <p className="reveal">While continuing my career in IT leadership, managing infrastructure, security, and networks for organizations where downtime isn&apos;t an option, I launched Witter Tech in 2019 to bring that same level of care to local homes and small businesses. You get enterprise-grade experience without the enterprise-sized bill.</p>
             <div className="creds reveal" style={{marginTop:'28px'}}>
               <span>13+ years in IT</span>
               <span>CompTIA A+ &amp; Network+</span>
@@ -51,18 +51,18 @@ export default function About() {
           <div style={{textAlign:'center',maxWidth:'600px',margin:'0 auto'}}>
             <span className="eyebrow reveal">Credentials</span>
             <h2 className="anim-words" style={{marginTop:'16px'}}>Enterprise-trained. Neighbor-level care.</h2>
-            <p className="reveal" style={{color:'var(--muted)',marginTop:'14px'}}>Over 13 years of training, professional development, and real-world experience — brought to your home or office.</p>
+            <p className="reveal" style={{color:'var(--muted)',marginTop:'14px'}}>Over 13 years of training, professional development, and real-world experience, brought to your home or office.</p>
           </div>
           <div className="cert-grid">
             <div className="cert-card reveal">
               <div className="badge">Microsoft</div>
               <h4>MCSE</h4>
-              <p>Microsoft Certified Solutions Expert — enterprise infrastructure and cloud services.</p>
+              <p>Microsoft Certified Solutions Expert, enterprise infrastructure and cloud services.</p>
             </div>
             <div className="cert-card reveal">
               <div className="badge">Microsoft</div>
               <h4>MCSA</h4>
-              <p>Microsoft Certified Solutions Associate — Windows Server administration and management.</p>
+              <p>Microsoft Certified Solutions Associate, Windows Server administration and management.</p>
             </div>
             <div className="cert-card reveal">
               <div className="badge">CompTIA</div>
@@ -77,12 +77,12 @@ export default function About() {
             <div className="cert-card reveal" style={{borderStyle:'dashed'}}>
               <div className="badge" style={{background:'rgba(251,122,30,.1)',color:'var(--accent-deep)'}}>In Progress</div>
               <h4>Security+</h4>
-              <p>CompTIA Security+ — cybersecurity fundamentals and risk management.</p>
+              <p>CompTIA Security+, cybersecurity fundamentals and risk management.</p>
             </div>
             <div className="cert-card reveal" style={{borderStyle:'dashed'}}>
               <div className="badge" style={{background:'rgba(251,122,30,.1)',color:'var(--accent-deep)'}}>In Progress</div>
               <h4>CISSP</h4>
-              <p>Certified Information Systems Security Professional — advanced security leadership.</p>
+              <p>Certified Information Systems Security Professional, advanced security leadership.</p>
             </div>
           </div>
 
@@ -103,7 +103,7 @@ export default function About() {
               </div>
               <div className="reveal">
                 <h3 style={{fontSize:'1.3rem',marginBottom:'16px'}}>Track record</h3>
-                <p style={{color:'var(--ink-2)',lineHeight:'1.7'}}>I&apos;ve helped thousands of customers recover from malware infections, hardware failures, network outages, and slow machines — while keeping downtime to a minimum. Every job gets the same attention, whether it&apos;s a single laptop or a full office network.</p>
+                <p style={{color:'var(--ink-2)',lineHeight:'1.7'}}>I&apos;ve helped thousands of customers recover from malware infections, hardware failures, network outages, and slow machines, while keeping downtime to a minimum. Every job gets the same attention, whether it&apos;s a single laptop or a full office network.</p>
                 <p style={{color:'var(--muted)',marginTop:'16px',fontFamily:'var(--font-mono),monospace',fontSize:'.84rem'}}>The most common thing people say: &ldquo;You actually explained it so I understood what happened.&rdquo;</p>
               </div>
             </div>
@@ -117,7 +117,7 @@ export default function About() {
           <div style={{textAlign:'center',maxWidth:'560px',margin:'0 auto'}}>
             <span className="eyebrow reveal">Availability</span>
             <h2 className="anim-words" style={{marginTop:'16px'}}>Hours &amp; service area.</h2>
-            <p className="reveal" style={{color:'var(--muted)',marginTop:'14px'}}>On-site, remote, or drop-off — whatever works best for you.</p>
+            <p className="reveal" style={{color:'var(--muted)',marginTop:'14px'}}>On-site, remote, or drop-off. Whatever works best for you.</p>
           </div>
           <div className="hours-grid">
             <div className="hours-card reveal">
@@ -125,7 +125,7 @@ export default function About() {
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
               </div>
               <h4>Business Hours</h4>
-              <p>Monday – Friday: 8:00 AM – 7:00 PM<br/>Saturday &amp; Sunday: By appointment<br/>Same-day service available whenever scheduling permits.</p>
+              <p>Monday-Friday: 8:00 AM-7:00 PM<br/>Saturday &amp; Sunday: By appointment<br/>Same-day service available whenever scheduling permits.</p>
             </div>
             <div className="hours-card reveal">
               <div className="icon">
@@ -148,7 +148,7 @@ export default function About() {
             <div className="reveal" style={{maxWidth:'680px'}}>
               <span className="eyebrow green" style={{marginBottom:'16px',display:'inline-flex'}}>Community</span>
               <h3 style={{fontSize:'1.4rem',fontWeight:'600',margin:'12px 0 14px'}}>Giving back to Central Florida</h3>
-              <p style={{color:'var(--ink-2)',lineHeight:'1.7'}}>Witter Tech is a locally owned, family-owned business proudly serving the Central Florida community. Giving back to the community is important to me — I enjoy helping local families and small businesses make the most of their technology and am open to participating in community events, technology workshops, and educational opportunities that help people become more comfortable and confident with technology.</p>
+              <p style={{color:'var(--ink-2)',lineHeight:'1.7'}}>Witter Tech is a locally owned, family-owned business proudly serving the Central Florida community. Giving back to the community is important to me. I enjoy helping local families and small businesses make the most of their technology and am open to participating in community events, technology workshops, and educational opportunities that help people become more comfortable and confident with technology.</p>
               <p style={{color:'var(--muted)',marginTop:'12px',fontFamily:'var(--font-mono),monospace',fontSize:'.84rem'}}>Member: CAFA · Serving Kissimmee, Orlando &amp; surrounding areas</p>
             </div>
           </div>
