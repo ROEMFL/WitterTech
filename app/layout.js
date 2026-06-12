@@ -1,6 +1,6 @@
 import './globals.css'
 import { Inter, Fragment_Mono } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/react'
+import { Analytics } from '@vercel/analytics/next'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import AnimationInit from '@/components/AnimationInit'
