@@ -323,8 +323,8 @@ footer h4{font-family:'Fragment Mono',monospace;font-size:.8rem;letter-spacing:.
 footer ul{list-style:none;display:grid;gap:11px}
 footer ul a,footer ul li{color:#fff;font-size:1rem;transition:.2s}
 footer ul a:hover{color:var(--accent)}
-.foot-ghost{font-weight:700;font-size:13vw;letter-spacing:-.05em;color:rgba(255,255,255,.05);line-height:.7;text-align:center;white-space:nowrap;user-select:none;position:relative;z-index:1;margin-top:20px}
-.foot-bottom{position:relative;z-index:2;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding:24px 0 36px;font-size:.86rem;color:var(--muted-d);border-top:1px solid var(--line-d);margin-top:-2vw}
+.foot-ghost{font-weight:700;font-size:13vw;letter-spacing:-.05em;color:rgba(255,255,255,.05);line-height:.7;text-align:center;white-space:nowrap;user-select:none;position:relative;z-index:1}
+.foot-bottom{position:relative;z-index:2;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding:24px 0 36px;font-size:.86rem;color:var(--muted-d);border-top:1px solid var(--line-d)}
 .foot-bottom a{color:var(--accent);font-weight:600}
 
 /* mobile bar */

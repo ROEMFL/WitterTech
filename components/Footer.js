@@ -5,7 +5,7 @@ export default function Footer() {
     <footer>
       <div className="wrap">
         <div className="foot-top">
-          <div className="foot-lead reveal">Calm, honest tech help — whenever you need it.</div>
+          <div className="foot-lead reveal">Reliable tech help for homes &amp; businesses — right here in Central Florida.</div>
           <div>
             <h4>Help with</h4>
             <ul>
@@ -38,13 +38,13 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="foot-ghost" aria-hidden="true">Witter Tech</div>
       <div className="wrap">
         <div className="foot-bottom">
           <span>&copy; 2026 Witter Tech &middot; a DBA of Witt-Tech Solutions LLC</span>
           <span>Website by <a href="https://roemdigital.com" target="_blank" rel="noopener noreferrer">ROEM Digital</a></span>
         </div>
       </div>
+      <div className="foot-ghost" aria-hidden="true">Witter Tech</div>
     </footer>
   )
 }
