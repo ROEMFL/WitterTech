@@ -12,10 +12,13 @@ export function generateMetadata({ params }) {
   return {
     title: tip.title,
     description: tip.description,
+    alternates: { canonical: `/tech-tips/${tip.slug}` },
     openGraph: {
       title: `${tip.title} | Witter Tech`,
       description: tip.description,
       type: 'article',
+      siteName: 'Witter Tech',
+      images: [{ url: '/assets/og.png', width: 1200, height: 630, alt: 'Witter Tech — Reliable Tech Repair & IT Support in Central Florida' }],
     },
   }
 }

@@ -4,6 +4,7 @@ import { TIPS } from '@/lib/tips'
 export const metadata = {
   title: 'Tech Tips',
   description: 'Practical tech advice from Joe Witter — plain-language guides on PC health, Wi-Fi, cybersecurity, smart home setup, and knowing when to repair vs. replace.',
+  alternates: { canonical: '/tech-tips' },
 }
 
 export default function TechTips() {

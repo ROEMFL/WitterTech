@@ -4,6 +4,7 @@ import ContactForm from '@/components/ContactForm'
 export const metadata = {
   title: 'Contact',
   description: 'Reach Joe Witter directly — call, text, or email for computer repair, IT support, Wi-Fi setup, or any tech help in Kissimmee, Orlando, and Central Florida.',
+  alternates: { canonical: '/contact' },
 }
 
 export default function Contact() {

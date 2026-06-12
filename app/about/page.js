@@ -4,6 +4,7 @@ import Image from 'next/image'
 export const metadata = {
   title: 'About Joe Witter',
   description: 'Meet Joe Witter — 13+ years of IT experience, Microsoft MCSE/MCSA and CompTIA certified, serving Central Florida families and small businesses since 2019.',
+  alternates: { canonical: '/about' },
 }
 
 export default function About() {

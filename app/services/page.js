@@ -4,6 +4,7 @@ import Image from 'next/image'
 export const metadata = {
   title: 'Services',
   description: 'One local technician for everything tech: computer repair, Wi-Fi, smart home, and small business IT in Kissimmee, Orlando, and surrounding Central Florida. Honest upfront pricing, same-day service available.',
+  alternates: { canonical: '/services' },
 }
 
 export default function Services() {

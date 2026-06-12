@@ -43,12 +43,14 @@ export const metadata = {
     siteName: 'Witter Tech',
     locale: 'en_US',
     type: 'website',
+    images: [{ url: '/assets/og.png', width: 1200, height: 630, alt: 'Witter Tech — Reliable Tech Repair & IT Support in Central Florida' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Witter Tech — Reliable Tech Repair & IT Support in Central Florida',
     description:
       'Computer repair, Wi-Fi setup, smart home, and IT support for homes and small businesses in Central Florida. Honest pricing, same-day service.',
+    images: ['/assets/og.png'],
   },
 }
 

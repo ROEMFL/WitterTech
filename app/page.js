@@ -3,6 +3,7 @@ import Image from 'next/image'
 
 export const metadata = {
   title: 'Witter Tech — Reliable Tech Repair & IT Support in Central Florida',
+  alternates: { canonical: '/' },
 }
 
 export default function Home() {

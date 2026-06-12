@@ -3,6 +3,7 @@ import Link from 'next/link'
 export const metadata = {
   title: 'FAQ',
   description: 'Common questions about Witter Tech services, pricing, scheduling, and how Joe works. Straight answers — no scripts, no hedging.',
+  alternates: { canonical: '/faq' },
 }
 
 const FAQS = [
