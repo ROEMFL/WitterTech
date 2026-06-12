@@ -56,32 +56,32 @@ export default function About() {
           <div className="cert-grid">
             <div className="cert-card reveal">
               <div className="badge">Microsoft</div>
-              <h4>MCSE</h4>
+              <h3>MCSE</h3>
               <p>Microsoft Certified Solutions Expert, enterprise infrastructure and cloud services.</p>
             </div>
             <div className="cert-card reveal">
               <div className="badge">Microsoft</div>
-              <h4>MCSA</h4>
+              <h3>MCSA</h3>
               <p>Microsoft Certified Solutions Associate, Windows Server administration and management.</p>
             </div>
             <div className="cert-card reveal">
               <div className="badge">CompTIA</div>
-              <h4>A+</h4>
+              <h3>A+</h3>
               <p>Industry-standard hardware and software troubleshooting certification.</p>
             </div>
             <div className="cert-card reveal">
               <div className="badge">CompTIA</div>
-              <h4>Network+</h4>
+              <h3>Network+</h3>
               <p>Networking fundamentals, infrastructure design, and troubleshooting.</p>
             </div>
             <div className="cert-card reveal" style={{borderStyle:'dashed'}}>
               <div className="badge" style={{background:'rgba(251,122,30,.1)',color:'var(--accent-deep)'}}>In Progress</div>
-              <h4>Security+</h4>
+              <h3>Security+</h3>
               <p>CompTIA Security+, cybersecurity fundamentals and risk management.</p>
             </div>
             <div className="cert-card reveal" style={{borderStyle:'dashed'}}>
               <div className="badge" style={{background:'rgba(251,122,30,.1)',color:'var(--accent-deep)'}}>In Progress</div>
-              <h4>CISSP</h4>
+              <h3>CISSP</h3>
               <p>Certified Information Systems Security Professional, advanced security leadership.</p>
             </div>
           </div>
@@ -124,21 +124,21 @@ export default function About() {
               <div className="icon">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
               </div>
-              <h4>Business Hours</h4>
+              <h3>Business Hours</h3>
               <p>Monday-Friday: 8:00 AM-7:00 PM<br/>Saturday &amp; Sunday: By appointment<br/>Same-day service available whenever scheduling permits.</p>
             </div>
             <div className="hours-card reveal">
               <div className="icon">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
               </div>
-              <h4>Service Area</h4>
+              <h3>Service Area</h3>
               <p>Kissimmee · Orlando · St. Cloud · Celebration · Davenport · and surrounding Central Florida communities.</p>
             </div>
             <div className="hours-card reveal">
               <div className="icon">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
               </div>
-              <h4>Get in Touch</h4>
+              <h3>Get in Touch</h3>
               <p>Call or text: <a href="tel:14076248459" style={{color:'var(--accent-deep)',fontWeight:'600'}}>407-624-8459</a><br/>Email: <a href="mailto:joe@wittertech.com" style={{color:'var(--accent-deep)',fontWeight:'600'}}>joe@wittertech.com</a><br/>Payment: Cash, Zelle, CashApp, Check</p>
             </div>
           </div>

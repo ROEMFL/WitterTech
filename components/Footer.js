@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="foot-top">
           <div className="foot-lead reveal">Reliable tech help for homes &amp; businesses, right here in Central Florida.</div>
           <div>
-            <h4>Help with</h4>
+            <h3>Help with</h3>
             <ul>
               <li><Link href="/services#home-tech">Computers &amp; laptops</Link></li>
               <li><Link href="/services#home-tech">Wi-Fi &amp; networks</Link></li>
@@ -17,7 +17,7 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h4>Around here</h4>
+            <h3>Around here</h3>
             <ul>
               <li>Kissimmee</li>
               <li>Orlando</li>
@@ -27,7 +27,7 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h4>Reach Joe</h4>
+            <h3>Reach Joe</h3>
             <ul>
               <li><a href="tel:14076248459">407-624-8459</a></li>
               <li><a href="mailto:joe@wittertech.com">joe@wittertech.com</a></li>

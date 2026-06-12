@@ -37,7 +37,7 @@ export default function ContactForm() {
 
   if (status === 'sent') {
     return (
-      <div className="form-success">
+      <div className="form-success" role="status" aria-live="polite">
         <div className="check">✓</div>
         <h3>Message received.</h3>
         <p>Joe reads every message personally and will get back to you the same day.<br /><br />Need help sooner? Call or text <a href="tel:14076248459" style={{ color: 'var(--accent-deep)', fontWeight: '600' }}>407-624-8459</a></p>
@@ -50,7 +50,7 @@ export default function ContactForm() {
 
   if (status === 'mailto') {
     return (
-      <div className="form-success">
+      <div className="form-success" role="status" aria-live="polite">
         <div className="check">✓</div>
         <h3>Your email app should open.</h3>
         <p>Hit send in your email app and Joe will get back to you the same day.<br /><br />Nothing opened? Email <a href="mailto:joe@wittertech.com" style={{ color: 'var(--accent-deep)', fontWeight: '600' }}>joe@wittertech.com</a> directly, or call or text <a href="tel:14076248459" style={{ color: 'var(--accent-deep)', fontWeight: '600' }}>407-624-8459</a></p>
@@ -62,7 +62,7 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} aria-busy={status === 'sending'}>
       <h3>Describe what&apos;s going on</h3>
       <p className="sm">Joe reads every message. No obligation, just a fast, honest response.</p>
       <div className="frow">
@@ -100,7 +100,7 @@ export default function ContactForm() {
         <textarea id="c-msg" name="message" rows="4" placeholder="In your own words, whatever comes to mind." value={form.message} onChange={update}></textarea>
       </div>
       {status === 'error' && (
-        <p style={{ color: 'var(--accent-deep)', fontSize: '.92rem', marginBottom: '14px' }}>
+        <p role="alert" style={{ color: 'var(--accent-deep)', fontSize: '.92rem', marginBottom: '14px' }}>
           Something went wrong sending your message. Please try again, or call or text <a href="tel:14076248459" style={{ fontWeight: '600', textDecoration: 'underline' }}>407-624-8459</a>.
         </p>
       )}

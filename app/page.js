@@ -50,9 +50,9 @@ export default function Home() {
       <section className="about" id="about">
         <div className="wrap about-grid">
           <div className="labels reveal">
-            <div><h4>Who I help</h4><p>Homes &middot; Families &middot; Small businesses &amp; offices</p></div>
-            <div><h4>Service area</h4><p>Kissimmee &middot; Orlando &middot; St. Cloud &middot; Celebration &middot; Davenport</p></div>
-            <div><h4>How</h4><p>On-site &middot; Remote &middot; Drop-off, whatever&apos;s easiest for you</p></div>
+            <div><div className="lbl">Who I help</div><p>Homes &middot; Families &middot; Small businesses &amp; offices</p></div>
+            <div><div className="lbl">Service area</div><p>Kissimmee &middot; Orlando &middot; St. Cloud &middot; Celebration &middot; Davenport</p></div>
+            <div><div className="lbl">How</div><p>On-site &middot; Remote &middot; Drop-off, whatever&apos;s easiest for you</p></div>
           </div>
           <div>
             <span className="eyebrow green reveal">About</span>

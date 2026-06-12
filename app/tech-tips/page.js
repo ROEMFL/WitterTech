@@ -28,7 +28,7 @@ export default function TechTips() {
               <Link key={tip.slug} href={`/tech-tips/${tip.slug}`} className="tip-card reveal">
                 <div className="tc-body">
                   <span className="tc-tag">{tip.tag}</span>
-                  <h3>{tip.title}</h3>
+                  <h2>{tip.title}</h2>
                   <p>{tip.intro}</p>
                   <span className="tc-read">Read the full guide →</span>
                 </div>

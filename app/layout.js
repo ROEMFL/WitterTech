@@ -128,6 +128,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${inter.variable} ${fragmentMono.variable}`}>
       <head>
         <link rel="icon" type="image/png" href="/assets/favicon.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
