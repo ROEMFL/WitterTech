@@ -79,6 +79,10 @@ const jsonLd = {
   ],
   founder: { '@type': 'Person', name: 'Joe Witter' },
   foundingDate: '2019',
+  sameAs: [
+    'https://www.facebook.com/WittTechSol/',
+    'https://www.instagram.com/witt.tech.solutions/',
+  ],
   aggregateRating: {
     '@type': 'AggregateRating',
     ratingValue: '5.0',
