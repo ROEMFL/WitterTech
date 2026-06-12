@@ -19,11 +19,12 @@ export default function Footer() {
           <div>
             <h3>Around here</h3>
             <ul>
-              <li>Kissimmee</li>
-              <li>Orlando</li>
-              <li>St. Cloud</li>
-              <li>Celebration</li>
-              <li>Davenport</li>
+              <li><Link href="/service-areas/kissimmee">Kissimmee</Link></li>
+              <li><Link href="/service-areas/orlando">Orlando</Link></li>
+              <li><Link href="/service-areas/st-cloud">St. Cloud</Link></li>
+              <li><Link href="/service-areas/celebration">Celebration</Link></li>
+              <li><Link href="/service-areas/davenport">Davenport</Link></li>
+              <li><Link href="/service-areas">All service areas</Link></li>
             </ul>
           </div>
           <div>
@@ -39,6 +40,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="wrap">
+        <img src="/wordmark-light.svg" alt="Witter Tech" className="foot-logo" width="72" height="48" />
         <div className="foot-bottom">
           <span>&copy; 2026 Witter Tech &middot; a DBA of Witt-Tech Solutions LLC &middot; <Link href="/privacy">Privacy</Link></span>
           <span>Website by <a href="https://roemdigital.com" target="_blank" rel="noopener noreferrer">ROEM Digital</a></span>

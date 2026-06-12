@@ -142,8 +142,21 @@ const FAQS = [
 ]
 
 export default function FAQ() {
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: FAQS.flatMap(s => s.items).map(item => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: { '@type': 'Answer', text: item.a },
+    })),
+  }
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       {/* PAGE HERO */}
       <div className="page-hero">
         <div className="ghost on-dark" style={{fontSize:'14vw',bottom:'-1vw'}}>FAQ</div>

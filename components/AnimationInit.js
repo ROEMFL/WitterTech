@@ -21,7 +21,7 @@ export default function AnimationInit() {
             if (t.trim()) out.push('<span class="word">' + t + '</span>')
             else if (t) out.push(t)
           })
-        } else {
+        } else if (node.nodeType === 1) {
           out.push('<span class="word">' + node.outerHTML + '</span>')
         }
       })

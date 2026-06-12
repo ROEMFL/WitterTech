@@ -1,4 +1,5 @@
 import { TIPS } from '@/lib/tips'
+import { LOCATIONS } from '@/lib/locations'
 
 export default function sitemap() {
   const base = 'https://wittertech.com'
@@ -7,9 +8,16 @@ export default function sitemap() {
     { url: `${base}/services`,        lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
     { url: `${base}/contact`,         lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
     { url: `${base}/about`,           lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${base}/service-areas`,   lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/faq`,             lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
     { url: `${base}/tech-tips`,       lastModified: new Date(), changeFrequency: 'weekly',  priority: 0.6 },
     { url: `${base}/privacy`,         lastModified: new Date(), changeFrequency: 'yearly',  priority: 0.2 },
+    ...LOCATIONS.map(l => ({
+      url: `${base}/service-areas/${l.slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    })),
     ...TIPS.map(t => ({
       url: `${base}/tech-tips/${t.slug}`,
       lastModified: new Date(),
