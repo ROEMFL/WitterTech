@@ -33,7 +33,6 @@ export default function Footer() {
               <li><a href="mailto:joe@wittertech.com">joe@wittertech.com</a></li>
               <li>Mon–Fri · 8am–7pm</li>
               <li>Weekends by appt.</li>
-              <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a> &middot; <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
             </ul>
           </div>
         </div>

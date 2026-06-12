@@ -107,7 +107,9 @@ export default function AnimationInit() {
       btn.setAttribute('aria-expanded', 'false')
       btn.onclick = () => {
         const isOpen = item.classList.contains('open')
-        document.querySelectorAll('.faq-item.open').forEach(i => {
+        // Only close siblings in the same group — on the FAQ page each
+        // category accordions independently
+        item.parentElement.querySelectorAll('.faq-item.open').forEach(i => {
           i.classList.remove('open')
           const a = i.querySelector('.faq-a')
           const b = i.querySelector('.faq-q')

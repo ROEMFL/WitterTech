@@ -108,7 +108,7 @@ export default function Home() {
             <div className="bcard"><div><h3>Same-day, often</h3><p>When the schedule and parts allow — and a realistic window when they don&apos;t.</p></div><div className="big">⚡</div></div>
             <div className="bcard feature">
               <div className="txt"><h3>Quiet, dependable IT</h3><p>Networks and support built to stay up — so your team can stop thinking about technology.</p></div>
-              <img src="/assets/network2.jpg" alt="Networking work" loading="lazy" />
+              <div className="bimg"><Image src="/assets/network2.jpg" alt="Business network installation" fill style={{objectFit:'cover'}} sizes="(max-width:680px) 100vw, 25vw" /></div>
             </div>
             <div className="bcard"><div><h3>Honest on cost</h3><p>An up-front price before any work begins. I&apos;d rather lose a job than surprise you with a bill.</p></div><div className="big" style={{fontSize:'1.5rem',color:'var(--green-deep)'}}>No surprises</div></div>
             <div className="bcard"><div><h3>Plain language</h3><p>You&apos;ll understand what happened and why — never made to feel behind for asking.</p></div><div className="big">💬</div></div>
@@ -120,7 +120,7 @@ export default function Home() {
       <section className="owner">
         <div className="wrap owner-grid">
           <div className="owner-photo" id="ownerPhoto">
-            <img src="/assets/joe-hero.jpg" alt="Joe Witter, owner of Witter Tech" loading="lazy" />
+            <Image src="/assets/joe-hero.jpg" alt="Joe Witter, owner of Witter Tech" fill style={{objectFit:'cover',objectPosition:'center top'}} sizes="(max-width:980px) 100vw, 42vw" />
           </div>
           <div>
             <span className="eyebrow green reveal">Meet Joe</span>
@@ -147,12 +147,12 @@ export default function Home() {
             <h2 className="anim-words">Calls I get every week.</h2>
           </div>
           <div className="pgrid">
-            <div className="pcard reveal"><div className="ph"><img src="/assets/hero.jpg" alt="Laptop repair" loading="lazy" /></div><div className="pb"><div className="pq">&ldquo;It turns on, but nothing really happens.&rdquo;</div><span className="pcat">Laptops</span></div></div>
-            <div className="pcard reveal"><div className="ph"><img src="/assets/network.jpg" alt="Networking" loading="lazy" /></div><div className="pb"><div className="pq">&ldquo;The Wi-Fi drops in half the house.&rdquo;</div><span className="pcat">Networks</span></div></div>
-            <div className="pcard reveal"><div className="ph"><img src="/assets/hands.jpg" alt="Computer tune-up" loading="lazy" /></div><div className="pb"><div className="pq">&ldquo;Everything&apos;s gotten slow and I don&apos;t know why.&rdquo;</div><span className="pcat">Tune-ups</span></div></div>
-            <div className="pcard reveal"><div className="ph"><img src="/assets/bench.jpg" alt="Data recovery" loading="lazy" /></div><div className="pb"><div className="pq">&ldquo;I really need my photos and files back.&rdquo;</div><span className="pcat">Recovery</span></div></div>
-            <div className="pcard reveal"><div className="ph"><img src="/assets/living.jpg" alt="Smart home" loading="lazy" /></div><div className="pb"><div className="pq">&ldquo;We&apos;re setting up cameras, a doorbell, or a new TV.&rdquo;</div><span className="pcat">Smart home</span></div></div>
-            <div className="pcard reveal"><div className="ph"><img src="/assets/network2.jpg" alt="Business IT" loading="lazy" /></div><div className="pb"><div className="pq">&ldquo;Our office network just needs to work — reliably.&rdquo;</div><span className="pcat">Business IT</span></div></div>
+            <div className="pcard reveal"><div className="ph"><Image src="/assets/hero.jpg" alt="Laptop repair in Central Florida" fill style={{objectFit:'cover'}} sizes="(max-width:680px) 100vw, 33vw" /></div><div className="pb"><div className="pq">&ldquo;It turns on, but nothing really happens.&rdquo;</div><span className="pcat">Laptops</span></div></div>
+            <div className="pcard reveal"><div className="ph"><Image src="/assets/network.jpg" alt="Home Wi-Fi and network setup in the Kissimmee, Orlando area" fill style={{objectFit:'cover'}} sizes="(max-width:680px) 100vw, 33vw" /></div><div className="pb"><div className="pq">&ldquo;The Wi-Fi drops in half the house.&rdquo;</div><span className="pcat">Networks</span></div></div>
+            <div className="pcard reveal"><div className="ph"><Image src="/assets/hands.jpg" alt="Computer tune-up and cleanup" fill style={{objectFit:'cover'}} sizes="(max-width:680px) 100vw, 33vw" /></div><div className="pb"><div className="pq">&ldquo;Everything&apos;s gotten slow and I don&apos;t know why.&rdquo;</div><span className="pcat">Tune-ups</span></div></div>
+            <div className="pcard reveal"><div className="ph"><Image src="/assets/bench.jpg" alt="Data recovery from failed drives" fill style={{objectFit:'cover'}} sizes="(max-width:680px) 100vw, 33vw" /></div><div className="pb"><div className="pq">&ldquo;I really need my photos and files back.&rdquo;</div><span className="pcat">Recovery</span></div></div>
+            <div className="pcard reveal"><div className="ph"><Image src="/assets/living.jpg" alt="Smart home and camera installation" fill style={{objectFit:'cover'}} sizes="(max-width:680px) 100vw, 33vw" /></div><div className="pb"><div className="pq">&ldquo;We&apos;re setting up cameras, a doorbell, or a new TV.&rdquo;</div><span className="pcat">Smart home</span></div></div>
+            <div className="pcard reveal"><div className="ph"><Image src="/assets/network2.jpg" alt="Small business office network support" fill style={{objectFit:'cover'}} sizes="(max-width:680px) 100vw, 33vw" /></div><div className="pb"><div className="pq">&ldquo;Our office network just needs to work — reliably.&rdquo;</div><span className="pcat">Business IT</span></div></div>
           </div>
           <p className="pfoot reveal">If yours isn&apos;t on the list, that&apos;s fine. <Link href="/contact">Just describe it in your own words.</Link></p>
         </div>
@@ -168,7 +168,7 @@ export default function Home() {
             <p className="reveal">Real help, explained plainly — here&apos;s how that feels.</p>
           </div>
           <div className="rcard reveal">
-            <img src="/assets/living.jpg" alt="Happy customer at home" loading="lazy" />
+            <div className="rph"><Image src="/assets/living.jpg" alt="Happy customer at home" fill style={{objectFit:'cover'}} sizes="(max-width:980px) 100vw, 40vw" /></div>
             <div className="rb">
               <div className="stars">★★★★★</div>
               <blockquote>&ldquo;He fixed in an afternoon what two other places couldn&apos;t — and actually explained what went wrong.&rdquo;</blockquote>

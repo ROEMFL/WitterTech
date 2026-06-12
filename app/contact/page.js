@@ -22,16 +22,16 @@ export default function Contact() {
       {/* HOW IT WORKS */}
       <section style={{background:'var(--white)',padding:'80px 0',borderBottom:'1px solid var(--line)'}}>
         <div className="wrap">
-          <div style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:'32px',maxWidth:'900px',margin:'0 auto',textAlign:'center'}}>
+          <div className="steps-grid">
             {[
               { step:'01', title:'Reach out', desc:"Call, text, email, or fill out the form below. Describe the issue in your own words — no tech jargon needed." },
               { step:'02', title:'Get a clear answer', desc:"Joe reads your message and responds with a straightforward plan and honest price — usually the same day." },
               { step:'03', title:'Problem solved', desc:"On-site, remote, or drop-off — whichever works best for you. Explained throughout, start to finish." },
             ].map(s => (
-              <div key={s.step} className="reveal" style={{padding:'32px',background:'var(--paper-soft)',borderRadius:'var(--r)',border:'1px solid var(--line)'}}>
-                <div style={{fontFamily:"'Fragment Mono',monospace",color:'var(--accent)',fontSize:'.9rem',marginBottom:'12px'}}>{s.step}</div>
-                <h3 style={{fontSize:'1.2rem',marginBottom:'10px'}}>{s.title}</h3>
-                <p style={{color:'var(--muted)',fontSize:'.95rem',lineHeight:'1.6'}}>{s.desc}</p>
+              <div key={s.step} className="step-card reveal">
+                <div className="step-num">{s.step}</div>
+                <h3>{s.title}</h3>
+                <p>{s.desc}</p>
               </div>
             ))}
           </div>
@@ -99,7 +99,7 @@ export default function Contact() {
             </div>
 
             <div style={{marginTop:'36px',padding:'24px',background:'rgba(116,204,0,.07)',borderRadius:'var(--r-sm)',border:'1px solid rgba(116,204,0,.2)'}}>
-              <p style={{fontFamily:"'Fragment Mono',monospace",fontSize:'.82rem',color:'var(--green-deep)',marginBottom:'10px'}}>Quick links</p>
+              <p style={{fontFamily:'var(--font-mono),monospace',fontSize:'.82rem',color:'var(--green-deep)',marginBottom:'10px'}}>Quick links</p>
               <div style={{display:'flex',gap:'10px',flexWrap:'wrap'}}>
                 <Link href="/services" style={{color:'var(--ink)',fontSize:'.95rem',fontWeight:'500',textDecoration:'underline',textUnderlineOffset:'3px'}}>View all services</Link>
                 <span style={{color:'var(--muted)'}}>·</span>

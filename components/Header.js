@@ -31,9 +31,13 @@ export default function Header() {
     WebkitBackdropFilter: scrolled ? 'blur(12px)' : 'none',
   }
 
+  // Inner pages open on a dark hero — the header needs light text until it
+  // gains its frosted background on scroll
+  const onDarkHero = pathname !== '/' && !scrolled
+
   return (
     <>
-      <header style={headerStyle}>
+      <header style={headerStyle} className={onDarkHero ? 'hdr-dark' : ''}>
         <div className="wrap nav">
           <Link href="/" className="brand">
             Witter Tech<span className="dot">.</span>
@@ -50,7 +54,7 @@ export default function Header() {
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
               407-624-8459
             </a>
-            <Link href="/contact" className="header-pill">Get help</Link>
+            <Link href="/contact" className="header-pill">Get a free estimate</Link>
             <button className="menu-btn" onClick={() => setMenuOpen(true)} aria-label="Open menu" aria-expanded={menuOpen} aria-controls="mobile-menu">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
             </button>
@@ -67,7 +71,7 @@ export default function Header() {
             {l.label}
           </Link>
         ))}
-        <Link href="/contact" className="m-link" onClick={() => setMenuOpen(false)}>Get help</Link>
+        <Link href="/contact" className="m-link m-cta" onClick={() => setMenuOpen(false)}>Get a free estimate</Link>
         <div className="m-foot">Call or text Joe &middot; <a href="tel:14076248459">407-624-8459</a></div>
       </div>
     </>

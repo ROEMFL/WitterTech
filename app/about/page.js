@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata = {
   title: 'About Joe Witter',
@@ -22,12 +23,12 @@ export default function About() {
       <section className="about-page">
         <div className="wrap about-page-grid">
           <div className="about-photo" id="aboutPhoto">
-            <img src="/assets/joe-hero.jpg" alt="Joe Witter, owner of Witter Tech" loading="lazy" />
+            <Image src="/assets/joe-hero.jpg" alt="Joe Witter, owner of Witter Tech" fill style={{objectFit:'cover',objectPosition:'center top'}} sizes="(max-width:980px) 100vw, 45vw" />
           </div>
           <div>
             <span className="eyebrow green reveal">My story</span>
             <h2 className="anim-words">13 years in IT. One business built on the values I&apos;d want as a customer.</h2>
-            <p className="reveal">I&apos;ve been in IT for over 13 years — and what I enjoy most has never changed: helping people solve technology problems and making it less frustrating. What I enjoy most is helping families and small businesses get reliable, affordable IT support without the runaround that usually comes with it.</p>
+            <p className="reveal">I&apos;ve been in IT for over 13 years — and what I enjoy most has never changed: helping people solve technology problems and making the whole thing less frustrating. These days, that means giving families and small businesses reliable, affordable IT support without the runaround that usually comes with it.</p>
             <p className="reveal">Witter Tech is family-inspired. I built this on the values I&apos;d want if the situation were reversed — honesty, reliability, and treating customers the way I&apos;d want my own family treated. Straight answers, fair pricing, and the job done right the first time. That&apos;s what you can count on from me.</p>
             <p className="reveal">While continuing my career in IT leadership — managing infrastructure, security, and networks for organizations where downtime isn&apos;t an option — I launched Witter Tech in 2019 to bring that same level of care to local homes and small businesses. You get enterprise-grade experience without the enterprise-sized bill.</p>
             <div className="creds reveal" style={{marginTop:'28px'}}>
@@ -102,7 +103,7 @@ export default function About() {
               <div className="reveal">
                 <h3 style={{fontSize:'1.3rem',marginBottom:'16px'}}>Track record</h3>
                 <p style={{color:'var(--ink-2)',lineHeight:'1.7'}}>I&apos;ve helped thousands of customers recover from malware infections, hardware failures, network outages, and slow machines — while keeping downtime to a minimum. Every job gets the same attention, whether it&apos;s a single laptop or a full office network.</p>
-                <p style={{color:'var(--muted)',marginTop:'16px',fontFamily:"'Fragment Mono',monospace",fontSize:'.84rem'}}>The most common thing people say: &ldquo;You actually explained it so I understood what happened.&rdquo;</p>
+                <p style={{color:'var(--muted)',marginTop:'16px',fontFamily:'var(--font-mono),monospace',fontSize:'.84rem'}}>The most common thing people say: &ldquo;You actually explained it so I understood what happened.&rdquo;</p>
               </div>
             </div>
           </div>
@@ -147,7 +148,7 @@ export default function About() {
               <span className="eyebrow green" style={{marginBottom:'16px',display:'inline-flex'}}>Community</span>
               <h3 style={{fontSize:'1.4rem',fontWeight:'600',margin:'12px 0 14px'}}>Giving back to Central Florida</h3>
               <p style={{color:'var(--ink-2)',lineHeight:'1.7'}}>Witter Tech is a locally owned, family-owned business proudly serving the Central Florida community. Giving back to the community is important to me — I enjoy helping local families and small businesses make the most of their technology and am open to participating in community events, technology workshops, and educational opportunities that help people become more comfortable and confident with technology.</p>
-              <p style={{color:'var(--muted)',marginTop:'12px',fontFamily:"'Fragment Mono',monospace",fontSize:'.84rem'}}>Member: CAFA · Serving Kissimmee, Orlando &amp; surrounding areas</p>
+              <p style={{color:'var(--muted)',marginTop:'12px',fontFamily:'var(--font-mono),monospace',fontSize:'.84rem'}}>Member: CAFA · Serving Kissimmee, Orlando &amp; surrounding areas</p>
             </div>
           </div>
 

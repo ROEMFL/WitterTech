@@ -1,7 +1,23 @@
 import './globals.css'
+import { Inter, Fragment_Mono } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import AnimationInit from '@/components/AnimationInit'
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+})
+
+const fragmentMono = Fragment_Mono({
+  subsets: ['latin'],
+  weight: '400',
+  style: ['normal', 'italic'],
+  variable: '--font-mono',
+  display: 'swap',
+})
 
 export const metadata = {
   metadataBase: new URL('https://wittertech.com'),
@@ -67,15 +83,9 @@ const jsonLd = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${inter.variable} ${fragmentMono.variable}`}>
       <head>
         <link rel="icon" type="image/png" href="/assets/favicon.png" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fragment+Mono:ital@0;1&display=swap"
-          rel="stylesheet"
-        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -87,6 +97,7 @@ export default function RootLayout({ children }) {
         <main id="main-content">{children}</main>
         <Footer />
         <AnimationInit />
+        <Analytics />
         {/* Mobile sticky bar */}
         <div className="mbar">
           <a href="/contact" className="msg">Get a free estimate</a>

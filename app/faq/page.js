@@ -135,13 +135,13 @@ export default function FAQ() {
             ))}
 
             {/* STILL HAVE QUESTIONS */}
-            <div className="reveal" style={{marginTop:'20px',padding:'44px',background:'var(--dark)',borderRadius:'var(--r)',textAlign:'center'}}>
+            <div className="cta-box reveal" style={{marginTop:'20px'}}>
               <span className="eyebrow on-dark" style={{justifyContent:'center',display:'inline-flex',marginBottom:'16px'}}>Still have questions?</span>
-              <h2 style={{fontSize:'clamp(1.6rem,3vw,2.2rem)',color:'#fff',fontWeight:'600',margin:'0 0 16px'}}>Ask Joe directly — he&apos;ll answer in plain language.</h2>
-              <p style={{color:'var(--muted-d)',maxWidth:'44ch',margin:'0 auto 32px'}}>No phone trees, no ticket systems. You&apos;re talking to the person who&apos;ll actually do the work.</p>
-              <div style={{display:'flex',gap:'16px',justifyContent:'center',flexWrap:'wrap'}}>
+              <h2>Ask Joe directly — he&apos;ll answer in plain language.</h2>
+              <p>No phone trees, no ticket systems. You&apos;re talking to the person who&apos;ll actually do the work.</p>
+              <div className="cta-box-row">
                 <Link href="/contact" className="btn-pill accent">Send a message</Link>
-                <a href="tel:14076248459" className="btn-pill" style={{background:'rgba(255,255,255,.08)',color:'#fff',border:'1px solid rgba(255,255,255,.12)'}}>
+                <a href="tel:14076248459" className="btn-pill ghost-pill">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{marginRight:'6px'}}><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                   407-624-8459
                 </a>

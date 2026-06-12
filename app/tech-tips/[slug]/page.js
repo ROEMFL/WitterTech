@@ -1,0 +1,81 @@
+import Link from 'next/link'
+import { notFound } from 'next/navigation'
+import { TIPS, getTip } from '@/lib/tips'
+
+export function generateStaticParams() {
+  return TIPS.map(t => ({ slug: t.slug }))
+}
+
+export function generateMetadata({ params }) {
+  const tip = getTip(params.slug)
+  if (!tip) return {}
+  return {
+    title: tip.title,
+    description: tip.description,
+    openGraph: {
+      title: `${tip.title} | Witter Tech`,
+      description: tip.description,
+      type: 'article',
+    },
+  }
+}
+
+export default function TipArticle({ params }) {
+  const tip = getTip(params.slug)
+  if (!tip) notFound()
+
+  const others = TIPS.filter(t => t.slug !== tip.slug).slice(0, 3)
+
+  return (
+    <>
+      {/* PAGE HERO */}
+      <div className="page-hero">
+        <div className="ghost on-dark" style={{fontSize:'14vw',bottom:'-1vw'}}>Tech Tips</div>
+        <div className="inner">
+          <span className="eyebrow on-dark reveal">{tip.tag}</span>
+          <h1 className="anim-words">{tip.title}</h1>
+          <p className="sub reveal">{tip.intro}</p>
+        </div>
+      </div>
+
+      {/* ARTICLE */}
+      <section className="article-section">
+        <div className="wrap">
+          <article className="article">
+            {tip.sections.map((s, i) => (
+              <div key={i} className="article-block reveal">
+                <h2>{s.h}</h2>
+                <p>{s.p}</p>
+              </div>
+            ))}
+
+            {/* RELATED SERVICE */}
+            <div className="article-cta reveal">
+              <p>{tip.cta}</p>
+              <div className="article-cta-row">
+                <Link href="/contact" className="btn-pill accent">Get a free estimate</Link>
+                <Link href={tip.related.href} className="btn-pill">{tip.related.label} →</Link>
+              </div>
+            </div>
+          </article>
+
+          {/* MORE TIPS */}
+          <div className="article-more">
+            <p className="article-more-label">More tech tips</p>
+            <div className="article-more-grid">
+              {others.map(t => (
+                <Link key={t.slug} href={`/tech-tips/${t.slug}`} className="article-more-card reveal">
+                  <span className="tc-tag">{t.tag}</span>
+                  <h3>{t.title}</h3>
+                </Link>
+              ))}
+            </div>
+            <div style={{textAlign:'center',marginTop:'36px'}}>
+              <Link href="/tech-tips" className="link-quiet">← All tech tips</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  )
+}

@@ -1,28 +1,61 @@
 'use client'
 import { useState } from 'react'
 
+// Formspree endpoint, e.g. 'https://formspree.io/f/abcdwxyz' (free tier: formspree.io).
+// While empty, the form falls back to opening the visitor's email app via mailto.
+const FORM_ENDPOINT = ''
+
 export default function ContactForm() {
   const [form, setForm] = useState({ name: '', phone: '', email: '', topic: '', message: '' })
-  const [sent, setSent] = useState(false)
+  const [status, setStatus] = useState('idle') // idle | sending | sent | mailto | error
 
   const update = e => setForm(f => ({ ...f, [e.target.name]: e.target.value }))
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault()
     const { name, phone, email, topic, message } = form
-    const body = `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\nTopic: ${topic}\n\n${message}`
-    window.location.href = `mailto:joe@wittertech.com?subject=Service Request from ${encodeURIComponent(name)}&body=${encodeURIComponent(body)}`
-    setSent(true)
+
+    if (!FORM_ENDPOINT) {
+      const body = `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\nTopic: ${topic}\n\n${message}`
+      window.location.href = `mailto:joe@wittertech.com?subject=Service Request from ${encodeURIComponent(name)}&body=${encodeURIComponent(body)}`
+      setStatus('mailto')
+      return
+    }
+
+    setStatus('sending')
+    try {
+      const res = await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ name, phone, email, topic, message }),
+      })
+      setStatus(res.ok ? 'sent' : 'error')
+    } catch {
+      setStatus('error')
+    }
   }
 
-  if (sent) {
+  if (status === 'sent') {
+    return (
+      <div className="form-success">
+        <div className="check">✓</div>
+        <h3>Message received.</h3>
+        <p>Joe reads every message personally and will get back to you the same day.<br /><br />Need help sooner? Call or text <a href="tel:14076248459" style={{ color: 'var(--accent-deep)', fontWeight: '600' }}>407-624-8459</a></p>
+        <button onClick={() => { setStatus('idle'); setForm({ name: '', phone: '', email: '', topic: '', message: '' }) }} style={{ marginTop: '24px', background: 'none', border: '1px solid var(--line)', borderRadius: 'var(--pill)', padding: '.7rem 1.4rem', cursor: 'pointer', fontFamily: 'inherit', fontSize: '.95rem' }}>
+          Send another message
+        </button>
+      </div>
+    )
+  }
+
+  if (status === 'mailto') {
     return (
       <div className="form-success">
         <div className="check">✓</div>
         <h3>Your email app should open.</h3>
-        <p>Fill in your message and hit send — Joe will get back to you the same day.<br /><br />Prefer to call? <a href="tel:14076248459" style={{ color: 'var(--accent-deep)', fontWeight: '600' }}>407-624-8459</a></p>
-        <button onClick={() => setSent(false)} style={{ marginTop: '24px', background: 'none', border: '1px solid var(--line)', borderRadius: 'var(--pill)', padding: '.7rem 1.4rem', cursor: 'pointer', fontFamily: 'inherit', fontSize: '.95rem' }}>
-          Send another message
+        <p>Hit send in your email app and Joe will get back to you the same day.<br /><br />Nothing opened? Email <a href="mailto:joe@wittertech.com" style={{ color: 'var(--accent-deep)', fontWeight: '600' }}>joe@wittertech.com</a> directly, or call or text <a href="tel:14076248459" style={{ color: 'var(--accent-deep)', fontWeight: '600' }}>407-624-8459</a></p>
+        <button onClick={() => setStatus('idle')} style={{ marginTop: '24px', background: 'none', border: '1px solid var(--line)', borderRadius: 'var(--pill)', padding: '.7rem 1.4rem', cursor: 'pointer', fontFamily: 'inherit', fontSize: '.95rem' }}>
+          Back to the form
         </button>
       </div>
     )
@@ -66,7 +99,14 @@ export default function ContactForm() {
         <label htmlFor="c-msg">Tell me what&apos;s going on</label>
         <textarea id="c-msg" name="message" rows="4" placeholder="In your own words — whatever comes to mind." value={form.message} onChange={update}></textarea>
       </div>
-      <button type="submit" className="btn-pill btn-submit">Send it over →</button>
+      {status === 'error' && (
+        <p style={{ color: 'var(--accent-deep)', fontSize: '.92rem', marginBottom: '14px' }}>
+          Something went wrong sending your message. Please try again, or call or text <a href="tel:14076248459" style={{ fontWeight: '600', textDecoration: 'underline' }}>407-624-8459</a>.
+        </p>
+      )}
+      <button type="submit" className="btn-pill btn-submit" disabled={status === 'sending'}>
+        {status === 'sending' ? 'Sending…' : 'Send it over →'}
+      </button>
     </form>
   )
 }
