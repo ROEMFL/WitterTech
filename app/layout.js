@@ -79,6 +79,35 @@ const jsonLd = {
   ],
   founder: { '@type': 'Person', name: 'Joe Witter' },
   foundingDate: '2019',
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5.0',
+    reviewCount: '36',
+    bestRating: '5',
+  },
+  review: [
+    {
+      '@type': 'Review',
+      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+      author: { '@type': 'Person', name: 'Mark Bynes' },
+      reviewBody:
+        "I'm truly impressed. When I called Joseph to fix my PC I assumed it would take days and most of my bank account, but he met me, took my computer to his lab, and within only a couple hours it was fixed and for way less money than I expected. I'm currently writing this review from that computer — his 5-star status is well deserved.",
+    },
+    {
+      '@type': 'Review',
+      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+      author: { '@type': 'Person', name: 'Haylis Perez' },
+      reviewBody:
+        "My gaming PC just crashed on me while playing and I couldn't get it back up and running. I went to him and he fixed the problem within a couple hours and for a reasonable price. He is very professional.",
+    },
+    {
+      '@type': 'Review',
+      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+      author: { '@type': 'Person', name: 'Naomi Simmons' },
+      reviewBody:
+        'Joseph was so amazing. Quick to respond to my request, gave me an accurate quote and had the job done so fast! I will definitely reach out to him for all my future tech needs!',
+    },
+  ],
 }
 
 export default function RootLayout({ children }) {

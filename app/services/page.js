@@ -156,7 +156,7 @@ export default function Services() {
         <div className="wrap">
           <p className="reveal">Trusted by families and businesses across Central Florida since 2019</p>
           <div className="trust-chips reveal">
-            {['Local & family-owned','No hidden fees','Same-day available','Honest recommendations','13+ years experience','CompTIA A+ certified'].map(t => (
+            {['5.0 ★ on Google · 36 reviews','Local & family-owned','No hidden fees','Same-day available','Honest recommendations','13+ years experience','CompTIA A+ certified'].map(t => (
               <span key={t} className="trust-chip">{t}</span>
             ))}
           </div>

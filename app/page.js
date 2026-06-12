@@ -164,17 +164,52 @@ export default function Home() {
         <div className="wrap">
           <div className="head">
             <span className="eyebrow reveal" style={{justifyContent:'center'}}>Reviews</span>
-            <h2 className="anim-words">What people say.</h2>
-            <p className="reveal">Real help, explained plainly — here&apos;s how that feels.</p>
+            <h2 className="anim-words">Rated 5.0 on Google — 36 reviews, all five stars.</h2>
+            <p className="reveal">Real reviews from real neighbors, posted to Google under Witt-Tech Solutions — Witter Tech&apos;s legal name. Same Joe.</p>
           </div>
           <div className="rcard reveal">
             <div className="rph"><Image src="/assets/living.jpg" alt="Happy customer at home" fill style={{objectFit:'cover'}} sizes="(max-width:980px) 100vw, 40vw" /></div>
             <div className="rb">
               <div className="stars">★★★★★</div>
-              <blockquote>&ldquo;He fixed in an afternoon what two other places couldn&apos;t — and actually explained what went wrong.&rdquo;</blockquote>
-              <p className="body">My laptop wouldn&apos;t boot and I was sure I&apos;d lost years of photos. Joe walked me through every step, recovered everything, and the price was exactly what he quoted. I won&apos;t call anyone else.</p>
-              <div className="who">Verified Customer<span>Kissimmee, FL</span></div>
+              <blockquote>&ldquo;I assumed it would take days and most of my bank account&hellip; within only a couple hours it was fixed.&rdquo;</blockquote>
+              <p className="body">&ldquo;He met me, took my computer to his lab, and within only a couple hours it was fixed — and for way less money than I expected. I&apos;m currently writing this review from that computer. His 5-star status is well deserved.&rdquo;</p>
+              <div className="who">Mark Bynes<span>Google review</span></div>
             </div>
+          </div>
+          <div className="rev-grid">
+            <div className="rev-card reveal">
+              <div className="stars">★★★★★</div>
+              <p>&ldquo;My gaming PC just crashed on me while playing and I couldn&apos;t get it back up and running. He fixed the problem within a couple hours and for a reasonable price. Very professional.&rdquo;</p>
+              <div className="who">Haylis Perez<span>Google review</span></div>
+            </div>
+            <div className="rev-card reveal">
+              <div className="stars">★★★★★</div>
+              <p>&ldquo;Needed my computer fixed quick for work &amp; he set me up in one day! Went to dinner, came back &amp; everything was running smoothly. Definitely worth the money.&rdquo;</p>
+              <div className="who">Blayze<span>Google review</span></div>
+            </div>
+            <div className="rev-card reveal">
+              <div className="stars">★★★★★</div>
+              <p>&ldquo;Quick to respond to my request, gave me an accurate quote and had the job done so fast! I will definitely reach out to him for all my future tech needs!&rdquo;</p>
+              <div className="who">Naomi Simmons<span>Google review</span></div>
+            </div>
+            <div className="rev-card reveal">
+              <div className="stars">★★★★★</div>
+              <p>&ldquo;We had an issue with the tower for our alignment machine. Joseph was able to get to us the same day! He even spoke directly to the company that makes the alignment machine.&rdquo;</p>
+              <div className="who">Silvera and Sons Automotive Repair<span>Google review · business client</span></div>
+            </div>
+            <div className="rev-card reveal">
+              <div className="stars">★★★★★</div>
+              <p>&ldquo;He takes the time to explain and search for solutions — super trustful and efficient, highly recommended!&rdquo;</p>
+              <div className="who">Jose M<span>Google review</span></div>
+            </div>
+            <div className="rev-card reveal">
+              <div className="stars">★★★★★</div>
+              <p>&ldquo;I had a messed up computer screen. Joseph got the part and fixed it up in a day, good as new. Great work at a good price.&rdquo;</p>
+              <div className="who">Ryan<span>Google review</span></div>
+            </div>
+          </div>
+          <div className="reveal" style={{textAlign:'center',marginTop:'44px',position:'relative',zIndex:2}}>
+            <a href="https://www.google.com/search?q=Witt-Tech+Solutions+Kissimmee+FL+reviews" target="_blank" rel="noopener noreferrer" className="btn-pill">Read all 36 reviews on Google →</a>
           </div>
         </div>
       </section>
