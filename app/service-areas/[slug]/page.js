@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { LOCATIONS, SERVICES, getLocation } from '@/lib/locations'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 export function generateStaticParams() {
   return LOCATIONS.map(l => ({ slug: l.slug }))
@@ -69,6 +70,7 @@ export default function ServiceArea({ params }) {
       {/* LOCAL INTRO + SERVICES */}
       <section style={{ background: 'var(--paper)', padding: '90px 0' }}>
         <div className="wrap">
+          <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Service Areas', href: '/service-areas' }, { label: loc.city, href: `/service-areas/${loc.slug}` }]} />
           <div style={{ maxWidth: '760px' }}>
             <span className="eyebrow green reveal">{loc.local[0].h}</span>
             <p className="reveal" style={{ fontSize: '1.15rem', lineHeight: '1.7', color: 'var(--ink-2)', marginTop: '18px' }}>{loc.local[0].p}</p>

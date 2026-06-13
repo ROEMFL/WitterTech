@@ -526,3 +526,12 @@ footer ul a:hover{color:var(--accent)}
 .sd-faq h3{font-size:1.12rem;font-weight:600;margin-bottom:8px}
 .sd-faq p{color:var(--muted);line-height:1.65}
 .sd-related{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+
+/* Breadcrumbs (top of first content section on deep pages) */
+.crumbs{margin-bottom:22px}
+.crumbs ol{list-style:none;display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;font-family:var(--font-mono),monospace;font-size:.78rem;letter-spacing:.01em;color:var(--muted)}
+.crumbs li{display:flex;align-items:center;gap:8px;min-width:0}
+.crumbs li:not(:first-child)::before{content:"\203A";color:var(--muted);opacity:.6}
+.crumbs a{color:var(--accent-deep);padding:3px 0;display:inline-block}
+.crumbs a:hover{text-decoration:underline}
+.crumbs [aria-current]{color:var(--muted)}

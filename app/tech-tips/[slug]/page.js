@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { TIPS, getTip } from '@/lib/tips'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 export function generateStaticParams() {
   return TIPS.map(t => ({ slug: t.slug }))
@@ -44,6 +45,7 @@ export default function TipArticle({ params }) {
       {/* ARTICLE */}
       <section className="article-section">
         <div className="wrap">
+          <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Tech Tips', href: '/tech-tips' }, { label: tip.title, href: `/tech-tips/${tip.slug}` }]} />
           <article className="article">
             {tip.sections.map((s, i) => (
               <div key={i} className="article-block reveal">

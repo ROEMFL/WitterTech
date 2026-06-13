@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { SERVICE_PAGES, getServicePage } from '@/lib/servicePages'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 export function generateStaticParams() {
   return SERVICE_PAGES.map(s => ({ slug: s.slug }))
@@ -81,6 +82,7 @@ export default function ServicePage({ params }) {
       {/* OVERVIEW + INCLUDED */}
       <section style={{ background: 'var(--paper)', padding: '90px 0' }}>
         <div className="wrap">
+          <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Services', href: '/services' }, { label: svc.name, href: `/services/${svc.slug}` }]} />
           <p className="sd-lead reveal">{svc.overview}</p>
 
           <h2 className="anim-words" style={{ marginTop: '56px' }}>What is included</h2>
