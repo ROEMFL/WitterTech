@@ -1,5 +1,6 @@
 import { TIPS } from '@/lib/tips'
 import { LOCATIONS } from '@/lib/locations'
+import { SERVICE_PAGES } from '@/lib/servicePages'
 import { COMING_SOON } from '@/lib/config'
 
 export default function sitemap() {
@@ -21,6 +22,12 @@ export default function sitemap() {
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.7,
+    })),
+    ...SERVICE_PAGES.map(s => ({
+      url: `${base}/services/${s.slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
     })),
     ...TIPS.map(t => ({
       url: `${base}/tech-tips/${t.slug}`,

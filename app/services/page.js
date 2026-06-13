@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { SERVICE_PAGES } from '@/lib/servicePages'
 
 export const metadata = {
   title: 'Services',
@@ -19,6 +20,26 @@ export default function Services() {
           <p className="sub reveal">No ticket queues, no outsourcing. Whether it&apos;s your home laptop or your entire office network. I&apos;ll handle it.</p>
         </div>
       </div>
+
+      {/* DETAILED SERVICE PAGES */}
+      <section style={{background:'var(--paper)',padding:'84px 0 72px'}}>
+        <div className="wrap">
+          <div style={{maxWidth:'640px',marginBottom:'4px'}}>
+            <span className="eyebrow reveal">Explore by service</span>
+            <h2 className="anim-words" style={{marginTop:'14px'}}>Pick the service you need.</h2>
+            <p className="reveal" style={{color:'var(--muted)',marginTop:'12px'}}>Every service has its own page with what is included, how it works, honest pricing, and answers to the questions people actually ask.</p>
+          </div>
+          <div className="loc-services" style={{marginTop:'36px'}}>
+            {SERVICE_PAGES.map(s => (
+              <Link key={s.slug} href={`/services/${s.slug}`} className="loc-card loc-card-link reveal">
+                <span className="tc-tag">{s.tag}</span>
+                <h3>{s.name}</h3>
+                <span className="loc-read">Learn more &rarr;</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* HOME TECH SUPPORT */}
       <section className="svc-section" id="home-tech">

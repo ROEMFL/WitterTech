@@ -506,3 +506,26 @@ footer ul a:hover{color:var(--accent)}
 .loc-trust{list-style:none;display:grid;gap:12px;margin-top:44px;max-width:680px}
 .loc-trust li{position:relative;padding-left:30px;color:var(--ink-2);font-size:1rem;line-height:1.5}
 .loc-trust li::before{content:"✓";position:absolute;left:0;top:0;color:var(--green-deep);font-weight:700}
+
+/* SERVICE detail pages (sd- prefix, kept distinct from the /services overview svc- classes) */
+.sd-lead{font-size:1.18rem;line-height:1.7;color:var(--ink-2);max-width:64ch;margin-top:6px}
+.sd-cols{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+@media(max-width:760px){.sd-cols{grid-template-columns:1fr;gap:40px}}
+.sd-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 40px;margin-top:14px;list-style:none}
+@media(max-width:680px){.sd-grid{grid-template-columns:1fr}}
+.sd-list{list-style:none;display:grid;gap:13px;margin-top:14px;max-width:72ch}
+.sd-grid li,.sd-list li{position:relative;padding-left:30px;color:var(--ink-2);line-height:1.55}
+.sd-grid.check li::before,.sd-list.check li::before{content:"✓";position:absolute;left:0;top:1px;color:var(--green-deep);font-weight:700}
+.sd-list.muted li{padding-left:24px}
+.sd-list.muted li::before{content:"";position:absolute;left:2px;top:9px;width:8px;height:2px;background:var(--muted);border-radius:2px}
+.sd-steps{counter-reset:s;display:grid;gap:22px;margin-top:18px;max-width:74ch}
+.sd-step{display:flex;gap:18px;align-items:flex-start}
+.sd-step .num{counter-increment:s;flex:none;width:34px;height:34px;border-radius:50%;background:var(--dark);color:#fff;display:grid;place-items:center;font-weight:600;font-size:.95rem}
+.sd-step .num::before{content:counter(s)}
+.sd-step h3{font-size:1.12rem;font-weight:600;margin-bottom:4px}
+.sd-step p{color:var(--muted);line-height:1.6}
+.sd-price{background:var(--white);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:var(--r);padding:26px 30px;max-width:72ch;font-size:1.06rem;line-height:1.7;color:var(--ink-2)}
+.sd-faq{display:grid;gap:24px;margin-top:18px;max-width:78ch}
+.sd-faq h3{font-size:1.12rem;font-weight:600;margin-bottom:8px}
+.sd-faq p{color:var(--muted);line-height:1.65}
+.sd-related{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
