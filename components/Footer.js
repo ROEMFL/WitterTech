@@ -42,7 +42,7 @@ export default function Footer() {
       <div className="wrap">
         <img src="/wordmark-light.svg" alt="Witter Tech" className="foot-logo" width="72" height="48" />
         <div className="foot-bottom">
-          <span>&copy; 2026 Witter Tech &middot; a DBA of Witt-Tech Solutions LLC &middot; <Link href="/privacy">Privacy</Link></span>
+          <span>&copy; 2026 Witter Tech &middot; a DBA of Witt-Tech Solutions LLC &middot; <Link href="/pricing">Pricing</Link> &middot; <Link href="/reviews">Reviews</Link> &middot; <Link href="/privacy">Privacy</Link></span>
           <span>Website by <a href="https://roemdigital.com" target="_blank" rel="noopener noreferrer">ROEM Digital</a></span>
         </div>
       </div>

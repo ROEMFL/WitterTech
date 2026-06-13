@@ -6,7 +6,7 @@ export default function robots() {
       rules: {
         userAgent: '*',
         allow: '/',
-        disallow: ['/services', '/about', '/contact', '/faq', '/tech-tips', '/privacy', '/service-areas'],
+        disallow: ['/services', '/about', '/contact', '/faq', '/tech-tips', '/privacy', '/service-areas', '/pricing', '/reviews'],
       },
       sitemap: 'https://wittertech.com/sitemap.xml',
     }
