@@ -75,10 +75,7 @@ header{position:fixed;top:0;left:0;right:0;z-index:80;transition:.3s}
 .brand{font-weight:700;font-size:1.4rem;letter-spacing:-.03em;color:var(--ink);display:flex;align-items:center;white-space:nowrap}
 .brand .dot{color:var(--accent)}
 .brand-logo{height:46px;width:auto;display:block}
-.brand-logo-light{display:none}
-header.hdr-dark .brand-logo-dark{display:none}
-header.hdr-dark .brand-logo-light{display:block}
-@media (max-width:560px){.brand-logo{height:32px}}
+@media (max-width:560px){.brand-logo{height:34px}}
 .nav-mid{display:flex;gap:32px}
 .nav-mid a{font-size:.97rem;color:var(--ink-2);font-weight:500;transition:.2s;white-space:nowrap}
 .nav-mid a:hover,.nav-mid a.active{color:var(--ink)}
@@ -104,7 +101,7 @@ header.hdr-dark .menu-btn{background:rgba(255,255,255,.08);border-color:rgba(255
 .m-overlay a{color:#fff;font-size:2rem;font-weight:600;padding:14px 0;border-bottom:1px solid var(--line-d);letter-spacing:-.02em}
 .m-overlay .m-close{position:absolute;top:30px;right:30px;width:54px;height:54px;border-radius:50%;background:rgba(255,255,255,.08);border:0;color:#fff;cursor:pointer;display:grid;place-items:center}
 .m-overlay .m-foot{margin-top:34px;color:var(--muted-d);font-family:var(--font-mono),monospace;font-size:.9rem}
-.m-overlay .m-foot a{font-size:1rem;color:var(--accent);display:inline;border:0;padding:0}
+.m-overlay .m-foot a{font-size:1rem;color:var(--accent);display:inline-block;border:0;padding:14px 10px;margin:-6px 0}
 
 /* PAGE HERO (inner pages) */
 .page-hero{background:var(--dark);color:#fff;padding:160px 0 100px;position:relative;overflow:hidden;text-align:center}

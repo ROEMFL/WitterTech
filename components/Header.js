@@ -53,8 +53,7 @@ export default function Header() {
       <header style={headerStyle} className={onDarkHero ? 'hdr-dark' : ''}>
         <div className="wrap nav">
           <Link href="/" className="brand" aria-label="Witter Tech, home">
-            <img src="/wordmark-dark.svg" alt="Witter Tech" className="brand-logo brand-logo-dark" width="63" height="42" />
-            <img src="/wordmark-light.svg" alt="" aria-hidden="true" className="brand-logo brand-logo-light" width="63" height="42" />
+            <img src={onDarkHero ? '/wordmark-light.webp' : '/wordmark-dark.webp'} alt="Witter Tech" className="brand-logo" width="63" height="42" />
           </Link>
           <nav className="nav-mid" role="navigation" aria-label="Main navigation">
             {NAV.map(l => {

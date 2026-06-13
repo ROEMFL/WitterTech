@@ -1,7 +1,7 @@
 export default function ComingSoon() {
   return (
     <div style={{ minHeight: '100svh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '48px 24px', background: 'var(--dark)', color: '#fff' }}>
-      <img src="/logo-black.svg" alt="Witter Tech" width="280" height="280" style={{ width: 'min(280px,72vw)', height: 'auto', marginBottom: '8px' }} />
+      <img src="/comingsoon-logo.webp" alt="Witter Tech" width="280" height="280" style={{ width: 'min(280px,72vw)', height: 'auto', marginBottom: '8px' }} />
 
       <span style={{ fontFamily: 'var(--font-mono),monospace', fontSize: '.82rem', letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: '22px' }}>
         Reliable &middot; Honest &middot; Affordable
