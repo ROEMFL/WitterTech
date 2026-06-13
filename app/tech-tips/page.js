@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { TIPS } from '@/lib/tips'
+import { SITE } from '@/lib/site'
 
 export const metadata = {
   title: 'Tech Tips',
@@ -43,7 +44,7 @@ export default function TechTips() {
             <p>Every situation is different. Describe yours in plain language and get a real recommendation, not a generic one.</p>
             <div className="cta-box-row">
               <Link href="/contact" className="btn-pill accent">Send Joe a message</Link>
-              <a href="tel:14076248459" className="btn-pill ghost-pill">Call 407-624-8459</a>
+              <a href={SITE.phoneHref} className="btn-pill ghost-pill">Call {SITE.phone}</a>
             </div>
           </div>
         </div>

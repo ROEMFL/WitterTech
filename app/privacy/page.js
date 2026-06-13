@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { SITE, MAILTO } from '@/lib/site'
 
 export const metadata = {
   title: 'Privacy Policy',
@@ -60,7 +61,7 @@ export default function Privacy() {
 
             <div className="article-block">
               <h2>Your choices</h2>
-              <p>Want to know what information we have about you, or want it deleted? Email <a href="mailto:joe@wittertech.com" style={{color:'var(--accent-deep)',fontWeight:'600'}}>joe@wittertech.com</a> or call or text <a href="tel:14076248459" style={{color:'var(--accent-deep)',fontWeight:'600'}}>407-624-8459</a> and it will be handled promptly, by Joe, like everything else here.</p>
+              <p>Want to know what information we have about you, or want it deleted? Email <a href={MAILTO} style={{color:'var(--accent-deep)',fontWeight:'600'}}>{SITE.email}</a> or call or text <a href={SITE.phoneHref} style={{color:'var(--accent-deep)',fontWeight:'600'}}>{SITE.phone}</a> and it will be handled promptly, by Joe, like everything else here.</p>
             </div>
 
             <div className="article-block">

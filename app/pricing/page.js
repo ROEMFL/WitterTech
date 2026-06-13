@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { SITE } from '@/lib/site'
 
 export const metadata = {
   title: 'Pricing: How It Works',
@@ -37,7 +38,7 @@ export default function Pricing() {
           <div className="hero-cta reveal" style={{ marginTop: '28px' }}>
             <div className="cta">
               <Link href="/contact" className="btn-pill accent">Get a free estimate</Link>
-              <a href="tel:14076248459" className="btn-pill ghost-pill">Call &amp; text 407-624-8459</a>
+              <a href={SITE.phoneHref} className="btn-pill ghost-pill">Call &amp; text {SITE.phone}</a>
             </div>
           </div>
         </div>
@@ -134,7 +135,7 @@ export default function Pricing() {
             <p>Tell me what is going on and I will give you a straight answer and an honest price before any work begins.</p>
             <div className="cta-box-row">
               <Link href="/contact" className="btn-pill accent">Get a free estimate</Link>
-              <a href="tel:14076248459" className="btn-pill ghost-pill">Call 407-624-8459</a>
+              <a href={SITE.phoneHref} className="btn-pill ghost-pill">Call {SITE.phone}</a>
             </div>
           </div>
           <div style={{ marginTop: '56px' }}>

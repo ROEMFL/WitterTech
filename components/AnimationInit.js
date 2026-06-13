@@ -78,6 +78,14 @@ export default function AnimationInit() {
         cio.unobserve(e.target)
       })
     }, { threshold: 0.4 })
+    // Real numbers are rendered in the HTML (no-JS friendly + crawlable). For
+    // JS users, reset non-year counters to 0 on mount so the count-up animates;
+    // years (data-val > 1900) keep their real value.
+    if (!reducedMotion) {
+      document.querySelectorAll('.counters [data-val],.bento [data-val]').forEach(el => {
+        if (+el.dataset.val <= 1900) el.textContent = '0'
+      })
+    }
     document.querySelectorAll('.counters,.bento').forEach(el => cio.observe(el))
 
     // Ghost word parallax, rAF throttled (skipped under reduced motion)
@@ -102,12 +110,20 @@ export default function AnimationInit() {
     window.addEventListener('resize', onResize, { passive: true })
     measureG(); applyP()
 
-    // FAQ accordion
+    // FAQ accordion (accessible): each answer gets an id and the button an
+    // aria-controls reference; collapsed answers are marked `inert` so their
+    // content is removed from the tab order and the accessibility tree (a
+    // maxHeight:0 panel alone still leaves links keyboard-focusable).
+    let faqId = 0
     document.querySelectorAll('.faq-item').forEach(item => {
       const btn = item.querySelector('.faq-q')
       const ans = item.querySelector('.faq-a')
       if (!btn || !ans) return
-      btn.setAttribute('aria-expanded', 'false')
+      if (!ans.id) ans.id = `faq-panel-${++faqId}`
+      btn.setAttribute('aria-controls', ans.id)
+      const startOpen = item.classList.contains('open')
+      btn.setAttribute('aria-expanded', startOpen ? 'true' : 'false')
+      if (!startOpen) ans.setAttribute('inert', '')
       btn.onclick = () => {
         const isOpen = item.classList.contains('open')
         // Only close siblings in the same group, on the FAQ page each
@@ -116,30 +132,50 @@ export default function AnimationInit() {
           i.classList.remove('open')
           const a = i.querySelector('.faq-a')
           const b = i.querySelector('.faq-q')
-          if (a) a.style.maxHeight = '0'
+          if (a) { a.style.maxHeight = '0'; a.setAttribute('inert', '') }
           if (b) b.setAttribute('aria-expanded', 'false')
         })
         if (!isOpen) {
           item.classList.add('open')
+          ans.removeAttribute('inert')
           ans.style.maxHeight = ans.scrollHeight + 'px'
           btn.setAttribute('aria-expanded', 'true')
         }
       }
     })
 
-    // Click-to-call conversion tracking (no-op until GA4 is active)
-    const onTelClick = e => {
-      const a = e.target.closest && e.target.closest('a[href^="tel:"]')
-      if (a && window.gtag) window.gtag('event', 'contact', { method: 'phone' })
+    // Conversion event taxonomy (all no-ops until GA4 is active via window.gtag):
+    //   contact     -> click-to-call (tel:)
+    //   email_click -> mailto: click
+    //   cta_click   -> any primary call-to-action link
+    //   form_start  -> first interaction with the contact form (once)
+    // generate_lead fires separately, on successful form submit, in ContactForm.
+    const track = (name, params) => { if (window.gtag) window.gtag('event', name, params) }
+    const onClick = e => {
+      const tel = e.target.closest?.('a[href^="tel:"]')
+      if (tel) return track('contact', { method: 'phone' })
+      const mail = e.target.closest?.('a[href^="mailto:"]')
+      if (mail) return track('email_click', { method: 'email' })
+      const cta = e.target.closest?.('a.btn-pill, a.header-pill, a.btn-circle, a.m-cta')
+      if (cta) track('cta_click', { label: (cta.textContent || '').trim().slice(0, 60), href: cta.getAttribute('href') || '' })
     }
-    document.addEventListener('click', onTelClick)
+    document.addEventListener('click', onClick)
+
+    let formStarted = false
+    const onFormFocus = e => {
+      if (formStarted || !e.target.closest?.('form')) return
+      formStarted = true
+      track('form_start', {})
+    }
+    document.addEventListener('focusin', onFormFocus)
 
     return () => {
       io.disconnect()
       cio.disconnect()
       window.removeEventListener('scroll', onScroll)
       window.removeEventListener('resize', onResize)
-      document.removeEventListener('click', onTelClick)
+      document.removeEventListener('click', onClick)
+      document.removeEventListener('focusin', onFormFocus)
     }
   }, [pathname])
 

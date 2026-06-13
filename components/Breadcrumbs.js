@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { SITE } from '@/lib/site'
 
 // Visible breadcrumb trail + BreadcrumbList JSON-LD, kept in lockstep.
 // items: [{ label, href }] from top level to the current page (current is last).
@@ -10,7 +11,7 @@ export default function Breadcrumbs({ items }) {
       '@type': 'ListItem',
       position: i + 1,
       name: it.label,
-      item: `https://wittertech.com${it.href}`,
+      item: `${SITE.url}${it.href}`,
     })),
   }
   const last = items.length - 1

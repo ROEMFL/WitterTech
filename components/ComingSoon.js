@@ -1,6 +1,9 @@
+import { SITE, MAILTO } from '@/lib/site'
+
 export default function ComingSoon() {
   return (
     <div style={{ minHeight: '100svh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '48px 24px', background: 'var(--dark)', color: '#fff' }}>
+      {/* eslint-disable-next-line @next/next/no-img-element -- standalone coming-soon screen, next/image not warranted */}
       <img src="/comingsoon-logo.webp" alt="Witter Tech" width="280" height="280" style={{ width: 'min(280px,72vw)', height: 'auto', marginBottom: '8px' }} />
 
       <span style={{ fontFamily: 'var(--font-mono),monospace', fontSize: '.82rem', letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: '22px' }}>
@@ -16,11 +19,11 @@ export default function ComingSoon() {
       </p>
 
       <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', justifyContent: 'center' }}>
-        <a href="tel:14076248459" style={{ background: 'var(--accent)', color: 'var(--dark)', fontWeight: 600, padding: '1rem 1.9rem', borderRadius: 'var(--pill)', fontSize: '1rem' }}>
-          Call or text 407-624-8459
+        <a href={SITE.phoneHref} style={{ background: 'var(--accent)', color: 'var(--dark)', fontWeight: 600, padding: '1rem 1.9rem', borderRadius: 'var(--pill)', fontSize: '1rem' }}>
+          Call or text {SITE.phone}
         </a>
-        <a href="mailto:joe@wittertech.com" style={{ background: 'transparent', color: '#fff', border: '1px solid rgba(255,255,255,.28)', fontWeight: 600, padding: '1rem 1.9rem', borderRadius: 'var(--pill)', fontSize: '1rem' }}>
-          joe@wittertech.com
+        <a href={MAILTO} style={{ background: 'transparent', color: '#fff', border: '1px solid rgba(255,255,255,.28)', fontWeight: 600, padding: '1rem 1.9rem', borderRadius: 'var(--pill)', fontSize: '1rem' }}>
+          {SITE.email}
         </a>
       </div>
 
@@ -28,7 +31,7 @@ export default function ComingSoon() {
         Serving Kissimmee, Orlando, St. Cloud, Celebration, Davenport &amp; Central Florida
       </p>
       <p style={{ marginTop: '10px', fontSize: '.78rem', color: 'rgba(255,255,255,.34)' }}>
-        &copy; 2026 Witter Tech &middot; a DBA of Witt-Tech Solutions LLC
+        &copy; 2026 {SITE.name} &middot; a DBA of {SITE.legalName}
       </p>
     </div>
   )

@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import { REVIEWS, RATING, GOOGLE_REVIEWS_URL } from '@/lib/reviews'
+import { SITE } from '@/lib/site'
+import { businessRatingJsonLd } from '@/lib/schema'
 
 export const metadata = {
   title: 'Reviews',
@@ -10,6 +12,8 @@ export const metadata = {
 export default function Reviews() {
   return (
     <>
+      {/* Rating + reviews schema, attached to the sitewide business @id. */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(businessRatingJsonLd()) }} />
       {/* HERO */}
       <div className="page-hero">
         <div className="ghost on-dark" style={{ fontSize: '13vw', bottom: '-1vw' }}>Reviews</div>
@@ -51,7 +55,7 @@ export default function Reviews() {
             <p>Tell me what is going on in plain language. The diagnostic and estimate are free, with no obligation.</p>
             <div className="cta-box-row">
               <Link href="/contact" className="btn-pill accent">Get a free estimate</Link>
-              <a href="tel:14076248459" className="btn-pill ghost-pill">Call 407-624-8459</a>
+              <a href={SITE.phoneHref} className="btn-pill ghost-pill">Call {SITE.phone}</a>
             </div>
           </div>
           <div style={{ marginTop: '56px' }}>

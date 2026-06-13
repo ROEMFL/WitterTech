@@ -1,14 +1,17 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { LOCATIONS, SERVICES, getLocation } from '@/lib/locations'
+import { SITE, TRUST_RATING } from '@/lib/site'
+import { providerNode } from '@/lib/schema'
 import Breadcrumbs from '@/components/Breadcrumbs'
 
 export function generateStaticParams() {
   return LOCATIONS.map(l => ({ slug: l.slug }))
 }
 
-export function generateMetadata({ params }) {
-  const loc = getLocation(params.slug)
+export async function generateMetadata({ params }) {
+  const { slug } = await params
+  const loc = getLocation(slug)
   if (!loc) return {}
   const title = `Computer Repair & IT Support in ${loc.city}, FL`
   return {
@@ -25,8 +28,9 @@ export function generateMetadata({ params }) {
   }
 }
 
-export default function ServiceArea({ params }) {
-  const loc = getLocation(params.slug)
+export default async function ServiceArea({ params }) {
+  const { slug } = await params
+  const loc = getLocation(slug)
   if (!loc) notFound()
 
   const others = LOCATIONS.filter(l => l.slug !== loc.slug).slice(0, 5)
@@ -35,16 +39,9 @@ export default function ServiceArea({ params }) {
     '@context': 'https://schema.org',
     '@type': 'Service',
     serviceType: 'Computer repair and IT support',
-    provider: {
-      '@type': 'LocalBusiness',
-      name: 'Witter Tech',
-      telephone: '+1-407-624-8459',
-      url: 'https://wittertech.com',
-      image: 'https://wittertech.com/assets/og.png',
-      priceRange: '$$',
-    },
+    provider: providerNode(),
     areaServed: { '@type': 'City', name: `${loc.city}, Florida` },
-    url: `https://wittertech.com/service-areas/${loc.slug}`,
+    url: `${SITE.url}/service-areas/${loc.slug}`,
   }
 
   return (
@@ -61,7 +58,7 @@ export default function ServiceArea({ params }) {
           <div className="hero-cta reveal" style={{ marginTop: '28px' }}>
             <div className="cta">
               <Link href="/contact" className="btn-pill accent">Get a free estimate</Link>
-              <a href="tel:14076248459" className="btn-pill ghost-pill">Call &amp; text 407-624-8459</a>
+              <a href={SITE.phoneHref} className="btn-pill ghost-pill">Call &amp; text {SITE.phone}</a>
             </div>
           </div>
         </div>
@@ -103,7 +100,7 @@ export default function ServiceArea({ params }) {
           </div>
 
           <ul className="loc-trust reveal">
-            <li>Rated 5.0 on Google, 36 reviews</li>
+            <li>{TRUST_RATING}</li>
             <li>CompTIA A+ &amp; Network+, Microsoft certified</li>
             <li>Same-day service whenever scheduling allows</li>
             <li>An honest price quoted before any work starts</li>
@@ -120,7 +117,7 @@ export default function ServiceArea({ params }) {
             <p>Tell me what is going on in plain language and I will give you a straight answer and an honest price, no obligation.</p>
             <div className="cta-box-row">
               <Link href="/contact" className="btn-pill accent">Send Joe a message</Link>
-              <a href="tel:14076248459" className="btn-pill ghost-pill">Call 407-624-8459</a>
+              <a href={SITE.phoneHref} className="btn-pill ghost-pill">Call {SITE.phone}</a>
             </div>
           </div>
 
