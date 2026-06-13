@@ -153,7 +153,7 @@ header.hdr-dark .menu-btn{background:rgba(255,255,255,.08);border-color:rgba(255
 .about .statement{font-size:clamp(1.7rem,3.2vw,2.9rem);font-weight:600;letter-spacing:-.035em;line-height:1.14;margin:18px 0 0;max-width:24ch}
 .about .statement span{color:var(--green-deep)}
 .counters{display:flex;gap:56px;flex-wrap:wrap;margin-top:56px;padding-top:46px;border-top:1px solid var(--line)}
-.counter .num{font-size:clamp(2.8rem,5vw,4.2rem);font-weight:600;letter-spacing:-.04em;line-height:1;color:var(--ink)}
+.counter .num{font-size:clamp(3.4rem,6.6vw,5.6rem);font-weight:600;letter-spacing:-.05em;line-height:.95;color:var(--ink)}
 .counter .num .plus{color:var(--accent)}
 .counter:nth-child(2) .num{color:var(--green-deep)}
 .counter p{color:var(--muted);margin-top:8px;max-width:22ch}
@@ -491,6 +491,43 @@ footer ul a:hover{color:var(--accent)}
 }
 
 /* REDUCED MOTION, disable parallax, marquee, blur reveals, smooth scroll */
+/* ---- Scroll/hover motion (aicreator-inspired, Witter Tech native timing) ---- */
+
+/* (1) Faint hero grid that fades in behind the content. Static by default
+   (and under reduced motion); animates in only when motion is welcome. */
+.hero::before{
+  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:64px 64px;
+  -webkit-mask-image:radial-gradient(125% 95% at 50% 0%,#000 28%,transparent 76%);
+  mask-image:radial-gradient(125% 95% at 50% 0%,#000 28%,transparent 76%);
+  opacity:.5;
+}
+@keyframes hero-grid-in{from{opacity:0;transform:scale(1.04)}to{opacity:.5;transform:scale(1)}}
+@keyframes srow-brighten{from{opacity:.3}to{opacity:1}}
+
+@media (prefers-reduced-motion: no-preference){
+  .hero::before{opacity:0;animation:hero-grid-in 1.4s cubic-bezier(.16,.84,.44,1) .1s forwards}
+  /* (5) Each services row brightens dim->full as it scrolls through view.
+     Scroll-driven CSS; browsers without support just show full opacity. */
+  @supports (animation-timeline: view()){
+    .services .srow{animation:srow-brighten linear both;animation-timeline:view();animation-range:entry 8% cover 42%}
+  }
+}
+
+/* (7) Card hover: a soft scrim + accent "+" badge reveal on the problem cards,
+   layered over the existing image zoom + card lift. */
+.pcard .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent,rgba(13,17,23,.22));opacity:0;transition:.45s cubic-bezier(.16,.84,.44,1);pointer-events:none}
+.pcard:hover .ph::after{opacity:1}
+.pcard .ph .plusbadge,.pcard .ph::before{
+  content:"+";position:absolute;z-index:2;top:50%;left:50%;
+  width:48px;height:48px;display:grid;place-items:center;border-radius:50%;
+  background:var(--accent);color:var(--dark);font-size:1.6rem;font-weight:600;line-height:1;
+  opacity:0;transform:translate(-50%,-50%) scale(.6);
+  transition:.45s cubic-bezier(.16,.84,.44,1);pointer-events:none
+}
+.pcard:hover .ph::before{opacity:1;transform:translate(-50%,-50%) scale(1)}
+
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto}
   .reveal,.word{opacity:1;transform:none;filter:none;transition:none}
@@ -499,6 +536,8 @@ footer ul a:hover{color:var(--accent)}
   .hero-photo .frame img,.owner-photo img{transform:none;transition:none}
   .intro-card{opacity:1;transform:none;transition:none}
   .btn-pill,.btn-circle,.bcard,.pcard,.tip-card,.cert-card,.article-more-card{transition:none}
+  .pcard .ph::before,.pcard .ph::after{transition:none}
+  .services .srow{animation:none;opacity:1}
 }
 
 /* WCAG AA: white text fails on the bright accent, so CTAs keep the bright
