@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { SITE } from '@/lib/site'
 
 export const metadata = {
   title: 'FAQ',
@@ -199,9 +200,9 @@ export default function FAQ() {
               <p>No phone trees, no ticket systems. You&apos;re talking to the person who&apos;ll actually do the work.</p>
               <div className="cta-box-row">
                 <Link href="/contact" className="btn-pill accent">Send a message</Link>
-                <a href="tel:14076248459" className="btn-pill ghost-pill">
+                <a href={SITE.phoneHref} className="btn-pill ghost-pill">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{marginRight:'6px'}}><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                  407-624-8459
+                  {SITE.phone}
                 </a>
               </div>
             </div>

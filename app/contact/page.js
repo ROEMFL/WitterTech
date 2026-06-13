@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import ContactForm from '@/components/ContactForm'
+import { SITE, MAILTO } from '@/lib/site'
 
 export const metadata = {
   title: 'Contact',
@@ -35,7 +36,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <b>Call or text</b>
-                  <a href="tel:14076248459">407-624-8459</a>
+                  <a href={SITE.phoneHref}>{SITE.phone}</a>
                   <span> &middot; Mon-Fri 8am-7pm</span>
                 </div>
               </div>
@@ -45,7 +46,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <b>Email</b>
-                  <a href="mailto:joe@wittertech.com">joe@wittertech.com</a>
+                  <a href={MAILTO}>{SITE.email}</a>
                 </div>
               </div>
               <div className="row">

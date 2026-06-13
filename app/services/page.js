@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { SERVICE_PAGES } from '@/lib/servicePages'
+import { SITE } from '@/lib/site'
 
 export const metadata = {
   title: 'Services',
@@ -225,7 +226,7 @@ export default function Services() {
         <div className="wrap">
           <p className="reveal">Trusted by families and businesses across Central Florida since 2019</p>
           <div className="trust-chips reveal">
-            {['5.0 ★ on Google · 36 reviews','Local & family-owned','No hidden fees','Same-day available','Honest recommendations','13+ years experience','CompTIA A+ certified'].map(t => (
+            {[`${SITE.rating.value} ★ on Google · ${SITE.rating.count} reviews`,'Local & family-owned','No hidden fees','Same-day available','Honest recommendations','13+ years experience','CompTIA A+ certified'].map(t => (
               <span key={t} className="trust-chip">{t}</span>
             ))}
           </div>

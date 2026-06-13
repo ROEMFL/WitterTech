@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { LOCATIONS } from '@/lib/locations'
+import { SITE } from '@/lib/site'
 
 export const metadata = {
   title: 'Service Areas in Central Florida',
@@ -40,7 +41,7 @@ export default function ServiceAreas() {
             <p>I cover much of Central Florida and the surrounding communities. Tell me where you are and I will let you know.</p>
             <div className="cta-box-row">
               <Link href="/contact" className="btn-pill accent">Send Joe a message</Link>
-              <a href="tel:14076248459" className="btn-pill ghost-pill">Call 407-624-8459</a>
+              <a href={SITE.phoneHref} className="btn-pill ghost-pill">Call {SITE.phone}</a>
             </div>
           </div>
         </div>

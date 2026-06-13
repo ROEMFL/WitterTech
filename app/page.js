@@ -1,17 +1,25 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { COMING_SOON } from '@/lib/config'
+import { SITE } from '@/lib/site'
+import { GOOGLE_REVIEWS_URL } from '@/lib/reviews'
+import { businessRatingJsonLd } from '@/lib/schema'
 import ComingSoon from '@/components/ComingSoon'
 
 export const metadata = {
   title: 'Witter Tech: Computer Repair & IT Support in Central FL',
-  alternates: { canonical: '/' },
+  // Absolute canonical (no trailing slash) to match trailingSlash:false; a
+  // relative '/' would resolve against metadataBase to a trailing-slash URL.
+  alternates: { canonical: SITE.url },
 }
 
 export default function Home() {
   if (COMING_SOON) return <ComingSoon />
   return (
     <>
+      {/* Rating + reviews schema, attached to the sitewide business @id. Only
+          rendered here and on /reviews, where the reviews are displayed. */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(businessRatingJsonLd()) }} />
       {/* HERO */}
       <section className="hero">
         <div className="ghost" data-parallax="0.18">Fix it.</div>
@@ -26,7 +34,7 @@ export default function Home() {
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
                 </Link>
               </div>
-              <a href="tel:14076248459" className="link-quiet">Or call &amp; text Joe directly</a>
+              <a href={SITE.phoneHref} className="link-quiet">Or call &amp; text Joe directly</a>
             </div>
           </div>
           <div className="hero-photo" id="heroPhoto">
@@ -63,9 +71,9 @@ export default function Home() {
               From a frozen laptop to a full office network, I find what&apos;s actually wrong and fix it right, the first time. <span>Straight answers, fair pricing, always.</span>
             </p>
             <div className="counters reveal">
-              <div className="counter"><div className="num"><span data-val="13">0</span><span className="plus">+</span></div><p>Years in IT, enterprise-grade care for neighbors</p></div>
+              <div className="counter"><div className="num"><span data-val="13">13</span><span className="plus">+</span></div><p>Years in IT, enterprise-grade care for neighbors</p></div>
               <div className="counter"><div className="num"><span data-val="2019">2019</span></div><p>Serving Central Florida homes &amp; businesses since</p></div>
-              <div className="counter"><div className="num"><span data-val="100">0</span><span className="plus">%</span></div><p>Honest, up-front pricing, every single time</p></div>
+              <div className="counter"><div className="num"><span data-val="100">100</span><span className="plus">%</span></div><p>Honest, up-front pricing, every single time</p></div>
             </div>
           </div>
         </div>
@@ -108,7 +116,7 @@ export default function Home() {
             </div>
           </div>
           <div className="bento reveal">
-            <div className="bcard"><div className="big"><span data-val="13">0</span><span className="plus">+</span></div><div><h3>Years of experience</h3><p>CompTIA A+ &amp; Network+, Microsoft MCSE/MCSA.</p></div></div>
+            <div className="bcard"><div className="big"><span data-val="13">13</span><span className="plus">+</span></div><div><h3>Years of experience</h3><p>CompTIA A+ &amp; Network+, Microsoft MCSE/MCSA.</p></div></div>
             <div className="bcard"><div><h3>Same-day, often</h3><p>When the schedule and parts allow, and a realistic window when they don&apos;t.</p></div><div className="big">⚡</div></div>
             <div className="bcard feature">
               <div className="txt"><h3>Quiet, dependable IT</h3><p>Networks and support built to stay up, so your team can stop thinking about technology.</p></div>
@@ -168,7 +176,7 @@ export default function Home() {
         <div className="wrap">
           <div className="head">
             <span className="eyebrow reveal" style={{justifyContent:'center'}}>Reviews</span>
-            <h2 className="anim-words">Rated 5.0 on Google: 36 reviews, all five stars.</h2>
+            <h2 className="anim-words">Rated {SITE.rating.value} on Google: {SITE.rating.count} reviews, all five stars.</h2>
             <p className="reveal">Real reviews from real neighbors, posted to Google under Witt-Tech Solutions, Witter Tech&apos;s legal name. Same Joe.</p>
           </div>
           <div className="rcard reveal">
@@ -213,7 +221,7 @@ export default function Home() {
             </div>
           </div>
           <div className="reveal" style={{textAlign:'center',marginTop:'44px',position:'relative',zIndex:2}}>
-            <a href="https://www.google.com/search?q=Witt-Tech+Solutions+Kissimmee+FL+reviews" target="_blank" rel="noopener noreferrer" className="btn-pill">Read all 36 reviews on Google →</a>
+            <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer" className="btn-pill">Read all {SITE.rating.count} reviews on Google →</a>
           </div>
         </div>
       </section>
@@ -246,7 +254,7 @@ export default function Home() {
           <h2 className="anim-words">Describe the problem, I&apos;ll handle everything else.</h2>
           <div className="cta reveal">
             <Link href="/contact" className="btn-pill accent">Send Joe a message</Link>
-            <a href="tel:14076248459" className="btn-circle" aria-label="Call Joe">
+            <a href={SITE.phoneHref} className="btn-circle" aria-label="Call Joe">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
             </a>
           </div>

@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { SITE } from '@/lib/site'
 
 const NAV = [
   { href: '/', label: 'Home' },
@@ -53,6 +54,7 @@ export default function Header() {
       <header style={headerStyle} className={onDarkHero ? 'hdr-dark' : ''}>
         <div className="wrap nav">
           <Link href="/" className="brand" aria-label="Witter Tech, home">
+            {/* eslint-disable-next-line @next/next/no-img-element -- single state-swapped webp lockup, avoids shipping two next/image variants */}
             <img src={onDarkHero ? '/wordmark-light.webp' : '/wordmark-dark.webp'} alt="Witter Tech" className="brand-logo" width="63" height="42" />
           </Link>
           <nav className="nav-mid" role="navigation" aria-label="Main navigation">
@@ -66,9 +68,9 @@ export default function Header() {
             })}
           </nav>
           <div className="nav-right">
-            <a href="tel:14076248459" className="nav-phone">
+            <a href={SITE.phoneHref} className="nav-phone">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              407-624-8459
+              {SITE.phone}
             </a>
             <Link href="/contact" className="header-pill">Get a free estimate</Link>
             <button className="menu-btn" onClick={() => setMenuOpen(true)} aria-label="Open menu" aria-expanded={menuOpen} aria-controls="mobile-menu">
@@ -88,7 +90,7 @@ export default function Header() {
           </Link>
         ))}
         <Link href="/contact" className="m-link m-cta" onClick={() => setMenuOpen(false)}>Get a free estimate</Link>
-        <div className="m-foot">Call or text Joe &middot; <a href="tel:14076248459">407-624-8459</a></div>
+        <div className="m-foot">Call or text Joe &middot; <a href={SITE.phoneHref}>{SITE.phone}</a></div>
       </div>
     </>
   )

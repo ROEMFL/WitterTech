@@ -1,14 +1,17 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { SERVICE_PAGES, getServicePage } from '@/lib/servicePages'
+import { SITE, TRUST_RATING } from '@/lib/site'
+import { providerNode } from '@/lib/schema'
 import Breadcrumbs from '@/components/Breadcrumbs'
 
 export function generateStaticParams() {
   return SERVICE_PAGES.map(s => ({ slug: s.slug }))
 }
 
-export function generateMetadata({ params }) {
-  const svc = getServicePage(params.slug)
+export async function generateMetadata({ params }) {
+  const { slug } = await params
+  const svc = getServicePage(slug)
   if (!svc) return {}
   // Some metaTitles include the brand; strip it so the layout title template
   // ("%s | Witter Tech") does not double it.
@@ -27,8 +30,9 @@ export function generateMetadata({ params }) {
   }
 }
 
-export default function ServicePage({ params }) {
-  const svc = getServicePage(params.slug)
+export default async function ServicePage({ params }) {
+  const { slug } = await params
+  const svc = getServicePage(slug)
   if (!svc) notFound()
 
   const serviceJsonLd = {
@@ -36,17 +40,9 @@ export default function ServicePage({ params }) {
     '@type': 'Service',
     serviceType: svc.name,
     description: svc.metaDescription,
-    url: `https://wittertech.com/services/${svc.slug}`,
+    url: `${SITE.url}/services/${svc.slug}`,
     areaServed: { '@type': 'AdministrativeArea', name: 'Central Florida' },
-    provider: {
-      '@type': 'LocalBusiness',
-      name: 'Witter Tech',
-      telephone: '+1-407-624-8459',
-      email: 'joe@wittertech.com',
-      url: 'https://wittertech.com',
-      image: 'https://wittertech.com/assets/og.png',
-      priceRange: '$$',
-    },
+    provider: providerNode(),
   }
   const faqJsonLd = {
     '@context': 'https://schema.org',
@@ -73,7 +69,7 @@ export default function ServicePage({ params }) {
           <div className="hero-cta reveal" style={{ marginTop: '28px' }}>
             <div className="cta">
               <Link href="/contact" className="btn-pill accent">Get a free estimate</Link>
-              <a href="tel:14076248459" className="btn-pill ghost-pill">Call &amp; text 407-624-8459</a>
+              <a href={SITE.phoneHref} className="btn-pill ghost-pill">Call &amp; text {SITE.phone}</a>
             </div>
           </div>
         </div>
@@ -147,7 +143,7 @@ export default function ServicePage({ params }) {
             {svc.guarantees.map(i => <li key={i}>{i}</li>)}
           </ul>
           <ul className="loc-trust reveal" style={{ marginTop: '36px' }}>
-            <li>Rated 5.0 on Google, 36 reviews</li>
+            <li>{TRUST_RATING}</li>
             <li>CompTIA A+ &amp; Network+, Microsoft certified, serving Central Florida since 2019</li>
             <li>On-site, remote, or drop-off, whichever is easiest for you</li>
           </ul>
@@ -186,7 +182,7 @@ export default function ServicePage({ params }) {
             <p>Tell me what is going on in plain language. I will give you a straight answer and an honest price before any work begins, with no obligation.</p>
             <div className="cta-box-row">
               <Link href="/contact" className="btn-pill accent">Send Joe a message</Link>
-              <a href="tel:14076248459" className="btn-pill ghost-pill">Call 407-624-8459</a>
+              <a href={SITE.phoneHref} className="btn-pill ghost-pill">Call {SITE.phone}</a>
             </div>
           </div>
 

@@ -1,14 +1,16 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { TIPS, getTip } from '@/lib/tips'
+import { SITE } from '@/lib/site'
 import Breadcrumbs from '@/components/Breadcrumbs'
 
 export function generateStaticParams() {
   return TIPS.map(t => ({ slug: t.slug }))
 }
 
-export function generateMetadata({ params }) {
-  const tip = getTip(params.slug)
+export async function generateMetadata({ params }) {
+  const { slug } = await params
+  const tip = getTip(slug)
   if (!tip) return {}
   return {
     title: tip.title,
@@ -24,8 +26,9 @@ export function generateMetadata({ params }) {
   }
 }
 
-export default function TipArticle({ params }) {
-  const tip = getTip(params.slug)
+export default async function TipArticle({ params }) {
+  const { slug } = await params
+  const tip = getTip(slug)
   if (!tip) notFound()
 
   const others = TIPS.filter(t => t.slug !== tip.slug).slice(0, 3)
@@ -35,14 +38,14 @@ export default function TipArticle({ params }) {
     '@type': 'BlogPosting',
     headline: tip.title,
     description: tip.description,
-    image: 'https://wittertech.com/assets/og.png',
-    author: { '@type': 'Person', name: 'Joe Witter' },
+    image: `${SITE.url}/assets/og.png`,
+    author: { '@type': 'Person', name: SITE.founder },
     publisher: {
       '@type': 'Organization',
-      name: 'Witter Tech',
-      logo: { '@type': 'ImageObject', url: 'https://wittertech.com/assets/favicon.png' },
+      name: SITE.name,
+      logo: { '@type': 'ImageObject', url: `${SITE.url}/assets/favicon.png` },
     },
-    mainEntityOfPage: { '@type': 'WebPage', '@id': `https://wittertech.com/tech-tips/${tip.slug}` },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `${SITE.url}/tech-tips/${tip.slug}` },
   }
 
   return (
