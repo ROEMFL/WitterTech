@@ -4,7 +4,7 @@ import { COMING_SOON } from '@/lib/config'
 import ComingSoon from '@/components/ComingSoon'
 
 export const metadata = {
-  title: 'Witter Tech: Reliable Tech Repair & IT Support in Central Florida',
+  title: 'Witter Tech: Computer Repair & IT Support in Central FL',
   alternates: { canonical: '/' },
 }
 

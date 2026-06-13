@@ -34,7 +34,7 @@ export const metadata = {
     default: 'Witter Tech: Reliable Tech Repair & IT Support in Central Florida',
   },
   description:
-    'Computer repair, Wi-Fi setup, smart home installation, and IT support for homes and small businesses in Kissimmee, Orlando, St. Cloud, Celebration, and Davenport. Honest upfront pricing, same-day service available.',
+    'Computer repair, Wi-Fi, smart home, and IT support for homes and businesses across Kissimmee, Orlando, and Central Florida. Free estimate, honest upfront pricing.',
   keywords: 'computer repair Kissimmee, IT support Orlando, PC repair Central Florida, WiFi setup, smart home, virus removal, data recovery',
   openGraph: {
     title: 'Witter Tech: Reliable Tech Repair & IT Support in Central Florida',
