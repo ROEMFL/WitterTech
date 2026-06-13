@@ -368,6 +368,13 @@ footer ul a:hover{color:var(--accent)}
 .mbar .msg{background:var(--accent);color:#fff;flex:1.6}
 .mbar .call{background:var(--dark);color:#fff}
 
+/* Back-to-top button: bottom-right, above the mobile sticky bar. */
+.scrolltop{position:fixed;right:28px;bottom:28px;z-index:75;width:48px;height:48px;border-radius:50%;border:0;cursor:pointer;background:var(--accent);color:var(--dark);display:grid;place-items:center;box-shadow:0 14px 32px -12px rgba(0,0,0,.45);opacity:0;transform:translateY(14px) scale(.9);pointer-events:none;transition:.35s cubic-bezier(.16,.84,.44,1)}
+.scrolltop.show{opacity:1;transform:none;pointer-events:auto}
+.scrolltop:hover{background:var(--accent-hover)}
+.scrolltop:active{transform:scale(.94)}
+@media(max-width:680px){.scrolltop{right:14px;bottom:calc(86px + env(safe-area-inset-bottom,0px));width:46px;height:46px}}
+
 /* RESPONSIVE */
 @media(max-width:1080px){
   .nav-phone{display:none}
@@ -501,9 +508,9 @@ footer ul a:hover{color:var(--accent)}
   background-size:64px 64px;
   -webkit-mask-image:radial-gradient(125% 95% at 50% 0%,#000 28%,transparent 76%);
   mask-image:radial-gradient(125% 95% at 50% 0%,#000 28%,transparent 76%);
-  opacity:.5;
+  opacity:.28;
 }
-@keyframes hero-grid-in{from{opacity:0;transform:scale(1.06)}to{opacity:.5;transform:scale(1)}}
+@keyframes hero-grid-in{from{opacity:0;transform:scale(1.06)}to{opacity:.28;transform:scale(1)}}
 @keyframes grid-drift{from{background-position:0 0,0 0}to{background-position:64px 64px,64px 64px}}
 @keyframes srow-brighten{from{opacity:.12;transform:translateY(30px)}to{opacity:1;transform:none}}
 /* In-frame media parallax is driven by JS (AnimationInit) via object-position,
@@ -543,6 +550,7 @@ footer ul a:hover{color:var(--accent)}
   .btn-pill,.btn-circle,.bcard,.pcard,.tip-card,.cert-card,.article-more-card{transition:none}
   .pcard .ph::before,.pcard .ph::after{transition:none}
   .services .srow{animation:none;opacity:1;transform:none}
+  .scrolltop{transition:opacity .2s}
 }
 
 /* WCAG AA: white text fails on the bright accent, so CTAs keep the bright
