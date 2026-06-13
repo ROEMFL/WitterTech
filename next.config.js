@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 
-// Site-wide security headers. Applied to every route in addition to the
+// Site-wide security headers, applied to every route in addition to the
 // asset caching rules in vercel.json.
 const securityHeaders = [
   { key: 'Strict-Transport-Security', value: 'max-age=63072000; includeSubDomains; preload' },
@@ -12,8 +12,16 @@ const securityHeaders = [
 ]
 
 const nextConfig = {
+  // Consistent trailing-slash policy: no trailing slash on any URL.
+  trailingSlash: false,
   async headers() {
-    return [{ source: '/:path*', headers: securityHeaders }]
+    const headers = [...securityHeaders]
+    // Keep non-production Vercel deployments (preview/branch URLs, *.vercel.app)
+    // out of search indexes. VERCEL_ENV is 'production' only on the live domain.
+    if (process.env.VERCEL_ENV && process.env.VERCEL_ENV !== 'production') {
+      headers.push({ key: 'X-Robots-Tag', value: 'noindex, nofollow' })
+    }
+    return [{ source: '/:path*', headers }]
   },
 }
 

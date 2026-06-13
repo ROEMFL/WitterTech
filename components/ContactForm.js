@@ -29,6 +29,9 @@ export default function ContactForm() {
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({ name, phone, email, topic, message }),
       })
+      if (res.ok && typeof window !== 'undefined' && window.gtag) {
+        window.gtag('event', 'generate_lead', { method: 'contact_form' })
+      }
       setStatus(res.ok ? 'sent' : 'error')
     } catch {
       setStatus('error')

@@ -30,8 +30,24 @@ export default function TipArticle({ params }) {
 
   const others = TIPS.filter(t => t.slug !== tip.slug).slice(0, 3)
 
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: tip.title,
+    description: tip.description,
+    image: 'https://wittertech.com/assets/og.png',
+    author: { '@type': 'Person', name: 'Joe Witter' },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Witter Tech',
+      logo: { '@type': 'ImageObject', url: 'https://wittertech.com/assets/favicon.png' },
+    },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `https://wittertech.com/tech-tips/${tip.slug}` },
+  }
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
       {/* PAGE HERO */}
       <div className="page-hero">
         <div className="ghost on-dark" style={{fontSize:'14vw',bottom:'-1vw'}}>Tech Tips</div>

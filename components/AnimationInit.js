@@ -127,11 +127,19 @@ export default function AnimationInit() {
       }
     })
 
+    // Click-to-call conversion tracking (no-op until GA4 is active)
+    const onTelClick = e => {
+      const a = e.target.closest && e.target.closest('a[href^="tel:"]')
+      if (a && window.gtag) window.gtag('event', 'contact', { method: 'phone' })
+    }
+    document.addEventListener('click', onTelClick)
+
     return () => {
       io.disconnect()
       cio.disconnect()
       window.removeEventListener('scroll', onScroll)
       window.removeEventListener('resize', onResize)
+      document.removeEventListener('click', onTelClick)
     }
   }, [pathname])
 

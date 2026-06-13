@@ -5,6 +5,12 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import AnimationInit from '@/components/AnimationInit'
 import { COMING_SOON } from '@/lib/config'
+import { SpeedInsights } from '@vercel/speed-insights/next'
+import Script from 'next/script'
+
+// Google Analytics 4 activates only when a Measurement ID is set in Vercel
+// (env var NEXT_PUBLIC_GA_ID, e.g. G-XXXXXXXXXX). Until then nothing loads.
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID
 
 const inter = Inter({
   subsets: ['latin'],
@@ -35,7 +41,6 @@ export const metadata = {
   },
   description:
     'Computer repair, Wi-Fi, smart home, and IT support for homes and businesses across Kissimmee, Orlando, and Central Florida. Free estimate, honest upfront pricing.',
-  keywords: 'computer repair Kissimmee, IT support Orlando, PC repair Central Florida, WiFi setup, smart home, virus removal, data recovery',
   openGraph: {
     title: 'Witter Tech: Reliable Tech Repair & IT Support in Central Florida',
     description:
@@ -156,6 +161,13 @@ export default function RootLayout({ children }) {
           </>
         )}
         <Analytics />
+        <SpeedInsights />
+        {GA_ID && (
+          <>
+            <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
+            <Script id="ga4-init" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_ID}');` }} />
+          </>
+        )}
       </body>
     </html>
   )

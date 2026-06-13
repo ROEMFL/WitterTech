@@ -99,6 +99,26 @@ export default function Contact() {
         </div>
       </section>
 
+      {/* SERVICE-AREA MAP */}
+      <section style={{background:'var(--paper)',padding:'70px 0',borderTop:'1px solid var(--line)'}}>
+        <div className="wrap">
+          <span className="eyebrow reveal">Where I work</span>
+          <h2 className="anim-words" style={{marginTop:'14px',marginBottom:'8px'}}>On-site across Central Florida.</h2>
+          <p className="reveal" style={{color:'var(--muted)',maxWidth:'60ch',marginBottom:'28px'}}>Kissimmee, Orlando, St. Cloud, Celebration, Davenport, Poinciana, Hunter&apos;s Creek, Lake Buena Vista, and the area near Disney. Remote and drop-off available too.</p>
+          <div style={{borderRadius:'var(--r)',overflow:'hidden',border:'1px solid var(--line)',lineHeight:0}}>
+            <iframe
+              title="Witter Tech service area in Central Florida"
+              src="https://www.google.com/maps?q=Kissimmee,+FL&z=9&output=embed"
+              width="100%"
+              height="360"
+              style={{border:0,display:'block'}}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
       {/* HOW IT WORKS */}
       <section style={{background:'var(--white)',padding:'80px 0',borderTop:'1px solid var(--line)'}}>
         <div className="wrap">
