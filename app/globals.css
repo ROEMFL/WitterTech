@@ -179,7 +179,7 @@ header.hdr-dark .menu-btn{background:rgba(255,255,255,.08);border-color:rgba(255
 .benefits h2{font-size:clamp(2rem,3.8vw,3.1rem);font-weight:600;margin:22px 0 28px;max-width:14ch}
 .bento{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .bcard{background:var(--white);border-radius:var(--r);padding:30px;min-height:200px;display:flex;flex-direction:column;justify-content:space-between;transition:.35s;border:1px solid transparent}
-.bcard:hover{transform:translateY(-5px);box-shadow:0 30px 56px -30px rgba(0,0,0,.32);border-color:rgba(116,204,0,.5)}
+.bcard:hover{transform:translateY(-9px);box-shadow:0 38px 64px -32px rgba(0,0,0,.36);border-color:rgba(116,204,0,.5)}
 .bcard .big{font-size:2.7rem;font-weight:600;letter-spacing:-.04em}
 .bcard .big .plus{color:var(--accent)}
 .bcard h3{font-size:1.22rem;font-weight:600;margin-bottom:6px}
@@ -208,10 +208,10 @@ header.hdr-dark .menu-btn{background:rgba(255,255,255,.08);border-color:rgba(255
 .problems h2{font-size:clamp(2rem,3.8vw,3.1rem);font-weight:600;margin-top:14px}
 .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;position:relative;z-index:2}
 .pcard{background:var(--white);border-radius:var(--r);overflow:hidden;transition:.35s}
-.pcard:hover{transform:translateY(-6px);box-shadow:0 30px 56px -30px rgba(0,0,0,.32)}
+.pcard:hover{transform:translateY(-12px) scale(1.015);box-shadow:0 40px 70px -34px rgba(0,0,0,.42)}
 .pcard .ph{aspect-ratio:16/11;overflow:hidden;position:relative}
 .pcard .ph img{width:100%;height:100%;object-fit:cover;transition:.6s cubic-bezier(.16,.84,.44,1)}
-.pcard:hover .ph img{transform:scale(1.07)}
+.pcard:hover .ph img{transform:scale(1.12)}
 .pcard .pb{padding:22px 22px 26px;display:flex;justify-content:space-between;align-items:flex-start;gap:14px}
 .pcard .pq{font-size:1.08rem;font-weight:600;letter-spacing:-.02em;line-height:1.3}
 .pcat{font-family:var(--font-mono),monospace;font-size:.72rem;background:rgba(116,204,0,.15);color:var(--green-deep);border-radius:var(--pill);padding:.4rem .8rem;white-space:nowrap}
@@ -503,16 +503,21 @@ footer ul a:hover{color:var(--accent)}
   mask-image:radial-gradient(125% 95% at 50% 0%,#000 28%,transparent 76%);
   opacity:.5;
 }
-@keyframes hero-grid-in{from{opacity:0;transform:scale(1.04)}to{opacity:.5;transform:scale(1)}}
-@keyframes srow-brighten{from{opacity:.3}to{opacity:1}}
+@keyframes hero-grid-in{from{opacity:0;transform:scale(1.06)}to{opacity:.5;transform:scale(1)}}
+@keyframes grid-drift{from{background-position:0 0,0 0}to{background-position:64px 64px,64px 64px}}
+@keyframes srow-brighten{from{opacity:.12;transform:translateY(30px)}to{opacity:1;transform:none}}
+/* In-frame media parallax is driven by JS (AnimationInit) via object-position,
+   which is more reliable across browsers than a scroll-timeline on that property. */
 
 @media (prefers-reduced-motion: no-preference){
-  .hero::before{opacity:0;animation:hero-grid-in 1.4s cubic-bezier(.16,.84,.44,1) .1s forwards}
-  /* (5) Each services row brightens dim->full as it scrolls through view.
-     Scroll-driven CSS; browsers without support just show full opacity. */
+  /* Hero grid fades in, then drifts slowly and continuously for ambient motion. */
+  .hero::before{opacity:0;animation:hero-grid-in 1.5s cubic-bezier(.16,.84,.44,1) .1s forwards, grid-drift 34s linear 1.7s infinite}
   @supports (animation-timeline: view()){
-    .services .srow{animation:srow-brighten linear both;animation-timeline:view();animation-range:entry 8% cover 42%}
+    /* (5) Services rows slide up + brighten from near-black as they scroll in. */
+    .services .srow{animation:srow-brighten linear both;animation-timeline:view();animation-range:entry 2% cover 48%}
   }
+  /* (NEW) In-frame parallax: smooth the JS-driven crop pan. */
+  .pcard .ph img,.rcard .rph img,.bcard.feature .bimg img{will-change:object-position}
 }
 
 /* (7) Card hover: a soft scrim + accent "+" badge reveal on the problem cards,
@@ -537,7 +542,7 @@ footer ul a:hover{color:var(--accent)}
   .intro-card{opacity:1;transform:none;transition:none}
   .btn-pill,.btn-circle,.bcard,.pcard,.tip-card,.cert-card,.article-more-card{transition:none}
   .pcard .ph::before,.pcard .ph::after{transition:none}
-  .services .srow{animation:none;opacity:1}
+  .services .srow{animation:none;opacity:1;transform:none}
 }
 
 /* WCAG AA: white text fails on the bright accent, so CTAs keep the bright

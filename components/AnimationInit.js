@@ -96,12 +96,22 @@ export default function AnimationInit() {
       o.base = o.el.parentElement.getBoundingClientRect().top +
         (window.scrollY || document.documentElement.scrollTop)
     })
+    // In-frame media parallax: pan the image crop vertically as its frame
+    // scrolls through the viewport, for depth within the boxes.
+    const frameImgs = reducedMotion ? [] : [...document.querySelectorAll('.pcard .ph img,.rcard .rph img,.bcard.feature .bimg img,.hero-photo .frame img')]
     let pRaf = 0
     const applyP = () => {
       pRaf = 0
       const y = window.scrollY || document.documentElement.scrollTop
       ghosts.forEach(o => {
-        o.el.style.transform = `translateY(${(-(y - o.base) * o.f * 0.14).toFixed(1)}px)`
+        o.el.style.transform = `translateY(${(-(y - o.base) * o.f * 0.22).toFixed(1)}px)`
+      })
+      const vh = window.innerHeight
+      frameImgs.forEach(img => {
+        const r = img.getBoundingClientRect()
+        if (r.bottom < -120 || r.top > vh + 120) return
+        const p = Math.min(Math.max((vh - r.top) / (vh + r.height), 0), 1)
+        img.style.objectPosition = `50% ${(30 + p * 40).toFixed(1)}%`
       })
     }
     const onScroll = () => { if (!pRaf) pRaf = requestAnimationFrame(applyP) }
