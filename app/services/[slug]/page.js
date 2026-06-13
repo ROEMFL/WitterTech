@@ -182,7 +182,7 @@ export default function ServicePage({ params }) {
         <div className="wrap">
           <div className="cta-box reveal">
             <span className="eyebrow on-dark" style={{ justifyContent: 'center', display: 'inline-flex', marginBottom: '18px' }}>Central Florida</span>
-            <h2>Get a free estimate on your {svc.name.toLowerCase()}.</h2>
+            <h2>Get a free estimate on {svc.name}.</h2>
             <p>Tell me what is going on in plain language. I will give you a straight answer and an honest price before any work begins, with no obligation.</p>
             <div className="cta-box-row">
               <Link href="/contact" className="btn-pill accent">Send Joe a message</Link>
