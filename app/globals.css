@@ -90,8 +90,8 @@ header{position:fixed;top:0;left:0;right:0;z-index:80;transition:.3s}
 .nav{display:flex;align-items:center;justify-content:space-between;height:84px}
 .brand{font-weight:700;font-size:1.4rem;letter-spacing:-.03em;color:var(--ink);display:flex;align-items:center;white-space:nowrap}
 .brand .dot{color:var(--accent)}
-.brand-logo{height:46px;width:auto;display:block}
-@media (max-width:560px){.brand-logo{height:34px}}
+.brand-logo{height:62px;width:auto;display:block}
+@media (max-width:560px){.brand-logo{height:46px}}
 .nav-mid{display:flex;gap:32px}
 .nav-mid a{font-size:.97rem;color:var(--ink-2);font-weight:500;transition:.2s;white-space:nowrap}
 .nav-mid a:hover,.nav-mid a.active{color:var(--ink)}
@@ -127,9 +127,9 @@ header.hdr-dark .menu-btn{background:rgba(255,255,255,.08);border-color:rgba(255
 .page-hero .sub{font-size:1.18rem;color:var(--muted-d);max-width:52ch;margin:0 auto}
 
 /* HERO (homepage) */
-.hero{position:relative;padding:150px 0 70px;overflow:hidden}
+.hero{position:relative;padding:150px 0 19vw;overflow:hidden}
 .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center;position:relative;z-index:2}
-.hero .ghost{font-size:22vw;bottom:2vw}
+.hero .ghost{font-size:22vw;bottom:1vw}
 .hero h1{font-size:clamp(2.7rem,5.2vw,4.6rem);font-weight:600;margin:0}
 .hero h1 em{font-style:normal;color:var(--accent);position:relative}
 .hero .sub{font-size:1.18rem;color:var(--ink-2);max-width:42ch;margin:28px 0 0}
@@ -153,7 +153,7 @@ header.hdr-dark .menu-btn{background:rgba(255,255,255,.08);border-color:rgba(255
 .about .statement{font-size:clamp(1.7rem,3.2vw,2.9rem);font-weight:600;letter-spacing:-.035em;line-height:1.14;margin:18px 0 0;max-width:24ch}
 .about .statement span{color:var(--green-deep)}
 .counters{display:flex;gap:56px;flex-wrap:wrap;margin-top:56px;padding-top:46px;border-top:1px solid var(--line)}
-.counter .num{font-size:clamp(2.8rem,5vw,4.2rem);font-weight:600;letter-spacing:-.04em;line-height:1;color:var(--ink)}
+.counter .num{font-size:clamp(3.4rem,6.6vw,5.6rem);font-weight:600;letter-spacing:-.05em;line-height:.95;color:var(--ink)}
 .counter .num .plus{color:var(--accent)}
 .counter:nth-child(2) .num{color:var(--green-deep)}
 .counter p{color:var(--muted);margin-top:8px;max-width:22ch}
@@ -179,7 +179,7 @@ header.hdr-dark .menu-btn{background:rgba(255,255,255,.08);border-color:rgba(255
 .benefits h2{font-size:clamp(2rem,3.8vw,3.1rem);font-weight:600;margin:22px 0 28px;max-width:14ch}
 .bento{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .bcard{background:var(--white);border-radius:var(--r);padding:30px;min-height:200px;display:flex;flex-direction:column;justify-content:space-between;transition:.35s;border:1px solid transparent}
-.bcard:hover{transform:translateY(-5px);box-shadow:0 30px 56px -30px rgba(0,0,0,.32);border-color:rgba(116,204,0,.5)}
+.bcard:hover{transform:translateY(-9px);box-shadow:0 38px 64px -32px rgba(0,0,0,.36);border-color:rgba(116,204,0,.5)}
 .bcard .big{font-size:2.7rem;font-weight:600;letter-spacing:-.04em}
 .bcard .big .plus{color:var(--accent)}
 .bcard h3{font-size:1.22rem;font-weight:600;margin-bottom:6px}
@@ -202,16 +202,16 @@ header.hdr-dark .menu-btn{background:rgba(255,255,255,.08);border-color:rgba(255
 .owner-sign small{display:block;font-style:normal;font-weight:400;color:var(--muted);font-size:.9rem;margin-top:4px}
 
 /* PROBLEMS */
-.problems{background:var(--paper);padding:140px 0;position:relative;overflow:hidden}
-.problems .ghost{font-size:16vw;top:auto;bottom:24px}
+.problems{background:var(--paper);padding:140px 0 26vw;position:relative;overflow:hidden}
+.problems .ghost{font-size:24vw;top:auto;bottom:1vw}
 .problems .head{position:relative;z-index:2;text-align:center;margin-bottom:50px}
 .problems h2{font-size:clamp(2rem,3.8vw,3.1rem);font-weight:600;margin-top:14px}
 .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;position:relative;z-index:2}
 .pcard{background:var(--white);border-radius:var(--r);overflow:hidden;transition:.35s}
-.pcard:hover{transform:translateY(-6px);box-shadow:0 30px 56px -30px rgba(0,0,0,.32)}
+.pcard:hover{transform:translateY(-12px) scale(1.015);box-shadow:0 40px 70px -34px rgba(0,0,0,.42)}
 .pcard .ph{aspect-ratio:16/11;overflow:hidden;position:relative}
 .pcard .ph img{width:100%;height:100%;object-fit:cover;transition:.6s cubic-bezier(.16,.84,.44,1)}
-.pcard:hover .ph img{transform:scale(1.07)}
+.pcard:hover .ph img{transform:scale(1.12)}
 .pcard .pb{padding:22px 22px 26px;display:flex;justify-content:space-between;align-items:flex-start;gap:14px}
 .pcard .pq{font-size:1.08rem;font-weight:600;letter-spacing:-.02em;line-height:1.3}
 .pcat{font-family:var(--font-mono),monospace;font-size:.72rem;background:rgba(116,204,0,.15);color:var(--green-deep);border-radius:var(--pill);padding:.4rem .8rem;white-space:nowrap}
@@ -219,8 +219,8 @@ header.hdr-dark .menu-btn{background:rgba(255,255,255,.08);border-color:rgba(255
 .pfoot a{color:var(--accent-deep);font-weight:600;border-bottom:1px solid var(--accent)}
 
 /* REVIEWS */
-.reviews{background:var(--white);padding:140px 0;position:relative;overflow:hidden;text-align:center}
-.reviews .ghost{font-size:16vw;top:auto;bottom:24px}
+.reviews{background:var(--white);padding:140px 0 25vw;position:relative;overflow:hidden;text-align:center}
+.reviews .ghost{font-size:28vw;top:auto;bottom:1vw}
 .reviews .head{position:relative;z-index:2}
 .reviews h2{font-size:clamp(2rem,4vw,3.4rem);font-weight:600;margin:16px 0 8px}
 .reviews .head p{color:var(--muted)}
@@ -251,8 +251,8 @@ header.hdr-dark .menu-btn{background:rgba(255,255,255,.08);border-color:rgba(255
 .faq-a p{padding:0 0 26px;color:var(--ink-2);max-width:62ch}
 
 /* CTA band */
-.ctaband{background:var(--dark);color:#fff;padding:130px 0 160px;text-align:center;position:relative;overflow:hidden}
-.ctaband .ghost{font-size:11vw;bottom:22px}
+.ctaband{background:var(--dark);color:#fff;padding:130px 0 20vw;text-align:center;position:relative;overflow:hidden}
+.ctaband .ghost{font-size:17vw;bottom:1vw}
 .ctaband h2{font-size:clamp(2.2rem,4.5vw,3.6rem);font-weight:600;max-width:18ch;margin:18px auto 30px;color:#fff;position:relative;z-index:2}
 .ctaband .cta{justify-content:center;position:relative;z-index:2}
 .ctaband .eyebrow{position:relative;z-index:2}
@@ -352,13 +352,13 @@ header.hdr-dark .menu-btn{background:rgba(255,255,255,.08);border-color:rgba(255
 footer{background:var(--dark);color:#fff;padding:120px 0 0;position:relative;overflow:hidden}
 .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;position:relative;z-index:2;padding-bottom:80px}
 .foot-lead{font-size:clamp(1.8rem,3vw,2.4rem);font-weight:600;letter-spacing:-.035em;max-width:14ch;color:#fff}
-.foot-logo{height:46px;width:auto;display:block;margin-bottom:28px}
+.foot-logo{height:72px;width:auto;display:block;margin-bottom:28px}
 footer h3{font-family:var(--font-mono),monospace;font-size:.8rem;letter-spacing:.02em;color:var(--muted-d);margin-bottom:16px;font-weight:400}
 footer ul{list-style:none;display:grid;gap:11px}
 footer ul a,footer ul li{color:#fff;font-size:1rem;transition:.2s}
 footer ul a{display:inline-block;padding:6px 0;margin:-6px 0}
 footer ul a:hover{color:var(--accent)}
-.foot-ghost{font-weight:700;font-size:13vw;letter-spacing:-.05em;color:rgba(255,255,255,.05);line-height:.7;text-align:center;white-space:nowrap;user-select:none;position:relative;z-index:1}
+.foot-ghost{font-weight:700;font-size:13vw;letter-spacing:.02em;color:rgba(255,255,255,.05);line-height:.8;text-align:center;white-space:nowrap;user-select:none;position:relative;z-index:1;margin-bottom:-1vw}
 .foot-bottom{position:relative;z-index:2;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding:24px 0 36px;font-size:.86rem;color:var(--muted-d);border-top:1px solid var(--line-d)}
 .foot-bottom a{color:var(--accent);font-weight:600;display:inline-block;padding:8px 0;margin:-8px 0}
 
@@ -367,6 +367,13 @@ footer ul a:hover{color:var(--accent)}
 .mbar a{flex:1;display:flex;align-items:center;justify-content:center;gap:.5rem;padding:1rem;border-radius:var(--pill);font-weight:600;box-shadow:0 16px 40px -16px rgba(0,0,0,.5);white-space:nowrap}
 .mbar .msg{background:var(--accent);color:#fff;flex:1.6}
 .mbar .call{background:var(--dark);color:#fff}
+
+/* Back-to-top button: bottom-right, above the mobile sticky bar. */
+.scrolltop{position:fixed;right:28px;bottom:28px;z-index:75;width:48px;height:48px;border-radius:50%;border:0;cursor:pointer;background:var(--accent);color:var(--dark);display:grid;place-items:center;box-shadow:0 14px 32px -12px rgba(0,0,0,.45);opacity:0;transform:translateY(14px) scale(.9);pointer-events:none;transition:.35s cubic-bezier(.16,.84,.44,1)}
+.scrolltop.show{opacity:1;transform:none;pointer-events:auto}
+.scrolltop:hover{background:var(--accent-hover)}
+.scrolltop:active{transform:scale(.94)}
+@media(max-width:680px){.scrolltop{right:14px;bottom:calc(86px + env(safe-area-inset-bottom,0px));width:46px;height:46px}}
 
 /* RESPONSIVE */
 @media(max-width:1080px){
@@ -491,6 +498,48 @@ footer ul a:hover{color:var(--accent)}
 }
 
 /* REDUCED MOTION, disable parallax, marquee, blur reveals, smooth scroll */
+/* ---- Scroll/hover motion (aicreator-inspired, Witter Tech native timing) ---- */
+
+/* (1) Faint hero grid that fades in behind the content. Static by default
+   (and under reduced motion); animates in only when motion is welcome. */
+.hero::before{
+  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:64px 64px;
+  -webkit-mask-image:radial-gradient(125% 95% at 50% 0%,#000 28%,transparent 76%);
+  mask-image:radial-gradient(125% 95% at 50% 0%,#000 28%,transparent 76%);
+  opacity:.28;
+}
+@keyframes hero-grid-in{from{opacity:0;transform:scale(1.06)}to{opacity:.28;transform:scale(1)}}
+@keyframes grid-drift{from{background-position:0 0,0 0}to{background-position:64px 64px,64px 64px}}
+@keyframes srow-brighten{from{opacity:.12;transform:translateY(30px)}to{opacity:1;transform:none}}
+/* In-frame media parallax is driven by JS (AnimationInit) via object-position,
+   which is more reliable across browsers than a scroll-timeline on that property. */
+
+@media (prefers-reduced-motion: no-preference){
+  /* Hero grid fades in, then drifts slowly and continuously for ambient motion. */
+  .hero::before{opacity:0;animation:hero-grid-in 1.5s cubic-bezier(.16,.84,.44,1) .1s forwards, grid-drift 34s linear 1.7s infinite}
+  @supports (animation-timeline: view()){
+    /* (5) Services rows slide up + brighten from near-black as they scroll in. */
+    .services .srow{animation:srow-brighten linear both;animation-timeline:view();animation-range:entry 2% cover 48%}
+  }
+  /* (NEW) In-frame parallax: smooth the JS-driven crop pan. */
+  .pcard .ph img,.rcard .rph img,.bcard.feature .bimg img{will-change:object-position}
+}
+
+/* (7) Card hover: a soft scrim + accent "+" badge reveal on the problem cards,
+   layered over the existing image zoom + card lift. */
+.pcard .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent,rgba(13,17,23,.22));opacity:0;transition:.45s cubic-bezier(.16,.84,.44,1);pointer-events:none}
+.pcard:hover .ph::after{opacity:1}
+.pcard .ph .plusbadge,.pcard .ph::before{
+  content:"+";position:absolute;z-index:2;top:50%;left:50%;
+  width:48px;height:48px;display:grid;place-items:center;border-radius:50%;
+  background:var(--accent);color:var(--dark);font-size:1.6rem;font-weight:600;line-height:1;
+  opacity:0;transform:translate(-50%,-50%) scale(.6);
+  transition:.45s cubic-bezier(.16,.84,.44,1);pointer-events:none
+}
+.pcard:hover .ph::before{opacity:1;transform:translate(-50%,-50%) scale(1)}
+
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto}
   .reveal,.word{opacity:1;transform:none;filter:none;transition:none}
@@ -499,6 +548,9 @@ footer ul a:hover{color:var(--accent)}
   .hero-photo .frame img,.owner-photo img{transform:none;transition:none}
   .intro-card{opacity:1;transform:none;transition:none}
   .btn-pill,.btn-circle,.bcard,.pcard,.tip-card,.cert-card,.article-more-card{transition:none}
+  .pcard .ph::before,.pcard .ph::after{transition:none}
+  .services .srow{animation:none;opacity:1;transform:none}
+  .scrolltop{transition:opacity .2s}
 }
 
 /* WCAG AA: white text fails on the bright accent, so CTAs keep the bright

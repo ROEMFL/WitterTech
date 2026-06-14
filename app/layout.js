@@ -4,6 +4,7 @@ import { Analytics } from '@vercel/analytics/react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import AnimationInit from '@/components/AnimationInit'
+import ScrollTop from '@/components/ScrollTop'
 import { COMING_SOON } from '@/lib/config'
 import { SITE } from '@/lib/site'
 import { businessJsonLd } from '@/lib/schema'
@@ -88,6 +89,7 @@ export default function RootLayout({ children }) {
             <main id="main-content">{children}</main>
             <Footer />
             <AnimationInit />
+            <ScrollTop />
             {/* Mobile sticky bar */}
             <div className="mbar">
               <a href="/contact" className="msg">Get a free estimate</a>
