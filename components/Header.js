@@ -55,7 +55,7 @@ export default function Header() {
         <div className="wrap nav">
           <Link href="/" className="brand" aria-label="Witter Tech, home">
             {/* eslint-disable-next-line @next/next/no-img-element -- single state-swapped webp lockup, avoids shipping two next/image variants */}
-            <img src={onDarkHero ? '/wordmark-light.webp' : '/wordmark-dark.webp'} alt="Witter Tech" className="brand-logo" width="93" height="62" />
+            <img src={onDarkHero ? '/wordmark-light.webp' : '/wordmark-dark.webp'} alt="Witter Tech" className="brand-logo" width="66" height="62" />
           </Link>
           <nav className="nav-mid" role="navigation" aria-label="Main navigation">
             {NAV.map(l => {
