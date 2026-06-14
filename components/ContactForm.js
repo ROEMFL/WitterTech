@@ -11,7 +11,15 @@ export default function ContactForm() {
   const [status, setStatus] = useState('idle') // idle | sending | sent | mailto | error
   const [err, setErr] = useState('') // inline validation / submit error message
 
-  const update = e => setForm(f => ({ ...f, [e.target.name]: e.target.value }))
+  const update = e => {
+    const { name, value } = e.target
+    setForm(f => ({ ...f, [name]: value }))
+    // Service/package interest: fire when the visitor picks what they need.
+    if (name === 'topic' && value && typeof window !== 'undefined' && window.gtag) {
+      if (value === 'Monthly IT support plan') window.gtag('event', 'package_interest', { plan: value })
+      else if (value !== 'Honestly not sure yet') window.gtag('event', 'service_interest', { topic: value })
+    }
+  }
 
   const handleSubmit = async e => {
     e.preventDefault()
@@ -47,6 +55,12 @@ export default function ContactForm() {
       })
       if (res.ok && typeof window !== 'undefined' && window.gtag) {
         window.gtag('event', 'generate_lead', { method: 'contact_form' })
+        window.gtag('event', 'form_submit', { method: 'contact_form' })
+        // A lead with name + a way to reach them + a described problem is the
+        // highest-quality signal.
+        if (phone.trim() && email.trim() && message.trim()) {
+          window.gtag('event', 'lead_qualified', { method: 'contact_form' })
+        }
       }
       setStatus(res.ok ? 'sent' : 'error')
     } catch {
@@ -94,6 +108,11 @@ export default function ContactForm() {
       />
       <h3>Describe what&apos;s going on</h3>
       <p className="sm">Joe reads every message. No obligation, just a fast, honest response.</p>
+      {SITE.booking && (
+        <p className="sm" style={{ marginTop: '-4px', marginBottom: '18px' }}>
+          Prefer to pick a time? <a href={SITE.booking} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-deep)', fontWeight: '600' }}>Book a visit &rarr;</a>
+        </p>
+      )}
       <div className="frow">
         <div className="field">
           <label htmlFor="c-name">Your name</label>

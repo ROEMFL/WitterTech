@@ -155,17 +155,24 @@ export default function AnimationInit() {
     })
 
     // Conversion event taxonomy (all no-ops until GA4 is active via window.gtag):
-    //   contact     -> click-to-call (tel:)
-    //   email_click -> mailto: click
-    //   cta_click   -> any primary call-to-action link
-    //   form_start  -> first interaction with the contact form (once)
-    // generate_lead fires separately, on successful form submit, in ContactForm.
+    //   phone_click      -> click-to-call (tel:)
+    //   email_click      -> mailto: click
+    //   service_interest -> click into a specific service page
+    //   package_interest -> click to the pricing/plans page
+    //   cta_click        -> any primary call-to-action link
+    //   form_start       -> first interaction with the contact form (once)
+    // form_submit / generate_lead / lead_qualified fire on submit in ContactForm.
     const track = (name, params) => { if (window.gtag) window.gtag('event', name, params) }
     const onClick = e => {
       const tel = e.target.closest?.('a[href^="tel:"]')
-      if (tel) return track('contact', { method: 'phone' })
+      if (tel) return track('phone_click', { method: 'phone' })
       const mail = e.target.closest?.('a[href^="mailto:"]')
       if (mail) return track('email_click', { method: 'email' })
+      const link = e.target.closest?.('a[href]')
+      const href = link ? link.getAttribute('href') || '' : ''
+      const svc = href.match(/^\/services\/([a-z0-9-]+)$/)
+      if (svc) track('service_interest', { service: svc[1] })
+      else if (href === '/pricing') track('package_interest', { source: 'pricing_link' })
       const cta = e.target.closest?.('a.btn-pill, a.header-pill, a.btn-circle, a.m-cta')
       if (cta) track('cta_click', { label: (cta.textContent || '').trim().slice(0, 60), href: cta.getAttribute('href') || '' })
     }
