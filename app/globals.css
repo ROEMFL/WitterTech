@@ -90,8 +90,8 @@ header{position:fixed;top:0;left:0;right:0;z-index:80;transition:.3s}
 .nav{display:flex;align-items:center;justify-content:space-between;height:84px}
 .brand{font-weight:700;font-size:1.4rem;letter-spacing:-.03em;color:var(--ink);display:flex;align-items:center;white-space:nowrap}
 .brand .dot{color:var(--accent)}
-.brand-logo{height:46px;width:auto;display:block}
-@media (max-width:560px){.brand-logo{height:34px}}
+.brand-logo{height:62px;width:auto;display:block}
+@media (max-width:560px){.brand-logo{height:46px}}
 .nav-mid{display:flex;gap:32px}
 .nav-mid a{font-size:.97rem;color:var(--ink-2);font-weight:500;transition:.2s;white-space:nowrap}
 .nav-mid a:hover,.nav-mid a.active{color:var(--ink)}
@@ -129,7 +129,7 @@ header.hdr-dark .menu-btn{background:rgba(255,255,255,.08);border-color:rgba(255
 /* HERO (homepage) */
 .hero{position:relative;padding:150px 0 70px;overflow:hidden}
 .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center;position:relative;z-index:2}
-.hero .ghost{font-size:22vw;bottom:2vw}
+.hero .ghost{font-size:22vw;bottom:-4vw}
 .hero h1{font-size:clamp(2.7rem,5.2vw,4.6rem);font-weight:600;margin:0}
 .hero h1 em{font-style:normal;color:var(--accent);position:relative}
 .hero .sub{font-size:1.18rem;color:var(--ink-2);max-width:42ch;margin:28px 0 0}
@@ -203,7 +203,7 @@ header.hdr-dark .menu-btn{background:rgba(255,255,255,.08);border-color:rgba(255
 
 /* PROBLEMS */
 .problems{background:var(--paper);padding:140px 0;position:relative;overflow:hidden}
-.problems .ghost{font-size:16vw;top:auto;bottom:24px}
+.problems .ghost{font-size:24vw;top:auto;bottom:24px}
 .problems .head{position:relative;z-index:2;text-align:center;margin-bottom:50px}
 .problems h2{font-size:clamp(2rem,3.8vw,3.1rem);font-weight:600;margin-top:14px}
 .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;position:relative;z-index:2}
@@ -220,7 +220,7 @@ header.hdr-dark .menu-btn{background:rgba(255,255,255,.08);border-color:rgba(255
 
 /* REVIEWS */
 .reviews{background:var(--white);padding:140px 0;position:relative;overflow:hidden;text-align:center}
-.reviews .ghost{font-size:16vw;top:auto;bottom:24px}
+.reviews .ghost{font-size:28vw;top:auto;bottom:24px}
 .reviews .head{position:relative;z-index:2}
 .reviews h2{font-size:clamp(2rem,4vw,3.4rem);font-weight:600;margin:16px 0 8px}
 .reviews .head p{color:var(--muted)}
@@ -252,7 +252,7 @@ header.hdr-dark .menu-btn{background:rgba(255,255,255,.08);border-color:rgba(255
 
 /* CTA band */
 .ctaband{background:var(--dark);color:#fff;padding:130px 0 160px;text-align:center;position:relative;overflow:hidden}
-.ctaband .ghost{font-size:11vw;bottom:22px}
+.ctaband .ghost{font-size:17vw;bottom:22px}
 .ctaband h2{font-size:clamp(2.2rem,4.5vw,3.6rem);font-weight:600;max-width:18ch;margin:18px auto 30px;color:#fff;position:relative;z-index:2}
 .ctaband .cta{justify-content:center;position:relative;z-index:2}
 .ctaband .eyebrow{position:relative;z-index:2}
@@ -352,13 +352,13 @@ header.hdr-dark .menu-btn{background:rgba(255,255,255,.08);border-color:rgba(255
 footer{background:var(--dark);color:#fff;padding:120px 0 0;position:relative;overflow:hidden}
 .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;position:relative;z-index:2;padding-bottom:80px}
 .foot-lead{font-size:clamp(1.8rem,3vw,2.4rem);font-weight:600;letter-spacing:-.035em;max-width:14ch;color:#fff}
-.foot-logo{height:46px;width:auto;display:block;margin-bottom:28px}
+.foot-logo{height:72px;width:auto;display:block;margin-bottom:28px}
 footer h3{font-family:var(--font-mono),monospace;font-size:.8rem;letter-spacing:.02em;color:var(--muted-d);margin-bottom:16px;font-weight:400}
 footer ul{list-style:none;display:grid;gap:11px}
 footer ul a,footer ul li{color:#fff;font-size:1rem;transition:.2s}
 footer ul a{display:inline-block;padding:6px 0;margin:-6px 0}
 footer ul a:hover{color:var(--accent)}
-.foot-ghost{font-weight:700;font-size:13vw;letter-spacing:-.05em;color:rgba(255,255,255,.05);line-height:.7;text-align:center;white-space:nowrap;user-select:none;position:relative;z-index:1}
+.foot-ghost{font-weight:700;font-size:13vw;letter-spacing:.02em;color:rgba(255,255,255,.05);line-height:.8;text-align:center;white-space:nowrap;user-select:none;position:relative;z-index:1;margin-bottom:-1vw}
 .foot-bottom{position:relative;z-index:2;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding:24px 0 36px;font-size:.86rem;color:var(--muted-d);border-top:1px solid var(--line-d)}
 .foot-bottom a{color:var(--accent);font-weight:600;display:inline-block;padding:8px 0;margin:-8px 0}
 
