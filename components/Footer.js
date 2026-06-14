@@ -48,7 +48,7 @@ export default function Footer() {
       <div className="foot-ghost" aria-hidden="true">Witter Tech</div>
       <div className="wrap">
         {/* eslint-disable-next-line @next/next/no-img-element -- small fixed-size webp lockup, next/image not needed */}
-        <img src="/wordmark-light.webp" alt="Witter Tech" className="foot-logo" width="108" height="72" />
+        <img src="/wordmark-light.webp" alt="Witter Tech" className="foot-logo" width="76" height="72" />
         <div className="foot-bottom">
           <span>&copy; 2026 {SITE.name} &middot; a DBA of {SITE.legalName} &middot; <Link href="/pricing">Pricing</Link> &middot; <Link href="/reviews">Reviews</Link> &middot; <Link href="/privacy">Privacy</Link></span>
           <span>Website by <a href="https://roemdigital.com" target="_blank" rel="noopener noreferrer">ROEM Digital</a></span>
