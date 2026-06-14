@@ -87,11 +87,12 @@ h1,h2,h3,h4{font-weight:600;letter-spacing:-.045em;line-height:1.05}
 
 /* HEADER */
 header{position:fixed;top:0;left:0;right:0;z-index:80;transition:.3s}
-.nav{display:flex;align-items:center;justify-content:space-between;height:84px}
+.nav{display:flex;align-items:center;justify-content:space-between;height:112px}
+@media (max-width:680px){.nav{height:74px}}
 .brand{font-weight:700;font-size:1.4rem;letter-spacing:-.03em;color:var(--ink);display:flex;align-items:center;white-space:nowrap}
 .brand .dot{color:var(--accent)}
-.brand-logo{height:74px;width:auto;display:block}
-@media (max-width:560px){.brand-logo{height:56px}}
+.brand-logo{height:98px;width:auto;display:block}
+@media (max-width:560px){.brand-logo{height:54px}}
 .nav-mid{display:flex;gap:32px}
 .nav-mid a{font-size:.97rem;color:var(--ink-2);font-weight:500;transition:.2s;white-space:nowrap}
 .nav-mid a:hover,.nav-mid a.active{color:var(--ink)}
