@@ -1,5 +1,25 @@
 /** @type {import('next').NextConfig} */
 
+// Content-Security-Policy, REPORT-ONLY: it monitors and logs violations to the
+// browser console without blocking anything, so it cannot break the live site.
+// Covers the resources this site actually uses (GA, Vercel insights, Formspree,
+// the contact-page Google Maps iframe, next/font, next/image). 'unsafe-inline'
+// is required because the site uses inline styles and inline JSON-LD/GA scripts;
+// an enforcing CSP would need those refactored to classes + nonces first.
+const csp = [
+  "default-src 'self'",
+  "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://va.vercel-scripts.com",
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' data: https://www.google.com https://www.googletagmanager.com",
+  "font-src 'self' data:",
+  "frame-src https://www.google.com",
+  "connect-src 'self' https://formspree.io https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://*.vercel-insights.com",
+  "base-uri 'self'",
+  "form-action 'self' https://formspree.io",
+  "frame-ancestors 'self'",
+  "object-src 'none'",
+].join('; ')
+
 // Site-wide security headers, applied to every route in addition to the
 // asset caching rules in vercel.json.
 const securityHeaders = [
@@ -9,6 +29,7 @@ const securityHeaders = [
   { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
   { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=(), browsing-topics=()' },
   { key: 'X-DNS-Prefetch-Control', value: 'on' },
+  { key: 'Content-Security-Policy-Report-Only', value: csp },
 ]
 
 const nextConfig = {
