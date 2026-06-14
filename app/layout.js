@@ -11,9 +11,12 @@ import { businessJsonLd } from '@/lib/schema'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import Script from 'next/script'
 
-// Google Analytics 4 activates only when a Measurement ID is set in Vercel
-// (env var NEXT_PUBLIC_GA_ID, e.g. G-XXXXXXXXXX). Until then nothing loads.
-const GA_ID = process.env.NEXT_PUBLIC_GA_ID
+// Google Analytics 4. The Measurement ID is public (gtag), so it lives in
+// lib/site.js; a Vercel env var can still override it. It only loads on the
+// production domain (VERCEL_ENV === 'production'), so preview/local traffic
+// never pollutes the analytics.
+const GA_ID =
+  process.env.VERCEL_ENV === 'production' ? (process.env.NEXT_PUBLIC_GA_ID || SITE.gaId) : null
 
 const inter = Inter({
   subsets: ['latin'],
