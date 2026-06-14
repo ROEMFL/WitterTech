@@ -127,9 +127,9 @@ header.hdr-dark .menu-btn{background:rgba(255,255,255,.08);border-color:rgba(255
 .page-hero .sub{font-size:1.18rem;color:var(--muted-d);max-width:52ch;margin:0 auto}
 
 /* HERO (homepage) */
-.hero{position:relative;padding:150px 0 70px;overflow:hidden}
+.hero{position:relative;padding:150px 0 180px;overflow:hidden}
 .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center;position:relative;z-index:2}
-.hero .ghost{font-size:22vw;bottom:-4vw}
+.hero .ghost{font-size:22vw;bottom:-7vw}
 .hero h1{font-size:clamp(2.7rem,5.2vw,4.6rem);font-weight:600;margin:0}
 .hero h1 em{font-style:normal;color:var(--accent);position:relative}
 .hero .sub{font-size:1.18rem;color:var(--ink-2);max-width:42ch;margin:28px 0 0}
@@ -203,7 +203,7 @@ header.hdr-dark .menu-btn{background:rgba(255,255,255,.08);border-color:rgba(255
 
 /* PROBLEMS */
 .problems{background:var(--paper);padding:140px 0;position:relative;overflow:hidden}
-.problems .ghost{font-size:24vw;top:auto;bottom:24px}
+.problems .ghost{font-size:24vw;top:auto;bottom:-11vw}
 .problems .head{position:relative;z-index:2;text-align:center;margin-bottom:50px}
 .problems h2{font-size:clamp(2rem,3.8vw,3.1rem);font-weight:600;margin-top:14px}
 .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;position:relative;z-index:2}
@@ -220,7 +220,7 @@ header.hdr-dark .menu-btn{background:rgba(255,255,255,.08);border-color:rgba(255
 
 /* REVIEWS */
 .reviews{background:var(--white);padding:140px 0;position:relative;overflow:hidden;text-align:center}
-.reviews .ghost{font-size:28vw;top:auto;bottom:24px}
+.reviews .ghost{font-size:28vw;top:auto;bottom:-13vw}
 .reviews .head{position:relative;z-index:2}
 .reviews h2{font-size:clamp(2rem,4vw,3.4rem);font-weight:600;margin:16px 0 8px}
 .reviews .head p{color:var(--muted)}
@@ -252,7 +252,7 @@ header.hdr-dark .menu-btn{background:rgba(255,255,255,.08);border-color:rgba(255
 
 /* CTA band */
 .ctaband{background:var(--dark);color:#fff;padding:130px 0 160px;text-align:center;position:relative;overflow:hidden}
-.ctaband .ghost{font-size:17vw;bottom:22px}
+.ctaband .ghost{font-size:17vw;bottom:-5vw}
 .ctaband h2{font-size:clamp(2.2rem,4.5vw,3.6rem);font-weight:600;max-width:18ch;margin:18px auto 30px;color:#fff;position:relative;z-index:2}
 .ctaband .cta{justify-content:center;position:relative;z-index:2}
 .ctaband .eyebrow{position:relative;z-index:2}
