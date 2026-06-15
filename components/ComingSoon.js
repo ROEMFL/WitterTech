@@ -22,6 +22,9 @@ export default function ComingSoon() {
         <a href={SITE.phoneHref} style={{ background: 'var(--accent)', color: 'var(--dark)', fontWeight: 600, padding: '1rem 1.9rem', borderRadius: 'var(--pill)', fontSize: '1rem' }}>
           Call or text {SITE.phone}
         </a>
+        {/* Off-screen separator so crawlers/screen readers don't run the phone
+            and email together (e.g. "407-624-8459joe@wittertech.com"). */}
+        <span style={{ position: 'absolute', width: 1, height: 1, overflow: 'hidden', clip: 'rect(0 0 0 0)', whiteSpace: 'nowrap' }}> or email </span>
         <a href={MAILTO} style={{ background: 'transparent', color: '#fff', border: '1px solid rgba(255,255,255,.28)', fontWeight: 600, padding: '1rem 1.9rem', borderRadius: 'var(--pill)', fontSize: '1rem' }}>
           {SITE.email}
         </a>
